@@ -3,209 +3,10 @@
 
   var ACCENT = "#ff2828";
   var ASSET_BASE = getAssetBase();
-
-  var courseData = {
-    en: {
-      courseId: "poligonsoft-free-sand-casting",
-      title: "Step-by-Step Sand Casting Simulation in PoligonSoft Free",
-      sidebarTitle: "PoligonSoft Free Course",
-      description: "Learn sand casting simulation in PoligonSoft Free with step-by-step video lessons. Create a project, prepare geometry, set materials, run a simulation, and review casting results.",
-      level: "Free",
-      labels: {
-        modules: "modules",
-        steps: "steps",
-        approx: "approx.",
-        level: "course level",
-        progress: "Progress",
-        lesson: "Lesson",
-        step: "Step",
-        of: "of",
-        actions: "Actions",
-        expected: "Expected result",
-        loadingLesson: "Loading lesson...",
-        previous: "Previous step",
-        next: "Next step",
-        markComplete: "Mark as completed",
-        completed: "Completed",
-        progressSync: "Progress sync",
-        guestProgress: "Sign in to save completed lessons and continue later.",
-        loadingProgress: "Loading saved progress...",
-        savedProgress: "Signed in. Completed {done} of {total} steps.",
-        progressUnavailable: "Progress sync is not available on this page yet.",
-        login: "Log in",
-        resetProgress: "Reset progress",
-        resetConfirm: "Reset your course progress?",
-        videoMissing: "Video will be added later",
-        videoCaption: "Placeholder for YouTube / Vimeo embed"
-      },
-      downloads: [
-        {
-          title: "Sand casting sample model",
-          url: "#"
-        },
-        {
-          title: "Project files archive",
-          url: "#"
-        }
-      ],
-      modules: [
-        {
-          id: "project-setup",
-          title: "Project setup",
-          steps: [
-            {
-              id: "install",
-              title: "Install and open PoligonSoft Free",
-              duration: "5 min",
-              contentUrl: "data/poligonsoft-free-course/en/project-setup/install.json"
-            },
-            {
-              id: "new-project",
-              title: "Create a sand casting project",
-              duration: "7 min",
-              contentUrl: "data/poligonsoft-free-course/en/project-setup/new-project.json"
-            }
-          ]
-        },
-        {
-          id: "geometry-materials",
-          title: "Geometry and materials",
-          steps: [
-            {
-              id: "import-geometry",
-              title: "Import casting geometry",
-              duration: "8 min",
-              contentUrl: "data/poligonsoft-free-course/en/geometry-materials/import-geometry.json"
-            },
-            {
-              id: "assign-material",
-              title: "Assign alloy and mold material",
-              duration: "9 min",
-              contentUrl: "data/poligonsoft-free-course/en/geometry-materials/assign-material.json"
-            }
-          ]
-        },
-        {
-          id: "simulation-results",
-          title: "Simulation and results",
-          steps: [
-            {
-              id: "run-simulation",
-              title: "Run the first simulation",
-              duration: "6 min",
-              contentUrl: "data/poligonsoft-free-course/en/simulation-results/run-simulation.json"
-            },
-            {
-              id: "review-results",
-              title: "Review casting results",
-              duration: "11 min",
-              contentUrl: "data/poligonsoft-free-course/en/simulation-results/review-results.json"
-            }
-          ]
-        }
-      ]
-    },
-    es: {
-      courseId: "poligonsoft-free-sand-casting",
-      title: "Simulacion de fundicion en arena paso a paso en PoligonSoft Free",
-      sidebarTitle: "Curso PoligonSoft Free",
-      description: "Aprenda simulacion de fundicion en arena en PoligonSoft Free con lecciones en video paso a paso. Cree un proyecto, prepare la geometria, configure materiales, ejecute la simulacion y revise resultados.",
-      level: "Free",
-      labels: {
-        modules: "modulos",
-        steps: "pasos",
-        approx: "aprox.",
-        level: "nivel del curso",
-        progress: "Progreso",
-        lesson: "Leccion",
-        step: "Paso",
-        of: "de",
-        actions: "Que hacer",
-        expected: "Resultado esperado",
-        loadingLesson: "Cargando leccion...",
-        previous: "Paso anterior",
-        next: "Siguiente paso",
-        markComplete: "Marcar como completado",
-        completed: "Completado",
-        progressSync: "Sincronizacion de progreso",
-        guestProgress: "Inicie sesion para guardar lecciones completadas y continuar despues.",
-        loadingProgress: "Cargando progreso guardado...",
-        savedProgress: "Sesion iniciada. Completado {done} de {total} pasos.",
-        progressUnavailable: "La sincronizacion de progreso aun no esta disponible en esta pagina.",
-        login: "Log in",
-        resetProgress: "Restablecer progreso",
-        resetConfirm: "Restablecer el progreso del curso?",
-        videoMissing: "El video se agregara mas tarde",
-        videoCaption: "Marcador para YouTube / Vimeo embed"
-      },
-      downloads: [
-        {
-          title: "Modelo de ejemplo para fundicion en arena",
-          url: "#"
-        },
-        {
-          title: "Archivo del proyecto",
-          url: "#"
-        }
-      ],
-      modules: [
-        {
-          id: "project-setup",
-          title: "Preparacion del proyecto",
-          steps: [
-            {
-              id: "install",
-              title: "Instalar y abrir PoligonSoft Free",
-              duration: "5 min",
-              contentUrl: "data/poligonsoft-free-course/es/project-setup/install.json"
-            },
-            {
-              id: "new-project",
-              title: "Crear un proyecto de fundicion en arena",
-              duration: "7 min",
-              contentUrl: "data/poligonsoft-free-course/es/project-setup/new-project.json"
-            }
-          ]
-        },
-        {
-          id: "geometry-materials",
-          title: "Geometria y materiales",
-          steps: [
-            {
-              id: "import-geometry",
-              title: "Importar geometria de la pieza",
-              duration: "8 min",
-              contentUrl: "data/poligonsoft-free-course/es/geometry-materials/import-geometry.json"
-            },
-            {
-              id: "assign-material",
-              title: "Asignar aleacion y material del molde",
-              duration: "9 min",
-              contentUrl: "data/poligonsoft-free-course/es/geometry-materials/assign-material.json"
-            }
-          ]
-        },
-        {
-          id: "simulation-results",
-          title: "Simulacion y resultados",
-          steps: [
-            {
-              id: "run-simulation",
-              title: "Ejecutar la primera simulacion",
-              duration: "6 min",
-              contentUrl: "data/poligonsoft-free-course/es/simulation-results/run-simulation.json"
-            },
-            {
-              id: "review-results",
-              title: "Revisar resultados de fundicion",
-              duration: "11 min",
-              contentUrl: "data/poligonsoft-free-course/es/simulation-results/review-results.json"
-            }
-          ]
-        }
-      ]
-    }
-  };
+  var COURSE_CONFIG_PATH = getCourseConfigPath();
+  var COURSE_CONFIG_URL = assetUrl(COURSE_CONFIG_PATH);
+  var COURSE_DATA_BASE = new URL("./", COURSE_CONFIG_URL).href;
+  var courseData = null;
 
   var state = {
     lang: getInitialLang(),
@@ -236,6 +37,13 @@
     return window.location.pathname.indexOf("/es/") === 0 ? "es" : "en";
   }
 
+  function getCourseConfigPath() {
+    var script = document.currentScript;
+    var fromScript = script && script.getAttribute("data-course-src");
+
+    return window.POLIGONSOFT_COURSE_SRC || fromScript || "data/poligonsoft-free-course/course.json";
+  }
+
   function getAssetBase() {
     var scriptUrl = document.currentScript && document.currentScript.src;
 
@@ -250,12 +58,40 @@
     return new URL(path, ASSET_BASE).href;
   }
 
+  function dataUrl(path) {
+    return new URL(path, COURSE_DATA_BASE).href;
+  }
+
+  function loadCourseData() {
+    return fetch(COURSE_CONFIG_URL)
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error("Course config request failed: " + response.status);
+        }
+
+        return response.json();
+      })
+      .then(function (data) {
+        courseData = data.languages || data;
+      });
+  }
+
   function course() {
-    return courseData[state.lang] || courseData.en;
+    var firstLang;
+
+    if (!courseData) {
+      return null;
+    }
+
+    firstLang = Object.keys(courseData)[0];
+
+    return courseData[state.lang] || courseData.en || courseData[firstLang] || null;
   }
 
   function labels() {
-    return course().labels;
+    var currentCourse = course();
+
+    return currentCourse && currentCourse.labels ? currentCourse.labels : {};
   }
 
   function el(name) {
@@ -304,9 +140,14 @@
 
   function flatSteps() {
     var result = [];
+    var currentCourse = course();
 
-    course().modules.forEach(function (module, moduleIndex) {
-      module.steps.forEach(function (step, stepIndex) {
+    if (!currentCourse || !currentCourse.modules) {
+      return result;
+    }
+
+    currentCourse.modules.forEach(function (module, moduleIndex) {
+      (module.steps || []).forEach(function (step, stepIndex) {
         result.push({
           module: module,
           step: step,
@@ -373,7 +214,14 @@
     var text = labels();
     var steps = flatSteps();
     var active = activeItem();
-    var activeIndex = steps.findIndex(function (item) {
+    var activeIndex;
+
+    if (!currentCourse || !active || !steps.length) {
+      console.warn("PoligonSoft course: course data is empty or invalid.");
+      return;
+    }
+
+    activeIndex = steps.findIndex(function (item) {
       return item.path === active.path;
     });
 
@@ -381,12 +229,12 @@
 
     setText("title", currentCourse.title);
     setText("description", currentCourse.description);
-    setStatText("stat-modules", 0, currentCourse.modules.length);
+    setStatText("stat-modules", 0, (currentCourse.modules || []).length);
     setStatText("stat-steps", 1, steps.length);
     setStatText("stat-duration", 2, totalMinutes(steps) + " min");
     setStatText("stat-level", 3, currentCourse.level);
     setText("sidebar-title", currentCourse.sidebarTitle);
-    setText("sidebar-description", currentCourse.description);
+    setText("sidebar-description", currentCourse.sidebarDescription || currentCourse.description);
     setText("progress-label", text.progress);
     setText("progress-text", (activeIndex + 1) + " " + text.of + " " + steps.length);
 
@@ -403,7 +251,7 @@
     var nav = el("lesson-nav");
     nav.innerHTML = "";
 
-    course().modules.forEach(function (module, moduleIndex) {
+    (course().modules || []).forEach(function (module, moduleIndex) {
       var group = document.createElement("div");
       group.className = "course-lesson-group";
 
@@ -412,7 +260,7 @@
       caption.textContent = String(moduleIndex + 1).padStart(2, "0") + ". " + module.title;
       group.appendChild(caption);
 
-      module.steps.forEach(function (step, stepIndex) {
+      (module.steps || []).forEach(function (step, stepIndex) {
         var path = module.id + "/" + step.id;
         var button = document.createElement("button");
         var completed = isCompleted(path);
@@ -482,7 +330,7 @@
 
     step._loading = true;
 
-    fetch(assetUrl(step.contentUrl))
+    fetch(dataUrl(step.contentUrl))
       .then(function (response) {
         if (!response.ok) {
           throw new Error("Lesson content request failed: " + response.status);
@@ -663,7 +511,7 @@
     var container = el("course-downloads");
     container.innerHTML = "";
 
-    course().downloads.forEach(function (download) {
+    (course().downloads || []).forEach(function (download) {
       var link = document.createElement("a");
       link.className = "course-download-link";
       link.href = download.url || "#";
@@ -870,16 +718,20 @@
       return;
     }
 
-    render();
-    initProgress();
+    loadCourseData().then(function () {
+      render();
+      initProgress();
 
-    window.addEventListener("hashchange", function () {
-      var nextPath = window.location.hash.replace(/^#/, "");
+      window.addEventListener("hashchange", function () {
+        var nextPath = window.location.hash.replace(/^#/, "");
 
-      if (nextPath && nextPath !== state.requestedPath) {
-        state.requestedPath = nextPath;
-        render();
-      }
+        if (nextPath && nextPath !== state.requestedPath) {
+          state.requestedPath = nextPath;
+          render();
+        }
+      });
+    }).catch(function (error) {
+      console.warn("PoligonSoft course: could not load course data", COURSE_CONFIG_URL, error);
     });
   });
 })();
