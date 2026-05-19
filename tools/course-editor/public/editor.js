@@ -335,83 +335,97 @@ function languageColumns(content) {
   `).join("")}</div>`;
 }
 
-function richEditor(scope, lang, field, label, html) {
+function htmlCodeEditor(scope, lang, field, label, html) {
   return `
-    <div class="rich-field is-wide">
-      <div class="field-label">${escapeHtml(label)}</div>
-      <div class="rich-toolbar" aria-label="${escapeHtml(label)} toolbar">
-        <button type="button" data-rich-command="formatBlock" data-rich-value="P">P</button>
-        <button type="button" data-rich-command="formatBlock" data-rich-value="H3">H3</button>
-        <button type="button" data-rich-command="bold">B</button>
-        <button type="button" data-rich-command="italic">I</button>
-        <button type="button" data-rich-command="insertUnorderedList">List</button>
-        <button type="button" data-rich-command="createLink">Link</button>
-        <button type="button" data-rich-command="insertImage">Image</button>
-        <button type="button" data-rich-command="removeFormat">Clear</button>
+    <div class="html-field is-wide">
+      <div class="field-label">${escapeHtml(label)} HTML</div>
+      <div class="html-toolbar" aria-label="${escapeHtml(label)} HTML toolbar">
+        <button type="button" data-html-template="paragraph">P</button>
+        <button type="button" data-html-template="heading">H3</button>
+        <button type="button" data-html-template="list">List</button>
+        <button type="button" data-html-template="link">Link</button>
+        <button type="button" data-html-template="image">Image</button>
+        <button type="button" data-html-template="button">Button</button>
       </div>
-      <div class="rich-editor" contenteditable="true" spellcheck="false" data-rich-editor="true" data-scope="${scope}" data-lang="${lang}" data-field="${field}">${html || ""}</div>
-      <details class="source-details">
-        <summary>HTML source</summary>
-        <textarea data-html-source="true" data-scope="${scope}" data-lang="${lang}" data-field="${field}" rows="7" spellcheck="false">${escapeHtml(html || "")}</textarea>
-      </details>
+      <textarea class="html-source-editor" data-html-source="true" data-scope="${scope}" data-lang="${lang}" data-field="${field}" rows="9" spellcheck="false">${escapeHtml(html || "")}</textarea>
+      <div class="html-preview-title">Preview</div>
+      <div class="html-preview" data-html-preview="true" data-scope="${scope}" data-lang="${lang}" data-field="${field}">${html || "<em>No HTML yet.</em>"}</div>
     </div>
   `;
 }
 
 function inputValue(target) {
-  if (target.dataset.richEditor) {
-    return target.innerHTML;
-  }
-
   return target.value;
 }
 
-function syncHtmlControls(target, value) {
-  const selector = `[data-scope="${target.dataset.scope}"][data-lang="${target.dataset.lang}"][data-field="${target.dataset.field}"]`;
+function syncHtmlPreview(target, value) {
+  const selector = `[data-html-preview="true"][data-scope="${target.dataset.scope}"][data-lang="${target.dataset.lang}"][data-field="${target.dataset.field}"]`;
 
   document.querySelectorAll(selector).forEach(control => {
-    if (control === target) {
-      return;
-    }
-
-    if (control.dataset.richEditor) {
-      control.innerHTML = value || "";
-    } else if (control.dataset.htmlSource) {
-      control.value = value || "";
-    }
+    control.innerHTML = value || "<em>No HTML yet.</em>";
   });
 }
 
-function applyRichCommand(button) {
-  const field = button.closest(".rich-field");
-  const editor = field && field.querySelector(".rich-editor");
-  const command = button.dataset.richCommand;
-  let value = button.dataset.richValue || null;
+function htmlTemplate(name) {
+  if (name === "paragraph") {
+    return "<p>Text</p>";
+  }
 
-  if (!editor || !command) {
+  if (name === "heading") {
+    return "<h3>Heading</h3>";
+  }
+
+  if (name === "list") {
+    return "<ul>\n  <li>Item</li>\n</ul>";
+  }
+
+  if (name === "link") {
+    const url = window.prompt("Link URL", "https://");
+
+    if (!url) {
+      return "";
+    }
+
+    return `<a href="${escapeAttribute(url)}">Link text</a>`;
+  }
+
+  if (name === "image") {
+    const url = window.prompt("Image URL", "https://");
+
+    if (!url) {
+      return "";
+    }
+
+    return `<img src="${escapeAttribute(url)}" alt="">`;
+  }
+
+  if (name === "button") {
+    return '<a class="course-button is-primary" href="#">Button text</a>';
+  }
+
+  return "";
+}
+
+function escapeAttribute(value) {
+  return String(value || "").replace(/"/g, "&quot;");
+}
+
+function insertHtmlTemplate(button) {
+  const field = button.closest(".html-field");
+  const textarea = field && field.querySelector(".html-source-editor");
+  const template = htmlTemplate(button.dataset.htmlTemplate);
+  const start = textarea ? textarea.selectionStart : 0;
+  const end = textarea ? textarea.selectionEnd : 0;
+
+  if (!textarea || !template) {
     return;
   }
 
-  editor.focus();
-
-  if (command === "createLink") {
-    value = window.prompt("Link URL", "https://");
-
-    if (!value) {
-      return;
-    }
-  }
-
-  if (command === "insertImage") {
-    value = window.prompt("Image URL", "https://");
-
-    if (!value) {
-      return;
-    }
-  }
-
-  document.execCommand(command, false, value);
-  editor.dispatchEvent(new Event("input", { bubbles: true }));
+  textarea.value = textarea.value.slice(0, start) + template + textarea.value.slice(end);
+  textarea.focus();
+  textarea.selectionStart = start;
+  textarea.selectionEnd = start + template.length;
+  textarea.dispatchEvent(new Event("input", { bubbles: true }));
 }
 
 function renderGeneral() {
@@ -432,7 +446,7 @@ function renderGeneral() {
           Level
           <input data-scope="course" data-lang="${lang}" data-field="level" type="text" value="${escapeHtml(course.level)}">
         </label>
-        ${richEditor("course", lang, "description", "Description", course.description)}
+        ${htmlCodeEditor("course", lang, "description", "Description", course.description)}
         <label class="is-wide">
           Downloads, one per line: title | url
           <textarea data-scope="course" data-lang="${lang}" data-field="downloads" rows="4">${escapeHtml(downloadsToText(course.downloads))}</textarea>
@@ -511,12 +525,12 @@ function renderLessons() {
             Video embed URL
             <input data-scope="content" data-lang="${lang}" data-field="videoUrl" type="text" value="${escapeHtml(content.videoUrl)}" placeholder="https://www.youtube.com/embed/...">
           </label>
-          ${richEditor("content", lang, "summary", "Summary", content.summary)}
+          ${htmlCodeEditor("content", lang, "summary", "Summary", content.summary)}
           <label class="is-wide">
             Actions, one per line
             <textarea data-scope="content" data-lang="${lang}" data-field="actions" rows="7" spellcheck="false">${escapeHtml(Array.isArray(content.actions) ? content.actions.join("\n") : "")}</textarea>
           </label>
-          ${richEditor("content", lang, "expected", "Expected result", content.expected)}
+          ${htmlCodeEditor("content", lang, "expected", "Expected result", content.expected)}
         </div>
       `;
     })}
@@ -572,8 +586,8 @@ function handleInput(event) {
     }
   }
 
-  if (target.dataset.richEditor || target.dataset.htmlSource) {
-    syncHtmlControls(target, value);
+  if (target.dataset.htmlSource) {
+    syncHtmlPreview(target, value);
   }
 
   markDirty();
@@ -846,13 +860,13 @@ async function publish() {
 document.addEventListener("input", handleInput);
 document.addEventListener("change", handleChange);
 document.addEventListener("click", event => {
-  const richButton = event.target.closest("[data-rich-command]");
+  const htmlButton = event.target.closest("[data-html-template]");
   const viewButton = event.target.closest("[data-view]");
   const actionButton = event.target.closest("[data-action]");
 
-  if (richButton) {
+  if (htmlButton) {
     event.preventDefault();
-    applyRichCommand(richButton);
+    insertHtmlTemplate(htmlButton);
     return;
   }
 
