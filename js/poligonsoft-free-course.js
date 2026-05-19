@@ -865,68 +865,11 @@
     return new Date().toISOString();
   }
 
-  function normalizeCourseLanguageLinks() {
-    var isCoursePage = /\/(?:es\/)?poligonsoft-free-course\/?$/.test(window.location.pathname);
-    var isSpanish = window.location.pathname.indexOf("/es/") === 0;
-    var languageLabel;
-    var linkEs;
-    var linkEn;
-    var languageList;
-
-    if (!isCoursePage) {
-      return;
-    }
-
-    languageLabel = document.querySelector(".langdroptext");
-    if (languageLabel) {
-      languageLabel.textContent = isSpanish ? "Es" : "En";
-    }
-
-    linkEs = document.getElementById("link-es");
-    if (!linkEs) {
-      return;
-    }
-
-    languageList = linkEs.parentElement;
-    linkEn = document.getElementById("link-us");
-
-    if (!linkEn) {
-      linkEn = linkEs.cloneNode(false);
-      linkEn.id = "link-us";
-      languageList.insertBefore(linkEn, linkEs);
-    }
-
-    configureLanguageLink(linkEn, "En", "/poligonsoft-free-course");
-    configureLanguageLink(linkEs, "Es", "/es/poligonsoft-free-course");
-    hideUnsupportedLanguageLink("link-ru");
-    hideUnsupportedLanguageLink("link-zh");
-  }
-
-  function configureLanguageLink(link, label, href) {
-    link.textContent = label;
-    link.href = href;
-
-    link.addEventListener("click", function (event) {
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      window.location.href = href;
-    }, true);
-  }
-
-  function hideUnsupportedLanguageLink(id) {
-    var link = document.getElementById(id);
-
-    if (link) {
-      link.style.display = "none";
-    }
-  }
-
   document.addEventListener("DOMContentLoaded", function () {
     if (!allRequiredElementsExist()) {
       return;
     }
 
-    normalizeCourseLanguageLinks();
     render();
     initProgress();
 
