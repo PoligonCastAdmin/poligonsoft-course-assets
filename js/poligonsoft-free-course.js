@@ -504,7 +504,6 @@
         button.addEventListener("click", function () {
           state.requestedPath = path;
           render();
-          scrollToLesson();
         });
 
         group.appendChild(button);
@@ -599,7 +598,6 @@
       if (activeIndex > 0) {
         state.requestedPath = steps[activeIndex - 1].path;
         render();
-        scrollToLesson();
       }
     };
 
@@ -608,7 +606,6 @@
       if (activeIndex < steps.length - 1) {
         state.requestedPath = steps[activeIndex + 1].path;
         render();
-        scrollToLesson();
       }
     };
 
@@ -658,7 +655,6 @@
       if (progress.lastStep) {
         state.requestedPath = progress.lastStep;
         render();
-        scrollToLesson();
       }
     };
   }
@@ -686,14 +682,6 @@
     var url = new URL(window.location.href);
     url.hash = path;
     window.history.replaceState(null, "", url);
-  }
-
-  function scrollToLesson() {
-    var lesson = document.querySelector('[data-course="video"]');
-
-    if (lesson) {
-      lesson.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
   }
 
   function firebaseServices() {
@@ -860,8 +848,12 @@
     initProgress();
 
     window.addEventListener("hashchange", function () {
-      state.requestedPath = window.location.hash.replace(/^#/, "");
-      render();
+      var nextPath = window.location.hash.replace(/^#/, "");
+
+      if (nextPath && nextPath !== state.requestedPath) {
+        state.requestedPath = nextPath;
+        render();
+      }
     });
   });
 })();
