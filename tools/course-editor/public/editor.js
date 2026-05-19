@@ -1,13 +1,16 @@
 const state = {
   course: null,
   lessons: {},
-  lang: "en",
+  view: "general",
   moduleIndex: 0,
   stepIndex: 0,
   dirty: false
 };
 
-const fields = {};
+const langNames = {
+  en: "English",
+  es: "Spanish"
+};
 
 function $(selector) {
   return document.querySelector(selector);
@@ -46,81 +49,209 @@ function languages() {
   return Object.keys(state.course.languages || {});
 }
 
-function langData() {
-  return state.course.languages[state.lang];
+function primaryLang() {
+  return state.course.defaultLang || languages()[0];
 }
 
-function modules() {
-  return langData().modules || [];
+function langCourse(lang) {
+  return state.course.languages[lang];
 }
 
-function activeModule() {
-  return modules()[state.moduleIndex] || null;
+function baseModules() {
+  return langCourse(primaryLang()).modules || [];
 }
 
-function activeStep() {
-  const module = activeModule();
-  return module && module.steps ? module.steps[state.stepIndex] || null : null;
+function moduleFor(lang, index = state.moduleIndex) {
+  const course = langCourse(lang);
+  course.modules = Array.isArray(course.modules) ? course.modules : [];
+  return course.modules[index] || null;
 }
 
-function lessonContent() {
-  const step = activeStep();
+function stepFor(lang, moduleIndex = state.moduleIndex, stepIndex = state.stepIndex) {
+  const module = moduleFor(lang, moduleIndex);
+  module.steps = Array.isArray(module.steps) ? module.steps : [];
+  return module.steps[stepIndex] || null;
+}
+
+function lessonContent(lang) {
+  const step = stepFor(lang);
 
   if (!step) {
-    return {
-      videoUrl: "",
-      summary: "",
-      actions: [],
-      expected: ""
-    };
+    return defaultLessonContent();
   }
 
   if (!step.contentUrl) {
-    step.contentUrl = generateLessonPath();
+    step.contentUrl = generateLessonPath(lang);
   }
 
   if (!state.lessons[step.contentUrl]) {
-    state.lessons[step.contentUrl] = {
-      videoUrl: "",
-      summary: "",
-      actions: [],
-      expected: ""
-    };
+    state.lessons[step.contentUrl] = defaultLessonContent();
   }
 
   return state.lessons[step.contentUrl];
 }
 
-function generateLessonPath() {
-  const module = activeModule();
-  const step = activeStep();
+function defaultLessonContent() {
+  return {
+    videoUrl: "",
+    summary: "",
+    actions: [],
+    expected: ""
+  };
+}
+
+function ensureParallelStructure() {
+  const langs = languages();
+  const moduleCount = Math.max(...langs.map(lang => Array.isArray(langCourse(lang).modules) ? langCourse(lang).modules.length : 0), 0);
+
+  langs.forEach(lang => {
+    const course = langCourse(lang);
+    course.modules = Array.isArray(course.modules) ? course.modules : [];
+  });
+
+  for (let moduleIndex = 0; moduleIndex < moduleCount; moduleIndex += 1) {
+    const sourceModule = langs.map(lang => langCourse(lang).modules[moduleIndex]).find(Boolean) || {};
+    const moduleId = slugify(sourceModule.id || sourceModule.title, `module-${moduleIndex + 1}`);
+    const stepCount = Math.max(...langs.map(lang => {
+      const module = langCourse(lang).modules[moduleIndex];
+      return module && Array.isArray(module.steps) ? module.steps.length : 0;
+    }), 0);
+
+    langs.forEach(lang => {
+      const course = langCourse(lang);
+
+      if (!course.modules[moduleIndex]) {
+        course.modules[moduleIndex] = {
+          id: moduleId,
+          title: "",
+          steps: []
+        };
+      }
+
+      course.modules[moduleIndex].id = moduleId;
+      course.modules[moduleIndex].steps = Array.isArray(course.modules[moduleIndex].steps) ? course.modules[moduleIndex].steps : [];
+    });
+
+    for (let stepIndex = 0; stepIndex < stepCount; stepIndex += 1) {
+      const sourceStep = langs
+        .map(lang => langCourse(lang).modules[moduleIndex].steps[stepIndex])
+        .find(Boolean) || {};
+      const stepId = slugify(sourceStep.id || sourceStep.title, `lesson-${stepIndex + 1}`);
+      const duration = sourceStep.duration || "";
+
+      langs.forEach(lang => {
+        const module = langCourse(lang).modules[moduleIndex];
+
+        if (!module.steps[stepIndex]) {
+          module.steps[stepIndex] = {
+            id: stepId,
+            title: "",
+            duration,
+            contentUrl: `${lang}/${module.id}/${stepId}.json`
+          };
+        }
+
+        module.steps[stepIndex].id = stepId;
+        module.steps[stepIndex].duration = duration;
+
+        if (!module.steps[stepIndex].contentUrl) {
+          module.steps[stepIndex].contentUrl = `${lang}/${module.id}/${stepId}.json`;
+        }
+      });
+    }
+  }
+}
+
+function ensureSelection() {
+  if (state.moduleIndex >= baseModules().length) {
+    state.moduleIndex = Math.max(0, baseModules().length - 1);
+  }
+
+  const module = baseModules()[state.moduleIndex];
+
+  if (module && state.stepIndex >= module.steps.length) {
+    state.stepIndex = Math.max(0, module.steps.length - 1);
+  }
+}
+
+function generateLessonPath(lang) {
+  const module = moduleFor(lang);
+  const step = stepFor(lang);
   const moduleId = slugify(module && module.id, "module");
   const stepId = slugify(step && step.id, "lesson");
 
-  return `${state.lang}/${moduleId}/${stepId}.json`;
+  return `${lang}/${moduleId}/${stepId}.json`;
 }
 
-function bindFields() {
-  [
-    "course-title",
-    "course-sidebar-title",
-    "course-level",
-    "course-description",
-    "course-downloads",
-    "course-labels",
-    "module-id",
-    "module-title",
-    "lesson-id",
-    "lesson-title",
-    "lesson-duration",
-    "lesson-content-url",
-    "lesson-video-url",
-    "lesson-summary",
-    "lesson-actions",
-    "lesson-expected"
-  ].forEach(id => {
-    fields[id] = $(`#${id}`);
+function moveContent(oldUrl, newUrl) {
+  if (oldUrl && newUrl && oldUrl !== newUrl && state.lessons[oldUrl] && !state.lessons[newUrl]) {
+    state.lessons[newUrl] = state.lessons[oldUrl];
+  }
+}
+
+function setModuleId(nextId) {
+  const id = slugify(nextId, `module-${state.moduleIndex + 1}`);
+
+  languages().forEach(lang => {
+    const module = moduleFor(lang);
+
+    if (!module) {
+      return;
+    }
+
+    module.id = id;
+
+    (module.steps || []).forEach(step => {
+      const oldUrl = step.contentUrl;
+      step.contentUrl = `${lang}/${id}/${step.id}.json`;
+      moveContent(oldUrl, step.contentUrl);
+    });
   });
+}
+
+function setStepId(nextId) {
+  const id = slugify(nextId, `lesson-${state.stepIndex + 1}`);
+
+  languages().forEach(lang => {
+    const step = stepFor(lang);
+
+    if (!step) {
+      return;
+    }
+
+    step.id = id;
+
+    const oldUrl = step.contentUrl;
+    step.contentUrl = generateLessonPath(lang);
+    moveContent(oldUrl, step.contentUrl);
+  });
+}
+
+function setDuration(value) {
+  languages().forEach(lang => {
+    const step = stepFor(lang);
+
+    if (step) {
+      step.duration = value;
+    }
+  });
+}
+
+function textToDownloads(value) {
+  return value.split("\n")
+    .map(line => line.trim())
+    .filter(Boolean)
+    .map(line => {
+      const parts = line.split("|");
+      return {
+        title: (parts[0] || "").trim(),
+        url: (parts.slice(1).join("|") || "").trim()
+      };
+    });
+}
+
+function downloadsToText(downloads) {
+  return (downloads || []).map(item => `${item.title || ""} | ${item.url || ""}`).join("\n");
 }
 
 function render() {
@@ -128,254 +259,363 @@ function render() {
     return;
   }
 
+  ensureParallelStructure();
   ensureSelection();
-  renderLanguageTabs();
-  renderStructure();
-  renderForms();
+  renderTabs();
+  renderSidebar();
+  renderCurrentView();
 }
 
-function ensureSelection() {
-  if (!languages().includes(state.lang)) {
-    state.lang = languages()[0];
-  }
+function renderTabs() {
+  document.querySelectorAll("[data-view]").forEach(button => {
+    button.classList.toggle("is-active", button.dataset.view === state.view);
+  });
 
-  if (state.moduleIndex >= modules().length) {
-    state.moduleIndex = Math.max(0, modules().length - 1);
-  }
-
-  const module = activeModule();
-
-  if (module && state.stepIndex >= module.steps.length) {
-    state.stepIndex = Math.max(0, module.steps.length - 1);
-  }
-}
-
-function renderLanguageTabs() {
-  $("#language-tabs").innerHTML = languages().map(lang => `
-    <button class="button language-tab ${lang === state.lang ? "is-active" : ""}" type="button" data-lang="${escapeHtml(lang)}">
-      ${escapeHtml(lang.toUpperCase())}
-    </button>
-  `).join("");
-
-  document.querySelectorAll("[data-lang]").forEach(button => {
-    button.addEventListener("click", () => {
-      state.lang = button.dataset.lang;
-      state.moduleIndex = 0;
-      state.stepIndex = 0;
-      render();
-    });
+  document.querySelectorAll(".editor-view").forEach(view => {
+    view.classList.toggle("is-active", view.id === `${state.view}-view`);
   });
 }
 
-function renderStructure() {
-  $("#structure-list").innerHTML = modules().map((module, moduleIndex) => `
-    <div class="module-block">
-      <button class="module-title ${moduleIndex === state.moduleIndex ? "is-active" : ""}" type="button" data-module="${moduleIndex}">
-        ${String(moduleIndex + 1).padStart(2, "0")}. ${escapeHtml(module.title || module.id)}
-      </button>
-      ${(module.steps || []).map((step, stepIndex) => `
-        <button class="lesson-link ${moduleIndex === state.moduleIndex && stepIndex === state.stepIndex ? "is-active" : ""}" type="button" data-module="${moduleIndex}" data-step="${stepIndex}">
-          <span class="lesson-number">${stepIndex + 1}</span>
-          <span>${escapeHtml(step.title || step.id)}</span>
+function renderSidebar() {
+  if (state.view === "general") {
+    $("#structure-list").innerHTML = `
+      <div class="sidebar-note">
+        <strong>Course data</strong>
+        <span>${languages().map(lang => lang.toUpperCase()).join(" + ")}</span>
+      </div>
+    `;
+    $("#sidebar-actions").innerHTML = "";
+    return;
+  }
+
+  $("#structure-list").innerHTML = baseModules().map((module, moduleIndex) => {
+    const esModule = moduleFor("es", moduleIndex);
+
+    return `
+      <div class="module-block">
+        <button class="module-title ${moduleIndex === state.moduleIndex ? "is-active" : ""}" type="button" data-action="select-module" data-module="${moduleIndex}">
+          ${String(moduleIndex + 1).padStart(2, "0")}. ${escapeHtml(module.title || module.id)}
+          ${esModule ? `<span>${escapeHtml(esModule.title || esModule.id)}</span>` : ""}
         </button>
-      `).join("")}
+        ${state.view === "lessons" ? (module.steps || []).map((step, stepIndex) => {
+          const esStep = stepFor("es", moduleIndex, stepIndex);
+
+          return `
+            <button class="lesson-link ${moduleIndex === state.moduleIndex && stepIndex === state.stepIndex ? "is-active" : ""}" type="button" data-action="select-lesson" data-module="${moduleIndex}" data-step="${stepIndex}">
+              <span class="lesson-number">${stepIndex + 1}</span>
+              <span>${escapeHtml(step.title || step.id)}${esStep ? `<small>${escapeHtml(esStep.title || esStep.id)}</small>` : ""}</span>
+            </button>
+          `;
+        }).join("") : ""}
+      </div>
+    `;
+  }).join("");
+
+  $("#sidebar-actions").innerHTML = state.view === "sections"
+    ? `<button data-action="add-module" class="button is-secondary" type="button">Add section</button>`
+    : `<button data-action="add-lesson" class="button is-secondary" type="button">Add lesson</button>`;
+}
+
+function renderCurrentView() {
+  if (state.view === "general") {
+    renderGeneral();
+  } else if (state.view === "sections") {
+    renderSections();
+  } else {
+    renderLessons();
+  }
+}
+
+function languageColumns(content) {
+  return `<div class="language-columns">${languages().map(lang => `
+    <div class="language-card" data-lang-card="${lang}">
+      <h3>${escapeHtml(langNames[lang] || lang.toUpperCase())}</h3>
+      ${content(lang)}
     </div>
-  `).join("");
+  `).join("")}</div>`;
+}
 
-  document.querySelectorAll("[data-module]").forEach(button => {
-    button.addEventListener("click", () => {
-      state.moduleIndex = Number(button.dataset.module);
-      state.stepIndex = button.dataset.step ? Number(button.dataset.step) : 0;
-      render();
-    });
+function updateHtmlPreview(lang) {
+  const preview = document.querySelector(`[data-lang-card="${lang}"] .html-preview`);
+  const content = lessonContent(lang);
+
+  if (preview) {
+    preview.innerHTML = content.summary || content.expected
+      ? `${content.summary || ""}${content.expected || ""}`
+      : "<em>No HTML preview yet.</em>";
+  }
+}
+
+function renderGeneral() {
+  $("#general-form").innerHTML = languageColumns(lang => {
+    const course = langCourse(lang);
+
+    return `
+      <div class="form-grid">
+        <label>
+          Course title
+          <input data-scope="course" data-lang="${lang}" data-field="title" type="text" value="${escapeHtml(course.title)}">
+        </label>
+        <label>
+          Sidebar title
+          <input data-scope="course" data-lang="${lang}" data-field="sidebarTitle" type="text" value="${escapeHtml(course.sidebarTitle)}">
+        </label>
+        <label>
+          Level
+          <input data-scope="course" data-lang="${lang}" data-field="level" type="text" value="${escapeHtml(course.level)}">
+        </label>
+        <label class="is-wide">
+          Description HTML
+          <textarea data-scope="course" data-lang="${lang}" data-field="description" rows="7" spellcheck="false">${escapeHtml(course.description)}</textarea>
+        </label>
+        <label class="is-wide">
+          Downloads, one per line: title | url
+          <textarea data-scope="course" data-lang="${lang}" data-field="downloads" rows="4">${escapeHtml(downloadsToText(course.downloads))}</textarea>
+        </label>
+        <details class="details is-wide">
+          <summary>Interface labels JSON</summary>
+          <textarea data-scope="course" data-lang="${lang}" data-field="labels" rows="9" spellcheck="false">${escapeHtml(JSON.stringify(course.labels || {}, null, 2))}</textarea>
+        </details>
+      </div>
+    `;
   });
 }
 
-function renderForms() {
-  const course = langData();
-  const module = activeModule();
-  const step = activeStep();
-  const content = lessonContent();
+function renderSections() {
+  const module = baseModules()[state.moduleIndex];
 
-  fields["course-title"].value = course.title || "";
-  fields["course-sidebar-title"].value = course.sidebarTitle || "";
-  fields["course-level"].value = course.level || "";
-  fields["course-description"].value = course.description || "";
-  fields["course-downloads"].value = (course.downloads || []).map(item => `${item.title || ""} | ${item.url || ""}`).join("\n");
-  fields["course-labels"].value = JSON.stringify(course.labels || {}, null, 2);
+  if (!module) {
+    $("#sections-form").innerHTML = `<div class="empty-state">Create the first section.</div>`;
+    return;
+  }
 
-  fields["module-id"].value = module ? module.id || "" : "";
-  fields["module-title"].value = module ? module.title || "" : "";
+  $("#sections-form").innerHTML = `
+    <div class="form-grid shared-grid">
+      <label>
+        Shared section ID
+        <input data-scope="module" data-field="id" type="text" value="${escapeHtml(module.id)}">
+      </label>
+    </div>
+    ${languageColumns(lang => {
+      const langModule = moduleFor(lang);
 
-  fields["lesson-id"].value = step ? step.id || "" : "";
-  fields["lesson-title"].value = step ? step.title || "" : "";
-  fields["lesson-duration"].value = step ? step.duration || "" : "";
-  fields["lesson-content-url"].value = step ? step.contentUrl || "" : "";
-  fields["lesson-video-url"].value = content.videoUrl || "";
-  fields["lesson-summary"].value = content.summary || "";
-  fields["lesson-actions"].value = Array.isArray(content.actions) ? content.actions.join("\n") : "";
-  fields["lesson-expected"].value = content.expected || "";
+      return `
+        <label>
+          Section title
+          <input data-scope="module" data-lang="${lang}" data-field="title" type="text" value="${escapeHtml(langModule ? langModule.title : "")}">
+        </label>
+      `;
+    })}
+  `;
 }
 
-function attachInputHandlers() {
-  fields["course-title"].addEventListener("input", event => {
-    langData().title = event.target.value;
-    markDirty();
-  });
+function renderLessons() {
+  const step = baseModules()[state.moduleIndex] && baseModules()[state.moduleIndex].steps[state.stepIndex];
 
-  fields["course-sidebar-title"].addEventListener("input", event => {
-    langData().sidebarTitle = event.target.value;
-    markDirty();
-  });
+  if (!step) {
+    $("#lessons-form").innerHTML = `<div class="empty-state">Create the first lesson in this section.</div>`;
+    return;
+  }
 
-  fields["course-level"].addEventListener("input", event => {
-    langData().level = event.target.value;
-    markDirty();
-  });
+  $("#lessons-form").innerHTML = `
+    <div class="form-grid shared-grid">
+      <label>
+        Shared lesson ID
+        <input data-scope="step" data-field="id" type="text" value="${escapeHtml(step.id)}">
+      </label>
+      <label>
+        Shared duration
+        <input data-scope="step" data-field="duration" type="text" value="${escapeHtml(step.duration)}" placeholder="7 min">
+      </label>
+    </div>
+    ${languageColumns(lang => {
+      const langStep = stepFor(lang);
+      const content = lessonContent(lang);
 
-  fields["course-description"].addEventListener("input", event => {
-    langData().description = event.target.value;
-    markDirty();
-  });
+      return `
+        <div class="form-grid">
+          <label>
+            Lesson title
+            <input data-scope="step" data-lang="${lang}" data-field="title" type="text" value="${escapeHtml(langStep ? langStep.title : "")}">
+          </label>
+          <label>
+            Content file
+            <input type="text" value="${escapeHtml(langStep ? langStep.contentUrl : "")}" readonly>
+          </label>
+          <label class="is-wide">
+            Video embed URL
+            <input data-scope="content" data-lang="${lang}" data-field="videoUrl" type="text" value="${escapeHtml(content.videoUrl)}" placeholder="https://www.youtube.com/embed/...">
+          </label>
+          <label class="is-wide">
+            Summary HTML
+            <textarea data-scope="content" data-lang="${lang}" data-field="summary" rows="8" spellcheck="false">${escapeHtml(content.summary)}</textarea>
+          </label>
+          <label class="is-wide">
+            Actions, one per line
+            <textarea data-scope="content" data-lang="${lang}" data-field="actions" rows="7" spellcheck="false">${escapeHtml(Array.isArray(content.actions) ? content.actions.join("\n") : "")}</textarea>
+          </label>
+          <label class="is-wide">
+            Expected result HTML
+            <textarea data-scope="content" data-lang="${lang}" data-field="expected" rows="6" spellcheck="false">${escapeHtml(content.expected)}</textarea>
+          </label>
+          <div class="html-preview is-wide">${content.summary || content.expected ? `${content.summary || ""}${content.expected || ""}` : "<em>No HTML preview yet.</em>"}</div>
+        </div>
+      `;
+    })}
+  `;
+}
 
-  fields["course-downloads"].addEventListener("input", event => {
-    langData().downloads = event.target.value.split("\n")
-      .map(line => line.trim())
-      .filter(Boolean)
-      .map(line => {
-        const parts = line.split("|");
-        return {
-          title: (parts[0] || "").trim(),
-          url: (parts.slice(1).join("|") || "").trim()
-        };
-      });
-    markDirty();
-  });
+function handleInput(event) {
+  const target = event.target;
+  const scope = target.dataset.scope;
+  const field = target.dataset.field;
+  const lang = target.dataset.lang;
 
-  fields["course-labels"].addEventListener("change", event => {
+  if (!scope || !field) {
+    return;
+  }
+
+  if (scope === "course") {
+    const course = langCourse(lang);
+
+    if (field === "downloads") {
+      course.downloads = textToDownloads(target.value);
+    } else if (field !== "labels") {
+      course[field] = target.value;
+    }
+  }
+
+  if (scope === "module") {
+    if (field === "id") {
+      setModuleId(target.value);
+    } else if (lang && moduleFor(lang)) {
+      moduleFor(lang).title = target.value;
+    }
+  }
+
+  if (scope === "step") {
+    if (field === "id") {
+      setStepId(target.value);
+    } else if (field === "duration") {
+      setDuration(target.value);
+    } else if (lang && stepFor(lang)) {
+      stepFor(lang).title = target.value;
+    }
+  }
+
+  if (scope === "content") {
+    const content = lessonContent(lang);
+
+    if (field === "actions") {
+      content.actions = target.value.split("\n").map(line => line.trim()).filter(Boolean);
+    } else {
+      content[field] = target.value;
+    }
+
+    updateHtmlPreview(lang);
+  }
+
+  markDirty();
+}
+
+function handleChange(event) {
+  const target = event.target;
+
+  if (target.dataset.scope === "course" && target.dataset.field === "labels") {
     try {
-      langData().labels = JSON.parse(event.target.value || "{}");
+      langCourse(target.dataset.lang).labels = JSON.parse(target.value || "{}");
       markDirty();
     } catch (error) {
       setStatus(`Labels JSON error: ${error.message}`, true);
     }
-  });
+  }
 
-  fields["module-id"].addEventListener("input", event => {
-    const module = activeModule();
-    if (module) {
-      module.id = slugify(event.target.value, "module");
-      markDirty();
-    }
-  });
+  if ((target.dataset.scope === "module" || target.dataset.scope === "step") && target.dataset.field === "id") {
+    render();
+  }
+}
 
-  fields["module-title"].addEventListener("input", event => {
-    const module = activeModule();
-    if (module) {
-      module.title = event.target.value;
-      markDirty();
-    }
-  });
+function moveItem(list, from, to) {
+  if (to < 0 || to >= list.length) {
+    return false;
+  }
 
-  fields["lesson-id"].addEventListener("input", event => {
-    const step = activeStep();
-    if (step) {
-      step.id = slugify(event.target.value, "lesson");
-      markDirty();
-    }
-  });
+  const item = list.splice(from, 1)[0];
+  list.splice(to, 0, item);
+  return true;
+}
 
-  fields["lesson-title"].addEventListener("input", event => {
-    const step = activeStep();
-    if (step) {
-      step.title = event.target.value;
-      markDirty();
-    }
-  });
+function canMove(list, from, to) {
+  return Array.isArray(list) && to >= 0 && to < list.length && from >= 0 && from < list.length;
+}
 
-  fields["lesson-duration"].addEventListener("input", event => {
-    const step = activeStep();
-    if (step) {
-      step.duration = event.target.value;
-      markDirty();
-    }
-  });
+function moveModules(direction) {
+  const targetIndex = state.moduleIndex + direction;
 
-  fields["lesson-content-url"].addEventListener("input", event => {
-    const step = activeStep();
-    if (step) {
-      const oldUrl = step.contentUrl;
-      step.contentUrl = event.target.value.trim();
+  if (!languages().every(lang => canMove(langCourse(lang).modules, state.moduleIndex, targetIndex))) {
+    return;
+  }
 
-      if (oldUrl && oldUrl !== step.contentUrl && state.lessons[oldUrl] && !state.lessons[step.contentUrl]) {
-        state.lessons[step.contentUrl] = state.lessons[oldUrl];
-      }
+  languages().forEach(lang => moveItem(langCourse(lang).modules, state.moduleIndex, targetIndex));
+  state.moduleIndex = targetIndex;
+  state.stepIndex = 0;
+  markDirty();
+  render();
+}
 
-      markDirty();
-    }
-  });
+function moveLessons(direction) {
+  const targetIndex = state.stepIndex + direction;
 
-  fields["lesson-video-url"].addEventListener("input", event => {
-    lessonContent().videoUrl = event.target.value;
-    markDirty();
-  });
+  if (!languages().every(lang => canMove(moduleFor(lang).steps, state.stepIndex, targetIndex))) {
+    return;
+  }
 
-  fields["lesson-summary"].addEventListener("input", event => {
-    lessonContent().summary = event.target.value;
-    markDirty();
-  });
-
-  fields["lesson-actions"].addEventListener("input", event => {
-    lessonContent().actions = event.target.value.split("\n").map(line => line.trim()).filter(Boolean);
-    markDirty();
-  });
-
-  fields["lesson-expected"].addEventListener("input", event => {
-    lessonContent().expected = event.target.value;
-    markDirty();
-  });
+  languages().forEach(lang => moveItem(moduleFor(lang).steps, state.stepIndex, targetIndex));
+  state.stepIndex = targetIndex;
+  markDirty();
+  render();
 }
 
 function addModule() {
-  const used = new Set(modules().map(module => module.id));
-  const id = nextId("new-module", used);
+  const used = new Set(baseModules().map(module => module.id));
+  const id = nextId("new-section", used);
 
-  modules().push({
-    id,
-    title: "New module",
-    steps: []
+  languages().forEach(lang => {
+    langCourse(lang).modules.push({
+      id,
+      title: lang === "en" ? "New section" : "Nueva seccion",
+      steps: []
+    });
   });
 
-  state.moduleIndex = modules().length - 1;
+  state.moduleIndex = baseModules().length - 1;
   state.stepIndex = 0;
   markDirty();
   render();
 }
 
 function addLesson() {
-  const module = activeModule();
-
-  if (!module) {
+  if (!baseModules().length) {
     addModule();
-    return;
   }
 
+  const module = baseModules()[state.moduleIndex];
   const used = new Set((module.steps || []).map(step => step.id));
   const id = nextId("new-lesson", used);
-  const step = {
-    id,
-    title: "New lesson",
-    duration: "",
-    contentUrl: `${state.lang}/${module.id}/${id}.json`
-  };
 
-  module.steps.push(step);
-  state.lessons[step.contentUrl] = {
-    videoUrl: "",
-    summary: "",
-    actions: [],
-    expected: ""
-  };
+  languages().forEach(lang => {
+    const langModule = moduleFor(lang);
+    const step = {
+      id,
+      title: lang === "en" ? "New lesson" : "Nueva leccion",
+      duration: "",
+      contentUrl: `${lang}/${langModule.id}/${id}.json`
+    };
+
+    langModule.steps.push(step);
+    state.lessons[step.contentUrl] = defaultLessonContent();
+  });
+
   state.stepIndex = module.steps.length - 1;
   markDirty();
   render();
@@ -393,100 +633,66 @@ function nextId(base, used) {
   return id;
 }
 
-function moveItem(list, from, to) {
-  if (to < 0 || to >= list.length) {
-    return false;
-  }
+function regenerateLessonPaths() {
+  languages().forEach(lang => {
+    const step = stepFor(lang);
 
-  const [item] = list.splice(from, 1);
-  list.splice(to, 0, item);
-  return true;
+    if (!step) {
+      return;
+    }
+
+    const oldUrl = step.contentUrl;
+    step.contentUrl = generateLessonPath(lang);
+    moveContent(oldUrl, step.contentUrl);
+  });
+
+  markDirty();
+  render();
 }
 
-function attachButtonHandlers() {
-  $("#reload-button").addEventListener("click", () => {
+function handleAction(action, button) {
+  if (action === "reload") {
     if (!state.dirty || window.confirm("Reload files and discard unsaved changes?")) {
       load();
     }
-  });
-
-  $("#save-button").addEventListener("click", save);
-  $("#publish-button").addEventListener("click", publish);
-  $("#add-module-button").addEventListener("click", addModule);
-  $("#add-lesson-button").addEventListener("click", addLesson);
-
-  $("#module-up-button").addEventListener("click", () => {
-    if (moveItem(modules(), state.moduleIndex, state.moduleIndex - 1)) {
-      state.moduleIndex -= 1;
-      markDirty();
-      render();
-    }
-  });
-
-  $("#module-down-button").addEventListener("click", () => {
-    if (moveItem(modules(), state.moduleIndex, state.moduleIndex + 1)) {
-      state.moduleIndex += 1;
-      markDirty();
-      render();
-    }
-  });
-
-  $("#delete-module-button").addEventListener("click", () => {
-    if (activeModule() && window.confirm("Delete this module from course.json? Lesson files on disk will not be deleted.")) {
-      modules().splice(state.moduleIndex, 1);
-      state.moduleIndex = Math.max(0, state.moduleIndex - 1);
-      state.stepIndex = 0;
-      markDirty();
-      render();
-    }
-  });
-
-  $("#lesson-path-button").addEventListener("click", () => {
-    const step = activeStep();
-
-    if (step) {
-      const oldUrl = step.contentUrl;
-      step.contentUrl = generateLessonPath();
-
-      if (oldUrl && state.lessons[oldUrl] && !state.lessons[step.contentUrl]) {
-        state.lessons[step.contentUrl] = state.lessons[oldUrl];
-      }
-
-      markDirty();
-      render();
-    }
-  });
-
-  $("#lesson-up-button").addEventListener("click", () => {
-    const module = activeModule();
-
-    if (module && moveItem(module.steps, state.stepIndex, state.stepIndex - 1)) {
-      state.stepIndex -= 1;
-      markDirty();
-      render();
-    }
-  });
-
-  $("#lesson-down-button").addEventListener("click", () => {
-    const module = activeModule();
-
-    if (module && moveItem(module.steps, state.stepIndex, state.stepIndex + 1)) {
-      state.stepIndex += 1;
-      markDirty();
-      render();
-    }
-  });
-
-  $("#delete-lesson-button").addEventListener("click", () => {
-    const module = activeModule();
-
-    if (module && activeStep() && window.confirm("Delete this lesson from course.json? The lesson file on disk will not be deleted.")) {
-      module.steps.splice(state.stepIndex, 1);
-      state.stepIndex = Math.max(0, state.stepIndex - 1);
-      markDirty();
-      render();
-    }
-  });
+  } else if (action === "save") {
+    save();
+  } else if (action === "publish") {
+    publish();
+  } else if (action === "select-module") {
+    state.moduleIndex = Number(button.dataset.module);
+    state.stepIndex = 0;
+    render();
+  } else if (action === "select-lesson") {
+    state.moduleIndex = Number(button.dataset.module);
+    state.stepIndex = Number(button.dataset.step);
+    render();
+  } else if (action === "add-module") {
+    addModule();
+  } else if (action === "add-lesson") {
+    addLesson();
+  } else if (action === "module-up") {
+    moveModules(-1);
+  } else if (action === "module-down") {
+    moveModules(1);
+  } else if (action === "delete-module" && baseModules()[state.moduleIndex] && window.confirm("Delete this section in all languages? Lesson files on disk will not be deleted.")) {
+    languages().forEach(lang => langCourse(lang).modules.splice(state.moduleIndex, 1));
+    state.moduleIndex = Math.max(0, state.moduleIndex - 1);
+    state.stepIndex = 0;
+    markDirty();
+    render();
+  } else if (action === "lesson-up") {
+    moveLessons(-1);
+  } else if (action === "lesson-down") {
+    moveLessons(1);
+  } else if (action === "regenerate-lesson-paths") {
+    regenerateLessonPaths();
+  } else if (action === "delete-lesson" && stepFor(primaryLang()) && window.confirm("Delete this lesson in all languages? The lesson files on disk will not be deleted.")) {
+    languages().forEach(lang => moduleFor(lang).steps.splice(state.stepIndex, 1));
+    state.stepIndex = Math.max(0, state.stepIndex - 1);
+    markDirty();
+    render();
+  }
 }
 
 async function load() {
@@ -502,10 +708,11 @@ async function load() {
     const data = await response.json();
     state.course = data.course;
     state.lessons = data.lessons || {};
-    state.lang = state.course.defaultLang || languages()[0] || "en";
+    state.view = "general";
     state.moduleIndex = 0;
     state.stepIndex = 0;
     state.dirty = false;
+    ensureParallelStructure();
     render();
     setStatus("Ready.");
   } catch (error) {
@@ -517,6 +724,8 @@ async function save() {
   setStatus("Saving files...");
 
   try {
+    ensureParallelStructure();
+
     const response = await fetch("/api/course", {
       method: "POST",
       headers: {
@@ -527,7 +736,6 @@ async function save() {
         lessons: state.lessons
       })
     });
-
     const result = await response.json();
 
     if (!response.ok) {
@@ -574,7 +782,20 @@ async function publish() {
   }
 }
 
-bindFields();
-attachInputHandlers();
-attachButtonHandlers();
+document.addEventListener("input", handleInput);
+document.addEventListener("change", handleChange);
+document.addEventListener("click", event => {
+  const viewButton = event.target.closest("[data-view]");
+  const actionButton = event.target.closest("[data-action]");
+
+  if (viewButton) {
+    state.view = viewButton.dataset.view;
+    render();
+  }
+
+  if (actionButton) {
+    handleAction(actionButton.dataset.action, actionButton);
+  }
+});
+
 load();

@@ -76,6 +76,23 @@
       });
   }
 
+  function injectHtmlContentStyles() {
+    var style;
+
+    if (document.getElementById("poligonsoft-course-html-styles")) {
+      return;
+    }
+
+    style = document.createElement("style");
+    style.id = "poligonsoft-course-html-styles";
+    style.textContent = [
+      '[data-course="description"] img,[data-course="sidebar-description"] img,[data-course="step-summary"] img,[data-course="expected-text"] img,.course-step-item img{max-width:100%;height:auto;}',
+      '[data-course="description"] p,[data-course="sidebar-description"] p,[data-course="step-summary"] p,[data-course="expected-text"] p{margin-top:0;margin-bottom:12px;}',
+      '[data-course="description"] p:last-child,[data-course="sidebar-description"] p:last-child,[data-course="step-summary"] p:last-child,[data-course="expected-text"] p:last-child{margin-bottom:0;}'
+    ].join("");
+    document.head.appendChild(style);
+  }
+
   function course() {
     var firstLang;
 
@@ -195,6 +212,14 @@
     }
   }
 
+  function setHtml(name, value) {
+    var node = el(name);
+
+    if (node) {
+      node.innerHTML = value || "";
+    }
+  }
+
   function setStatText(name, index, value) {
     var node = el(name);
     var statNodes;
@@ -228,13 +253,13 @@
     state.requestedPath = active.path;
 
     setText("title", currentCourse.title);
-    setText("description", currentCourse.description);
+    setHtml("description", currentCourse.description);
     setStatText("stat-modules", 0, (currentCourse.modules || []).length);
     setStatText("stat-steps", 1, steps.length);
     setStatText("stat-duration", 2, totalMinutes(steps) + " min");
     setStatText("stat-level", 3, currentCourse.level);
     setText("sidebar-title", currentCourse.sidebarTitle);
-    setText("sidebar-description", currentCourse.sidebarDescription || currentCourse.description);
+    setHtml("sidebar-description", currentCourse.sidebarDescription || currentCourse.description);
     setText("progress-label", text.progress);
     setText("progress-text", (activeIndex + 1) + " " + text.of + " " + steps.length);
 
@@ -309,10 +334,10 @@
     setText("module-meta", text.lesson + " " + (activeIndex + 1) + " " + text.of + " " + steps.length);
     setText("step-kicker", text.step + " " + (activeIndex + 1));
     setText("step-title", step.title);
-    setText("step-summary", content.summary || text.loadingLesson);
+    setHtml("step-summary", content.summary || text.loadingLesson);
     setText("actions-title", text.actions);
     setText("expected-title", text.expected);
-    setText("expected-text", content.expected || "");
+    setHtml("expected-text", content.expected || "");
 
     renderVideo(Object.assign({}, step, content));
     renderActions(content.actions || []);
@@ -397,7 +422,7 @@
     actions.forEach(function (action) {
       var item = document.createElement("li");
       item.className = "course-step-item";
-      item.textContent = action;
+      item.innerHTML = action;
       list.appendChild(item);
     });
   }
@@ -719,6 +744,7 @@
     }
 
     loadCourseData().then(function () {
+      injectHtmlContentStyles();
       render();
       initProgress();
 

@@ -13,121 +13,62 @@
       <h1>PoligonSoft Free Course</h1>
     </div>
     <div class="header-actions">
-      <button id="reload-button" class="button is-secondary" type="button">Reload</button>
-      <button id="save-button" class="button is-primary" type="button">Save files</button>
-      <button id="publish-button" class="button is-dark" type="button">Publish to GitHub</button>
+      <button data-action="reload" class="button is-secondary" type="button">Reload</button>
+      <button data-action="save" class="button is-primary" type="button">Save files</button>
+      <button data-action="publish" class="button is-dark" type="button">Publish to GitHub</button>
     </div>
   </header>
 
+  <nav class="view-tabs" aria-label="Editor sections">
+    <button data-view="general" class="view-tab is-active" type="button">General</button>
+    <button data-view="sections" class="view-tab" type="button">Sections</button>
+    <button data-view="lessons" class="view-tab" type="button">Lessons</button>
+  </nav>
+
   <main class="layout">
     <aside class="sidebar">
-      <div id="language-tabs" class="language-tabs"></div>
       <div id="structure-list" class="structure-list"></div>
-      <div class="sidebar-actions">
-        <button id="add-module-button" class="button is-secondary" type="button">Add module</button>
-        <button id="add-lesson-button" class="button is-secondary" type="button">Add lesson</button>
-      </div>
+      <div id="sidebar-actions" class="sidebar-actions"></div>
     </aside>
 
     <section class="editor">
       <div id="status" class="status">Loading...</div>
 
-      <section class="panel">
-        <div class="panel-heading">
-          <h2>Course</h2>
-        </div>
-        <div class="form-grid">
-          <label>
-            Course title
-            <input id="course-title" type="text">
-          </label>
-          <label>
-            Sidebar title
-            <input id="course-sidebar-title" type="text">
-          </label>
-          <label>
-            Level
-            <input id="course-level" type="text">
-          </label>
-          <label class="is-wide">
-            Description
-            <textarea id="course-description" rows="3"></textarea>
-          </label>
-          <label class="is-wide">
-            Downloads, one per line: title | url
-            <textarea id="course-downloads" rows="4"></textarea>
-          </label>
-          <label class="is-wide">
-            Interface labels JSON
-            <textarea id="course-labels" rows="8" spellcheck="false"></textarea>
-          </label>
+      <section id="general-view" class="editor-view is-active">
+        <div class="panel">
+          <div class="panel-heading">
+            <h2>General information</h2>
+          </div>
+          <div id="general-form"></div>
         </div>
       </section>
 
-      <section class="panel">
-        <div class="panel-heading">
-          <h2>Module</h2>
-          <div class="inline-actions">
-            <button id="module-up-button" class="icon-button" type="button" title="Move module up">Up</button>
-            <button id="module-down-button" class="icon-button" type="button" title="Move module down">Down</button>
-            <button id="delete-module-button" class="icon-button is-danger" type="button" title="Delete module">Delete</button>
+      <section id="sections-view" class="editor-view">
+        <div class="panel">
+          <div class="panel-heading">
+            <h2>Sections</h2>
+            <div class="inline-actions">
+              <button data-action="module-up" class="icon-button" type="button">Up</button>
+              <button data-action="module-down" class="icon-button" type="button">Down</button>
+              <button data-action="delete-module" class="icon-button is-danger" type="button">Delete</button>
+            </div>
           </div>
-        </div>
-        <div class="form-grid">
-          <label>
-            Module ID
-            <input id="module-id" type="text">
-          </label>
-          <label>
-            Module title
-            <input id="module-title" type="text">
-          </label>
+          <div id="sections-form"></div>
         </div>
       </section>
 
-      <section class="panel">
-        <div class="panel-heading">
-          <h2>Lesson</h2>
-          <div class="inline-actions">
-            <button id="lesson-path-button" class="icon-button" type="button" title="Generate content file path">Path</button>
-            <button id="lesson-up-button" class="icon-button" type="button" title="Move lesson up">Up</button>
-            <button id="lesson-down-button" class="icon-button" type="button" title="Move lesson down">Down</button>
-            <button id="delete-lesson-button" class="icon-button is-danger" type="button" title="Delete lesson">Delete</button>
+      <section id="lessons-view" class="editor-view">
+        <div class="panel">
+          <div class="panel-heading">
+            <h2>Lessons</h2>
+            <div class="inline-actions">
+              <button data-action="lesson-up" class="icon-button" type="button">Up</button>
+              <button data-action="lesson-down" class="icon-button" type="button">Down</button>
+              <button data-action="regenerate-lesson-paths" class="icon-button" type="button">Paths</button>
+              <button data-action="delete-lesson" class="icon-button is-danger" type="button">Delete</button>
+            </div>
           </div>
-        </div>
-        <div class="form-grid">
-          <label>
-            Lesson ID
-            <input id="lesson-id" type="text">
-          </label>
-          <label>
-            Lesson title
-            <input id="lesson-title" type="text">
-          </label>
-          <label>
-            Duration
-            <input id="lesson-duration" type="text" placeholder="7 min">
-          </label>
-          <label>
-            Content file
-            <input id="lesson-content-url" type="text">
-          </label>
-          <label class="is-wide">
-            Video embed URL
-            <input id="lesson-video-url" type="text" placeholder="https://www.youtube.com/embed/...">
-          </label>
-          <label class="is-wide">
-            Summary
-            <textarea id="lesson-summary" rows="3"></textarea>
-          </label>
-          <label class="is-wide">
-            Actions, one per line
-            <textarea id="lesson-actions" rows="7"></textarea>
-          </label>
-          <label class="is-wide">
-            Expected result
-            <textarea id="lesson-expected" rows="4"></textarea>
-          </label>
+          <div id="lessons-form"></div>
         </div>
       </section>
     </section>
