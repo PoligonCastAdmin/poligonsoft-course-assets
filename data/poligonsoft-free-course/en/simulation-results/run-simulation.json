@@ -1,0 +1,10 @@
+{
+  "videoUrl": "",
+  "summary": "Start the calculation and make sure it begins without critical warnings.",
+  "actions": [
+    "Open calculation settings.",
+    "Review required parameters.",
+    "Start the simulation and check the log."
+  ],
+  "expected": "The simulation starts and the message log has no critical errors."
+}

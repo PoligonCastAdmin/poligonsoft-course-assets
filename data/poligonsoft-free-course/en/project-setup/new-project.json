@@ -1,0 +1,10 @@
+{
+  "videoUrl": "",
+  "summary": "Create a clean working project for the sand casting simulation.",
+  "actions": [
+    "Select File -> New project.",
+    "Create a dedicated working folder.",
+    "Save the empty project before importing geometry."
+  ],
+  "expected": "An empty project is created and the project structure is visible."
+}

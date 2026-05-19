@@ -1,0 +1,10 @@
+{
+  "videoUrl": "",
+  "summary": "Abra los primeros resultados e inspeccione zonas de riesgo en el modelo.",
+  "actions": [
+    "Abra la pestana de resultados.",
+    "Seleccione una visualizacion de resultado.",
+    "Gire el modelo y compare varias vistas."
+  ],
+  "expected": "El resultado esta abierto y se pueden identificar las zonas principales de riesgo."
+}

@@ -1,0 +1,10 @@
+{
+  "videoUrl": "",
+  "summary": "Set basic casting and mold materials for the sand casting example.",
+  "actions": [
+    "Open the material list.",
+    "Assign an alloy to the casting region.",
+    "Assign sand mold properties to the mold region."
+  ],
+  "expected": "All required regions have assigned materials."
+}

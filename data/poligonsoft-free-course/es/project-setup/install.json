@@ -1,0 +1,10 @@
+{
+  "videoUrl": "",
+  "summary": "Prepare el software y compruebe que la interfaz principal se abre correctamente.",
+  "actions": [
+    "Descargue e instale PoligonSoft Free.",
+    "Inicie el programa desde Windows.",
+    "Revise el arbol del proyecto, el area de trabajo y el menu superior."
+  ],
+  "expected": "La ventana principal se abre sin mensajes de error."
+}

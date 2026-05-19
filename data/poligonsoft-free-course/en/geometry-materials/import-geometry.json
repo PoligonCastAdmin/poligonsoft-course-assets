@@ -1,0 +1,10 @@
+{
+  "videoUrl": "",
+  "summary": "Import the training casting model and check its orientation and scale.",
+  "actions": [
+    "Open the geometry import command.",
+    "Select the prepared STL or STEP file.",
+    "Check model orientation and scale."
+  ],
+  "expected": "The casting model is visible in the workspace and appears in the project tree."
+}

@@ -1,0 +1,10 @@
+{
+  "videoUrl": "",
+  "summary": "Prepare the software and check that the main interface opens correctly.",
+  "actions": [
+    "Download and install PoligonSoft Free.",
+    "Launch the program from Windows.",
+    "Check the project tree, workspace, and top menu."
+  ],
+  "expected": "The main program window opens without error messages."
+}

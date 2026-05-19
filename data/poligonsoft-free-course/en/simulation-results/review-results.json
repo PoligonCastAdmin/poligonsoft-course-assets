@@ -1,0 +1,10 @@
+{
+  "videoUrl": "",
+  "summary": "Open the first results and inspect basic risk zones on the casting model.",
+  "actions": [
+    "Open the results tab.",
+    "Select a result visualization.",
+    "Rotate the model and compare several views."
+  ],
+  "expected": "The result is open and main risk zones can be identified."
+}

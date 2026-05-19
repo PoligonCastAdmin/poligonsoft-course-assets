@@ -2,6 +2,7 @@
   "use strict";
 
   var ACCENT = "#ff2828";
+  var ASSET_BASE = getAssetBase();
 
   var courseData = {
     en: {
@@ -21,6 +22,7 @@
         of: "of",
         actions: "Actions",
         expected: "Expected result",
+        loadingLesson: "Loading lesson...",
         previous: "Previous step",
         next: "Next step",
         markComplete: "Mark as completed",
@@ -55,27 +57,13 @@
               id: "install",
               title: "Install and open PoligonSoft Free",
               duration: "5 min",
-              videoUrl: "",
-              summary: "Prepare the software and check that the main interface opens correctly.",
-              actions: [
-                "Download and install PoligonSoft Free.",
-                "Launch the program from Windows.",
-                "Check the project tree, workspace, and top menu."
-              ],
-              expected: "The main program window opens without error messages."
+              contentUrl: "data/poligonsoft-free-course/en/project-setup/install.json"
             },
             {
               id: "new-project",
               title: "Create a sand casting project",
               duration: "7 min",
-              videoUrl: "",
-              summary: "Create a clean working project for the sand casting simulation.",
-              actions: [
-                "Select File -> New project.",
-                "Create a dedicated working folder.",
-                "Save the empty project before importing geometry."
-              ],
-              expected: "An empty project is created and the project structure is visible."
+              contentUrl: "data/poligonsoft-free-course/en/project-setup/new-project.json"
             }
           ]
         },
@@ -87,27 +75,13 @@
               id: "import-geometry",
               title: "Import casting geometry",
               duration: "8 min",
-              videoUrl: "",
-              summary: "Import the training casting model and check its orientation and scale.",
-              actions: [
-                "Open the geometry import command.",
-                "Select the prepared STL or STEP file.",
-                "Check model orientation and scale."
-              ],
-              expected: "The casting model is visible in the workspace and appears in the project tree."
+              contentUrl: "data/poligonsoft-free-course/en/geometry-materials/import-geometry.json"
             },
             {
               id: "assign-material",
               title: "Assign alloy and mold material",
               duration: "9 min",
-              videoUrl: "",
-              summary: "Set basic casting and mold materials for the sand casting example.",
-              actions: [
-                "Open the material list.",
-                "Assign an alloy to the casting region.",
-                "Assign sand mold properties to the mold region."
-              ],
-              expected: "All required regions have assigned materials."
+              contentUrl: "data/poligonsoft-free-course/en/geometry-materials/assign-material.json"
             }
           ]
         },
@@ -119,27 +93,13 @@
               id: "run-simulation",
               title: "Run the first simulation",
               duration: "6 min",
-              videoUrl: "",
-              summary: "Start the calculation and make sure it begins without critical warnings.",
-              actions: [
-                "Open calculation settings.",
-                "Review required parameters.",
-                "Start the simulation and check the log."
-              ],
-              expected: "The simulation starts and the message log has no critical errors."
+              contentUrl: "data/poligonsoft-free-course/en/simulation-results/run-simulation.json"
             },
             {
               id: "review-results",
               title: "Review casting results",
               duration: "11 min",
-              videoUrl: "",
-              summary: "Open the first results and inspect basic risk zones on the casting model.",
-              actions: [
-                "Open the results tab.",
-                "Select a result visualization.",
-                "Rotate the model and compare several views."
-              ],
-              expected: "The result is open and main risk zones can be identified."
+              contentUrl: "data/poligonsoft-free-course/en/simulation-results/review-results.json"
             }
           ]
         }
@@ -162,6 +122,7 @@
         of: "de",
         actions: "Que hacer",
         expected: "Resultado esperado",
+        loadingLesson: "Cargando leccion...",
         previous: "Paso anterior",
         next: "Siguiente paso",
         markComplete: "Marcar como completado",
@@ -196,27 +157,13 @@
               id: "install",
               title: "Instalar y abrir PoligonSoft Free",
               duration: "5 min",
-              videoUrl: "",
-              summary: "Prepare el software y compruebe que la interfaz principal se abre correctamente.",
-              actions: [
-                "Descargue e instale PoligonSoft Free.",
-                "Inicie el programa desde Windows.",
-                "Revise el arbol del proyecto, el area de trabajo y el menu superior."
-              ],
-              expected: "La ventana principal se abre sin mensajes de error."
+              contentUrl: "data/poligonsoft-free-course/es/project-setup/install.json"
             },
             {
               id: "new-project",
               title: "Crear un proyecto de fundicion en arena",
               duration: "7 min",
-              videoUrl: "",
-              summary: "Cree un proyecto limpio para la simulacion de fundicion en arena.",
-              actions: [
-                "Seleccione File -> New project.",
-                "Cree una carpeta de trabajo dedicada.",
-                "Guarde el proyecto vacio antes de importar geometria."
-              ],
-              expected: "El proyecto vacio esta creado y la estructura aparece en el panel izquierdo."
+              contentUrl: "data/poligonsoft-free-course/es/project-setup/new-project.json"
             }
           ]
         },
@@ -228,27 +175,13 @@
               id: "import-geometry",
               title: "Importar geometria de la pieza",
               duration: "8 min",
-              videoUrl: "",
-              summary: "Importe el modelo de practica y revise su orientacion y escala.",
-              actions: [
-                "Abra el comando de importacion de geometria.",
-                "Seleccione el archivo STL o STEP preparado.",
-                "Revise la orientacion y escala del modelo."
-              ],
-              expected: "El modelo aparece en el area de trabajo y en el arbol del proyecto."
+              contentUrl: "data/poligonsoft-free-course/es/geometry-materials/import-geometry.json"
             },
             {
               id: "assign-material",
               title: "Asignar aleacion y material del molde",
               duration: "9 min",
-              videoUrl: "",
-              summary: "Configure materiales basicos de pieza y molde para el ejemplo de fundicion en arena.",
-              actions: [
-                "Abra la lista de materiales.",
-                "Asigne una aleacion a la zona de la pieza.",
-                "Asigne propiedades de arena a la zona del molde."
-              ],
-              expected: "Todas las zonas requeridas tienen materiales asignados."
+              contentUrl: "data/poligonsoft-free-course/es/geometry-materials/assign-material.json"
             }
           ]
         },
@@ -260,27 +193,13 @@
               id: "run-simulation",
               title: "Ejecutar la primera simulacion",
               duration: "6 min",
-              videoUrl: "",
-              summary: "Inicie el calculo y compruebe que comienza sin advertencias criticas.",
-              actions: [
-                "Abra la configuracion de calculo.",
-                "Revise los parametros obligatorios.",
-                "Inicie la simulacion y revise el registro."
-              ],
-              expected: "La simulacion inicia y el registro no contiene errores criticos."
+              contentUrl: "data/poligonsoft-free-course/es/simulation-results/run-simulation.json"
             },
             {
               id: "review-results",
               title: "Revisar resultados de fundicion",
               duration: "11 min",
-              videoUrl: "",
-              summary: "Abra los primeros resultados e inspeccione zonas de riesgo en el modelo.",
-              actions: [
-                "Abra la pestana de resultados.",
-                "Seleccione una visualizacion de resultado.",
-                "Gire el modelo y compare varias vistas."
-              ],
-              expected: "El resultado esta abierto y se pueden identificar las zonas principales de riesgo."
+              contentUrl: "data/poligonsoft-free-course/es/simulation-results/review-results.json"
             }
           ]
         }
@@ -315,6 +234,20 @@
     }
 
     return window.location.pathname.indexOf("/es/") === 0 ? "es" : "en";
+  }
+
+  function getAssetBase() {
+    var scriptUrl = document.currentScript && document.currentScript.src;
+
+    if (scriptUrl) {
+      return new URL("../", scriptUrl).href;
+    }
+
+    return "https://poligoncastadmin.github.io/poligonsoft-course-assets/";
+  }
+
+  function assetUrl(path) {
+    return new URL(path, ASSET_BASE).href;
   }
 
   function course() {
@@ -520,20 +453,62 @@
   function renderLesson(active, activeIndex, steps) {
     var text = labels();
     var step = active.step;
+    var content = step._content || {};
+
+    ensureLessonContent(active);
 
     setText("module-title", active.module.title);
     setText("module-meta", text.lesson + " " + (activeIndex + 1) + " " + text.of + " " + steps.length);
     setText("step-kicker", text.step + " " + (activeIndex + 1));
     setText("step-title", step.title);
-    setText("step-summary", step.summary);
+    setText("step-summary", content.summary || text.loadingLesson);
     setText("actions-title", text.actions);
     setText("expected-title", text.expected);
-    setText("expected-text", step.expected);
+    setText("expected-text", content.expected || "");
 
-    renderVideo(step);
-    renderActions(step.actions);
+    renderVideo(Object.assign({}, step, content));
+    renderActions(content.actions || []);
     renderButtons(active, activeIndex, steps);
     rememberLastViewed(active.path);
+  }
+
+  function ensureLessonContent(active) {
+    var step = active.step;
+    var activePath = active.path;
+
+    if (step._content || step._loading || !step.contentUrl) {
+      return;
+    }
+
+    step._loading = true;
+
+    fetch(assetUrl(step.contentUrl))
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error("Lesson content request failed: " + response.status);
+        }
+
+        return response.json();
+      })
+      .then(function (content) {
+        step._content = content;
+      })
+      .catch(function (error) {
+        console.warn("PoligonSoft course: could not load lesson content", step.contentUrl, error);
+        step._content = {
+          videoUrl: "",
+          summary: labels().loadingLesson,
+          actions: [],
+          expected: ""
+        };
+      })
+      .finally(function () {
+        step._loading = false;
+
+        if (state.requestedPath === activePath) {
+          render();
+        }
+      });
   }
 
   function renderVideo(step) {
@@ -890,11 +865,68 @@
     return new Date().toISOString();
   }
 
+  function normalizeCourseLanguageLinks() {
+    var isCoursePage = /\/(?:es\/)?poligonsoft-free-course\/?$/.test(window.location.pathname);
+    var isSpanish = window.location.pathname.indexOf("/es/") === 0;
+    var languageLabel;
+    var linkEs;
+    var linkEn;
+    var languageList;
+
+    if (!isCoursePage) {
+      return;
+    }
+
+    languageLabel = document.querySelector(".langdroptext");
+    if (languageLabel) {
+      languageLabel.textContent = isSpanish ? "Es" : "En";
+    }
+
+    linkEs = document.getElementById("link-es");
+    if (!linkEs) {
+      return;
+    }
+
+    languageList = linkEs.parentElement;
+    linkEn = document.getElementById("link-us");
+
+    if (!linkEn) {
+      linkEn = linkEs.cloneNode(false);
+      linkEn.id = "link-us";
+      languageList.insertBefore(linkEn, linkEs);
+    }
+
+    configureLanguageLink(linkEn, "En", "/poligonsoft-free-course");
+    configureLanguageLink(linkEs, "Es", "/es/poligonsoft-free-course");
+    hideUnsupportedLanguageLink("link-ru");
+    hideUnsupportedLanguageLink("link-zh");
+  }
+
+  function configureLanguageLink(link, label, href) {
+    link.textContent = label;
+    link.href = href;
+
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.location.href = href;
+    }, true);
+  }
+
+  function hideUnsupportedLanguageLink(id) {
+    var link = document.getElementById(id);
+
+    if (link) {
+      link.style.display = "none";
+    }
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     if (!allRequiredElementsExist()) {
       return;
     }
 
+    normalizeCourseLanguageLinks();
     render();
     initProgress();
 

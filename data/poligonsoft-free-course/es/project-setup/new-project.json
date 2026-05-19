@@ -1,0 +1,10 @@
+{
+  "videoUrl": "",
+  "summary": "Cree un proyecto limpio para la simulacion de fundicion en arena.",
+  "actions": [
+    "Seleccione File -> New project.",
+    "Cree una carpeta de trabajo dedicada.",
+    "Guarde el proyecto vacio antes de importar geometria."
+  ],
+  "expected": "El proyecto vacio esta creado y la estructura aparece en el panel izquierdo."
+}

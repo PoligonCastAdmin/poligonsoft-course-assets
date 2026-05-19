@@ -1,0 +1,10 @@
+{
+  "videoUrl": "",
+  "summary": "Importe el modelo de practica y revise su orientacion y escala.",
+  "actions": [
+    "Abra el comando de importacion de geometria.",
+    "Seleccione el archivo STL o STEP preparado.",
+    "Revise la orientacion y escala del modelo."
+  ],
+  "expected": "El modelo aparece en el area de trabajo y en el arbol del proyecto."
+}
