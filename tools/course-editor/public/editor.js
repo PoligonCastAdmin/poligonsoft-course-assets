@@ -335,15 +335,83 @@ function languageColumns(content) {
   `).join("")}</div>`;
 }
 
-function updateHtmlPreview(lang) {
-  const preview = document.querySelector(`[data-lang-card="${lang}"] .html-preview`);
-  const content = lessonContent(lang);
+function richEditor(scope, lang, field, label, html) {
+  return `
+    <div class="rich-field is-wide">
+      <div class="field-label">${escapeHtml(label)}</div>
+      <div class="rich-toolbar" aria-label="${escapeHtml(label)} toolbar">
+        <button type="button" data-rich-command="formatBlock" data-rich-value="P">P</button>
+        <button type="button" data-rich-command="formatBlock" data-rich-value="H3">H3</button>
+        <button type="button" data-rich-command="bold">B</button>
+        <button type="button" data-rich-command="italic">I</button>
+        <button type="button" data-rich-command="insertUnorderedList">List</button>
+        <button type="button" data-rich-command="createLink">Link</button>
+        <button type="button" data-rich-command="insertImage">Image</button>
+        <button type="button" data-rich-command="removeFormat">Clear</button>
+      </div>
+      <div class="rich-editor" contenteditable="true" spellcheck="false" data-rich-editor="true" data-scope="${scope}" data-lang="${lang}" data-field="${field}">${html || ""}</div>
+      <details class="source-details">
+        <summary>HTML source</summary>
+        <textarea data-html-source="true" data-scope="${scope}" data-lang="${lang}" data-field="${field}" rows="7" spellcheck="false">${escapeHtml(html || "")}</textarea>
+      </details>
+    </div>
+  `;
+}
 
-  if (preview) {
-    preview.innerHTML = content.summary || content.expected
-      ? `${content.summary || ""}${content.expected || ""}`
-      : "<em>No HTML preview yet.</em>";
+function inputValue(target) {
+  if (target.dataset.richEditor) {
+    return target.innerHTML;
   }
+
+  return target.value;
+}
+
+function syncHtmlControls(target, value) {
+  const selector = `[data-scope="${target.dataset.scope}"][data-lang="${target.dataset.lang}"][data-field="${target.dataset.field}"]`;
+
+  document.querySelectorAll(selector).forEach(control => {
+    if (control === target) {
+      return;
+    }
+
+    if (control.dataset.richEditor) {
+      control.innerHTML = value || "";
+    } else if (control.dataset.htmlSource) {
+      control.value = value || "";
+    }
+  });
+}
+
+function applyRichCommand(button) {
+  const field = button.closest(".rich-field");
+  const editor = field && field.querySelector(".rich-editor");
+  const command = button.dataset.richCommand;
+  let value = button.dataset.richValue || null;
+
+  if (!editor || !command) {
+    return;
+  }
+
+  editor.focus();
+
+  if (command === "createLink") {
+    value = window.prompt("Link URL", "https://");
+
+    if (!value) {
+      return;
+    }
+  }
+
+  if (command === "insertImage") {
+    value = window.prompt("Image URL", "https://");
+
+    if (!value) {
+      return;
+    }
+  }
+
+  document.execCommand(command, false, value);
+  editor.dispatchEvent(new Event("input", { bubbles: true }));
 }
 
 function renderGeneral() {
@@ -364,10 +432,7 @@ function renderGeneral() {
           Level
           <input data-scope="course" data-lang="${lang}" data-field="level" type="text" value="${escapeHtml(course.level)}">
         </label>
-        <label class="is-wide">
-          Description HTML
-          <textarea data-scope="course" data-lang="${lang}" data-field="description" rows="7" spellcheck="false">${escapeHtml(course.description)}</textarea>
-        </label>
+        ${richEditor("course", lang, "description", "Description", course.description)}
         <label class="is-wide">
           Downloads, one per line: title | url
           <textarea data-scope="course" data-lang="${lang}" data-field="downloads" rows="4">${escapeHtml(downloadsToText(course.downloads))}</textarea>
@@ -446,19 +511,12 @@ function renderLessons() {
             Video embed URL
             <input data-scope="content" data-lang="${lang}" data-field="videoUrl" type="text" value="${escapeHtml(content.videoUrl)}" placeholder="https://www.youtube.com/embed/...">
           </label>
-          <label class="is-wide">
-            Summary HTML
-            <textarea data-scope="content" data-lang="${lang}" data-field="summary" rows="8" spellcheck="false">${escapeHtml(content.summary)}</textarea>
-          </label>
+          ${richEditor("content", lang, "summary", "Summary", content.summary)}
           <label class="is-wide">
             Actions, one per line
             <textarea data-scope="content" data-lang="${lang}" data-field="actions" rows="7" spellcheck="false">${escapeHtml(Array.isArray(content.actions) ? content.actions.join("\n") : "")}</textarea>
           </label>
-          <label class="is-wide">
-            Expected result HTML
-            <textarea data-scope="content" data-lang="${lang}" data-field="expected" rows="6" spellcheck="false">${escapeHtml(content.expected)}</textarea>
-          </label>
-          <div class="html-preview is-wide">${content.summary || content.expected ? `${content.summary || ""}${content.expected || ""}` : "<em>No HTML preview yet.</em>"}</div>
+          ${richEditor("content", lang, "expected", "Expected result", content.expected)}
         </div>
       `;
     })}
@@ -470,6 +528,7 @@ function handleInput(event) {
   const scope = target.dataset.scope;
   const field = target.dataset.field;
   const lang = target.dataset.lang;
+  const value = inputValue(target);
 
   if (!scope || !field) {
     return;
@@ -479,27 +538,27 @@ function handleInput(event) {
     const course = langCourse(lang);
 
     if (field === "downloads") {
-      course.downloads = textToDownloads(target.value);
+      course.downloads = textToDownloads(value);
     } else if (field !== "labels") {
-      course[field] = target.value;
+      course[field] = value;
     }
   }
 
   if (scope === "module") {
     if (field === "id") {
-      setModuleId(target.value);
+      setModuleId(value);
     } else if (lang && moduleFor(lang)) {
-      moduleFor(lang).title = target.value;
+      moduleFor(lang).title = value;
     }
   }
 
   if (scope === "step") {
     if (field === "id") {
-      setStepId(target.value);
+      setStepId(value);
     } else if (field === "duration") {
-      setDuration(target.value);
+      setDuration(value);
     } else if (lang && stepFor(lang)) {
-      stepFor(lang).title = target.value;
+      stepFor(lang).title = value;
     }
   }
 
@@ -507,12 +566,14 @@ function handleInput(event) {
     const content = lessonContent(lang);
 
     if (field === "actions") {
-      content.actions = target.value.split("\n").map(line => line.trim()).filter(Boolean);
+      content.actions = value.split("\n").map(line => line.trim()).filter(Boolean);
     } else {
-      content[field] = target.value;
+      content[field] = value;
     }
+  }
 
-    updateHtmlPreview(lang);
+  if (target.dataset.richEditor || target.dataset.htmlSource) {
+    syncHtmlControls(target, value);
   }
 
   markDirty();
@@ -785,8 +846,15 @@ async function publish() {
 document.addEventListener("input", handleInput);
 document.addEventListener("change", handleChange);
 document.addEventListener("click", event => {
+  const richButton = event.target.closest("[data-rich-command]");
   const viewButton = event.target.closest("[data-view]");
   const actionButton = event.target.closest("[data-action]");
+
+  if (richButton) {
+    event.preventDefault();
+    applyRichCommand(richButton);
+    return;
+  }
 
   if (viewButton) {
     state.view = viewButton.dataset.view;
