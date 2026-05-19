@@ -30,6 +30,7 @@
         loadingProgress: "Loading saved progress...",
         savedProgress: "Signed in. Completed {done} of {total} steps.",
         progressUnavailable: "Progress sync is not available on this page yet.",
+        login: "Log in",
         resetProgress: "Reset progress",
         resetConfirm: "Reset your course progress?",
         videoMissing: "Video will be added later",
@@ -170,6 +171,7 @@
         loadingProgress: "Cargando progreso guardado...",
         savedProgress: "Sesion iniciada. Completado {done} de {total} pasos.",
         progressUnavailable: "La sincronizacion de progreso aun no esta disponible en esta pagina.",
+        login: "Log in",
         resetProgress: "Restablecer progreso",
         resetConfirm: "Restablecer el progreso del curso?",
         videoMissing: "El video se agregara mas tarde",
@@ -637,29 +639,49 @@
     var hasProgress = Boolean(progress.lastStep || Object.keys(progress.completedSteps).length);
 
     setText("account-progress-title", text.progressSync);
-    resetButton.textContent = text.resetProgress;
 
     if (progress.unavailable) {
       setText("account-progress-text", text.progressUnavailable);
+      resetButton.textContent = text.login;
+      resetButton.classList.remove("is-disabled");
+      resetButton.disabled = false;
+      resetButton.onclick = function (event) {
+        event.preventDefault();
+        window.location.href = "/login";
+      };
     } else if (!progress.user) {
       setText("account-progress-text", text.guestProgress);
+      resetButton.textContent = text.login;
+      resetButton.classList.remove("is-disabled");
+      resetButton.disabled = false;
+      resetButton.onclick = function (event) {
+        event.preventDefault();
+        window.location.href = "/login";
+      };
     } else if (!progress.loaded) {
       setText("account-progress-text", text.loadingProgress);
+      resetButton.textContent = text.resetProgress;
+      resetButton.classList.add("is-disabled");
+      resetButton.disabled = true;
+      resetButton.onclick = function (event) {
+        event.preventDefault();
+      };
     } else {
       setText("account-progress-text", text.savedProgress
         .replace("{done}", completedCount(steps))
         .replace("{total}", steps.length));
+
+      resetButton.textContent = text.resetProgress;
+      resetButton.classList.toggle("is-disabled", !hasProgress || progress.saving);
+      resetButton.disabled = !hasProgress || progress.saving;
+      resetButton.onclick = function (event) {
+        event.preventDefault();
+
+        if (hasProgress && !progress.saving) {
+          resetProgress();
+        }
+      };
     }
-
-    resetButton.classList.toggle("is-disabled", !progress.user || !progress.loaded || !hasProgress || progress.saving);
-    resetButton.disabled = !progress.user || !progress.loaded || !hasProgress || progress.saving;
-    resetButton.onclick = function (event) {
-      event.preventDefault();
-
-      if (progress.user && progress.loaded && hasProgress && !progress.saving) {
-        resetProgress();
-      }
-    };
   }
 
   function renderDownloads() {
