@@ -30,7 +30,8 @@
         loadingProgress: "Loading saved progress...",
         savedProgress: "Signed in. Completed {done} of {total} steps.",
         progressUnavailable: "Progress sync is not available on this page yet.",
-        continueLearning: "Continue learning",
+        resetProgress: "Reset progress",
+        resetConfirm: "Reset your course progress?",
         videoMissing: "Video will be added later",
         videoCaption: "Placeholder for YouTube / Vimeo embed"
       },
@@ -169,7 +170,8 @@
         loadingProgress: "Cargando progreso guardado...",
         savedProgress: "Sesion iniciada. Completado {done} de {total} pasos.",
         progressUnavailable: "La sincronizacion de progreso aun no esta disponible en esta pagina.",
-        continueLearning: "Continuar aprendiendo",
+        resetProgress: "Restablecer progreso",
+        resetConfirm: "Restablecer el progreso del curso?",
         videoMissing: "El video se agregara mas tarde",
         videoCaption: "Marcador para YouTube / Vimeo embed"
       },
@@ -631,10 +633,11 @@
 
   function renderAccountProgress(steps) {
     var text = labels();
-    var continueButton = el("continue-learning");
+    var resetButton = el("continue-learning");
+    var hasProgress = Boolean(progress.lastStep || Object.keys(progress.completedSteps).length);
 
     setText("account-progress-title", text.progressSync);
-    continueButton.textContent = text.continueLearning;
+    resetButton.textContent = text.resetProgress;
 
     if (progress.unavailable) {
       setText("account-progress-text", text.progressUnavailable);
@@ -648,13 +651,13 @@
         .replace("{total}", steps.length));
     }
 
-    continueButton.classList.toggle("is-disabled", !progress.user || !progress.lastStep);
-    continueButton.disabled = !progress.user || !progress.lastStep;
-    continueButton.onclick = function (event) {
+    resetButton.classList.toggle("is-disabled", !progress.user || !progress.loaded || !hasProgress || progress.saving);
+    resetButton.disabled = !progress.user || !progress.loaded || !hasProgress || progress.saving;
+    resetButton.onclick = function (event) {
       event.preventDefault();
-      if (progress.lastStep) {
-        state.requestedPath = progress.lastStep;
-        render();
+
+      if (progress.user && progress.loaded && hasProgress && !progress.saving) {
+        resetProgress();
       }
     };
   }
@@ -791,6 +794,32 @@
       .then(function () {
         progress.completedSteps = completed;
         progress.lastStep = path;
+        progress.loaded = true;
+      })
+      .catch(function () {
+        progress.unavailable = true;
+      })
+      .finally(function () {
+        progress.saving = false;
+        render();
+      });
+  }
+
+  function resetProgress() {
+    var ref = progressDocRef();
+    var text = labels();
+
+    if (!ref || !window.confirm(text.resetConfirm)) {
+      return;
+    }
+
+    progress.saving = true;
+    render();
+
+    ref.delete()
+      .then(function () {
+        progress.completedSteps = {};
+        progress.lastStep = "";
         progress.loaded = true;
       })
       .catch(function () {
