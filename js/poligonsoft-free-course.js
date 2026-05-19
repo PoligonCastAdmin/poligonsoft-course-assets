@@ -328,9 +328,6 @@
   function allRequiredElementsExist() {
     var required = [
       "stat-modules",
-      "stat-steps",
-      "stat-duration",
-      "stat-level",
       "sidebar-title",
       "sidebar-description",
       "progress-label",
@@ -420,6 +417,20 @@
     }
   }
 
+  function setStatText(name, index, value) {
+    var node = el(name);
+    var statNodes;
+
+    if (!node) {
+      statNodes = document.querySelectorAll(".course-stats .course-stat-number");
+      node = statNodes[index] || null;
+    }
+
+    if (node) {
+      node.textContent = value;
+    }
+  }
+
   function render() {
     var currentCourse = course();
     var text = labels();
@@ -431,10 +442,12 @@
 
     state.requestedPath = active.path;
 
-    setText("stat-modules", currentCourse.modules.length);
-    setText("stat-steps", steps.length);
-    setText("stat-duration", totalMinutes(steps) + " min");
-    setText("stat-level", currentCourse.level);
+    setText("title", currentCourse.title);
+    setText("description", currentCourse.description);
+    setStatText("stat-modules", 0, currentCourse.modules.length);
+    setStatText("stat-steps", 1, steps.length);
+    setStatText("stat-duration", 2, totalMinutes(steps) + " min");
+    setStatText("stat-level", 3, currentCourse.level);
     setText("sidebar-title", currentCourse.sidebarTitle);
     setText("sidebar-description", currentCourse.description);
     setText("progress-label", text.progress);
@@ -581,7 +594,8 @@
     complete.classList.toggle("is-disabled", !progress.user || progress.unavailable || progress.saving);
     complete.setAttribute("aria-disabled", completeState || !progress.user || progress.unavailable || progress.saving ? "true" : "false");
 
-    prev.onclick = function () {
+    prev.onclick = function (event) {
+      event.preventDefault();
       if (activeIndex > 0) {
         state.requestedPath = steps[activeIndex - 1].path;
         render();
@@ -589,7 +603,8 @@
       }
     };
 
-    next.onclick = function () {
+    next.onclick = function (event) {
+      event.preventDefault();
       if (activeIndex < steps.length - 1) {
         state.requestedPath = steps[activeIndex + 1].path;
         render();
@@ -597,7 +612,8 @@
       }
     };
 
-    complete.onclick = function () {
+    complete.onclick = function (event) {
+      event.preventDefault();
       if (!completeState && progress.user && !progress.unavailable && !progress.saving) {
         markComplete(active.path);
       }
@@ -608,6 +624,12 @@
     button.disabled = disabled;
     button.classList.toggle("is-disabled", disabled);
     button.setAttribute("aria-disabled", disabled ? "true" : "false");
+
+    if (disabled) {
+      button.setAttribute("tabindex", "-1");
+    } else {
+      button.removeAttribute("tabindex");
+    }
   }
 
   function renderAccountProgress(steps) {
@@ -631,7 +653,8 @@
 
     continueButton.classList.toggle("is-disabled", !progress.user || !progress.lastStep);
     continueButton.disabled = !progress.user || !progress.lastStep;
-    continueButton.onclick = function () {
+    continueButton.onclick = function (event) {
+      event.preventDefault();
       if (progress.lastStep) {
         state.requestedPath = progress.lastStep;
         render();
