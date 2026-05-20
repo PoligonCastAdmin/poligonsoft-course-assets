@@ -386,11 +386,13 @@
 
   function renderVideo(step) {
     var frame = el("video");
+    var videoUrl = embedVideoUrl(step.videoUrl);
+
     frame.innerHTML = "";
 
-    if (step.videoUrl) {
+    if (videoUrl) {
       var iframe = document.createElement("iframe");
-      iframe.src = step.videoUrl;
+      iframe.src = videoUrl;
       iframe.title = step.title;
       iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
       iframe.allowFullscreen = true;
@@ -413,6 +415,49 @@
     placeholder.appendChild(title);
     placeholder.appendChild(caption);
     frame.appendChild(placeholder);
+  }
+
+  function embedVideoUrl(rawUrl) {
+    var url;
+    var videoId;
+    var match;
+
+    if (!rawUrl) {
+      return "";
+    }
+
+    try {
+      url = new URL(rawUrl);
+    } catch (error) {
+      return rawUrl;
+    }
+
+    if (url.hostname === "youtu.be") {
+      videoId = url.pathname.split("/").filter(Boolean)[0];
+      return videoId ? "https://www.youtube.com/embed/" + videoId : rawUrl;
+    }
+
+    if (url.hostname.indexOf("youtube.com") !== -1 || url.hostname.indexOf("youtube-nocookie.com") !== -1) {
+      if (url.pathname.indexOf("/embed/") === 0) {
+        return rawUrl;
+      }
+
+      videoId = url.searchParams.get("v");
+
+      if (!videoId) {
+        match = url.pathname.match(/\/(?:shorts|live)\/([^/?#]+)/);
+        videoId = match && match[1];
+      }
+
+      return videoId ? "https://www.youtube.com/embed/" + videoId : rawUrl;
+    }
+
+    if (url.hostname.indexOf("vimeo.com") !== -1 && url.hostname.indexOf("player.vimeo.com") === -1) {
+      match = url.pathname.match(/\/(\d+)/);
+      return match ? "https://player.vimeo.com/video/" + match[1] : rawUrl;
+    }
+
+    return rawUrl;
   }
 
   function renderActions(actions) {

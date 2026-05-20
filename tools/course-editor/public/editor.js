@@ -522,8 +522,8 @@ function renderLessons() {
             <input type="text" value="${escapeHtml(langStep ? langStep.contentUrl : "")}" readonly>
           </label>
           <label class="is-wide">
-            Video embed URL
-            <input data-scope="content" data-lang="${lang}" data-field="videoUrl" type="text" value="${escapeHtml(content.videoUrl)}" placeholder="https://www.youtube.com/embed/...">
+            Video URL
+            <input data-scope="content" data-lang="${lang}" data-field="videoUrl" type="text" value="${escapeHtml(content.videoUrl)}" placeholder="https://www.youtube.com/watch?v=...">
           </label>
           ${htmlCodeEditor("content", lang, "summary", "Summary", content.summary)}
           <label class="is-wide">
