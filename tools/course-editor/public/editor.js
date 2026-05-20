@@ -354,6 +354,44 @@ function htmlCodeEditor(scope, lang, field, label, html) {
   `;
 }
 
+function actionListEditor(lang, actions) {
+  const items = Array.isArray(actions) ? actions : [];
+
+  return `
+    <div class="action-list-field is-wide" data-action-list="${lang}">
+      <div class="field-label">Actions HTML</div>
+      <div class="action-list">
+        ${items.length ? items.map((action, index) => actionItemEditor(lang, index, action)).join("") : `<div class="empty-state">No actions yet.</div>`}
+      </div>
+      <button type="button" class="button is-secondary" data-action-item-op="add" data-lang="${lang}">Add action</button>
+    </div>
+  `;
+}
+
+function actionItemEditor(lang, index, html) {
+  return `
+    <div class="action-item" data-action-index="${index}">
+      <div class="action-item-head">
+        <span>Action ${index + 1}</span>
+        <div class="inline-actions">
+          <button type="button" class="icon-button" data-action-item-op="up" data-lang="${lang}" data-action-index="${index}">Up</button>
+          <button type="button" class="icon-button" data-action-item-op="down" data-lang="${lang}" data-action-index="${index}">Down</button>
+          <button type="button" class="icon-button is-danger" data-action-item-op="delete" data-lang="${lang}" data-action-index="${index}">Delete</button>
+        </div>
+      </div>
+      <div class="html-toolbar" aria-label="Action ${index + 1} HTML toolbar">
+        <button type="button" data-html-template="paragraph">Text</button>
+        <button type="button" data-html-template="link">Link</button>
+        <button type="button" data-html-template="image">Image</button>
+        <button type="button" data-html-template="button">Button</button>
+      </div>
+      <textarea class="action-source-editor" data-scope="action" data-lang="${lang}" data-field="html" data-action-index="${index}" rows="5" spellcheck="false">${escapeHtml(html || "")}</textarea>
+      <div class="html-preview-title">Preview</div>
+      <div class="html-preview" data-action-preview="${lang}-${index}">${html || "<em>No action HTML yet.</em>"}</div>
+    </div>
+  `;
+}
+
 function inputValue(target) {
   return target.value;
 }
@@ -364,6 +402,14 @@ function syncHtmlPreview(target, value) {
   document.querySelectorAll(selector).forEach(control => {
     control.innerHTML = value || "<em>No HTML yet.</em>";
   });
+}
+
+function syncActionPreview(target, value) {
+  const preview = document.querySelector(`[data-action-preview="${target.dataset.lang}-${target.dataset.actionIndex}"]`);
+
+  if (preview) {
+    preview.innerHTML = value || "<em>No action HTML yet.</em>";
+  }
 }
 
 function htmlTemplate(name) {
@@ -411,8 +457,8 @@ function escapeAttribute(value) {
 }
 
 function insertHtmlTemplate(button) {
-  const field = button.closest(".html-field");
-  const textarea = field && field.querySelector(".html-source-editor");
+  const field = button.closest(".html-field, .action-item");
+  const textarea = field && field.querySelector(".html-source-editor, .action-source-editor");
   const template = htmlTemplate(button.dataset.htmlTemplate);
   const start = textarea ? textarea.selectionStart : 0;
   const end = textarea ? textarea.selectionEnd : 0;
@@ -526,10 +572,7 @@ function renderLessons() {
             <input data-scope="content" data-lang="${lang}" data-field="videoUrl" type="text" value="${escapeHtml(content.videoUrl)}" placeholder="https://www.youtube.com/watch?v=...">
           </label>
           ${htmlCodeEditor("content", lang, "summary", "Summary", content.summary)}
-          <label class="is-wide">
-            Actions, one per line
-            <textarea data-scope="content" data-lang="${lang}" data-field="actions" rows="7" spellcheck="false">${escapeHtml(Array.isArray(content.actions) ? content.actions.join("\n") : "")}</textarea>
-          </label>
+          ${actionListEditor(lang, content.actions)}
           ${htmlCodeEditor("content", lang, "expected", "Expected result", content.expected)}
         </div>
       `;
@@ -584,6 +627,15 @@ function handleInput(event) {
     } else {
       content[field] = value;
     }
+  }
+
+  if (scope === "action") {
+    const content = lessonContent(lang);
+    const index = Number(target.dataset.actionIndex);
+
+    content.actions = Array.isArray(content.actions) ? content.actions : [];
+    content.actions[index] = value;
+    syncActionPreview(target, value);
   }
 
   if (target.dataset.htmlSource) {
@@ -649,6 +701,42 @@ function moveLessons(direction) {
   state.stepIndex = targetIndex;
   markDirty();
   render();
+}
+
+function moveAction(lang, index, direction) {
+  const actions = lessonContent(lang).actions;
+  const targetIndex = index + direction;
+
+  if (!Array.isArray(actions) || !canMove(actions, index, targetIndex)) {
+    return;
+  }
+
+  moveItem(actions, index, targetIndex);
+  markDirty();
+  render();
+}
+
+function handleActionItemOp(button) {
+  const lang = button.dataset.lang;
+  const op = button.dataset.actionItemOp;
+  const content = lessonContent(lang);
+  const index = Number(button.dataset.actionIndex);
+
+  content.actions = Array.isArray(content.actions) ? content.actions : [];
+
+  if (op === "add") {
+    content.actions.push("<p>New action</p>");
+    markDirty();
+    render();
+  } else if (op === "delete") {
+    content.actions.splice(index, 1);
+    markDirty();
+    render();
+  } else if (op === "up") {
+    moveAction(lang, index, -1);
+  } else if (op === "down") {
+    moveAction(lang, index, 1);
+  }
 }
 
 function addModule() {
@@ -860,9 +948,16 @@ async function publish() {
 document.addEventListener("input", handleInput);
 document.addEventListener("change", handleChange);
 document.addEventListener("click", event => {
+  const actionItemButton = event.target.closest("[data-action-item-op]");
   const htmlButton = event.target.closest("[data-html-template]");
   const viewButton = event.target.closest("[data-view]");
   const actionButton = event.target.closest("[data-action]");
+
+  if (actionItemButton) {
+    event.preventDefault();
+    handleActionItemOp(actionItemButton);
+    return;
+  }
 
   if (htmlButton) {
     event.preventDefault();
