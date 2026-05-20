@@ -463,7 +463,7 @@
   function cleanYouTubeEmbedUrl(rawUrl) {
     var url = new URL(rawUrl);
 
-    url.searchParams.set("controls", "0");
+    url.searchParams.set("controls", "1");
     url.searchParams.set("rel", "0");
     url.searchParams.set("iv_load_policy", "3");
     url.searchParams.set("fs", "0");
