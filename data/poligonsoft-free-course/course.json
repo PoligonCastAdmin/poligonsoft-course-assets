@@ -46,20 +46,20 @@
       ],
       "modules": [
         {
-          "id": "project-setup",
-          "title": "Project setup",
+          "id": "getting-started",
+          "title": "Getting Started",
           "steps": [
             {
               "id": "install",
-              "title": "Install and open PoligonSoft Free",
+              "title": "Install PoligonSoft Free",
               "duration": "5 min",
-              "contentUrl": "en/project-setup/install.json"
+              "contentUrl": "en/getting-started/install.json"
             },
             {
               "id": "new-project",
               "title": "Create a sand casting project",
               "duration": "7 min",
-              "contentUrl": "en/project-setup/new-project.json"
+              "contentUrl": "en/getting-started/new-project.json"
             }
           ]
         },
@@ -105,7 +105,7 @@
       "courseId": "poligonsoft-free-sand-casting",
       "title": "Simulacion de fundicion en arena paso a paso en PoligonSoft Free",
       "sidebarTitle": "Curso PoligonSoft Free",
-      "description": "Aprenda simulacion de fundicion en arena en PoligonSoft Free con lecciones en video paso a paso. Cree un proyecto, prepare la geometria, configure materiales, ejecute la simulacion y revise resultados.",
+      "description": "Domine la simulación de fundición en arena en PoligonSoft Free con videotutoriales paso a paso. Cree un proyecto, prepare la geometría, configure los materiales, ejecute la simulación y revise los resultados.",
       "level": "Free",
       "labels": {
         "modules": "modulos",
@@ -146,20 +146,20 @@
       ],
       "modules": [
         {
-          "id": "project-setup",
+          "id": "getting-started",
           "title": "Preparacion del proyecto",
           "steps": [
             {
               "id": "install",
               "title": "Instalar y abrir PoligonSoft Free",
               "duration": "5 min",
-              "contentUrl": "es/project-setup/install.json"
+              "contentUrl": "es/getting-started/install.json"
             },
             {
               "id": "new-project",
               "title": "Crear un proyecto de fundicion en arena",
               "duration": "7 min",
-              "contentUrl": "es/project-setup/new-project.json"
+              "contentUrl": "es/getting-started/new-project.json"
             }
           ]
         },

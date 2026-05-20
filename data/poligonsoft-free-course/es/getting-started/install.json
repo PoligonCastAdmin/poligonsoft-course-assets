@@ -1,0 +1,11 @@
+{
+  "videoUrl": "",
+  "summary": "Descargue PoligonSoft Free y complete el proceso de instalación en su equipo.",
+  "actions": [
+    "Cree una cuenta o inicie sesión en el sitio de PoligonSoft.",
+    "Descargue el instalador de PoligonSoft Free desde su perfil de usuario.",
+    "Ejecute el instalador.",
+    "Siga los pasos del asistente de instalación hasta finalizar el proceso."
+  ],
+  "expected": "PoligonSoft Free quedará instalado en su equipo. El icono para ejecutar PoligonSoft aparecerá en el escritorio."
+}
