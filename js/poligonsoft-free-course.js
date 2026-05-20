@@ -434,12 +434,12 @@
 
     if (url.hostname === "youtu.be") {
       videoId = url.pathname.split("/").filter(Boolean)[0];
-      return videoId ? "https://www.youtube.com/embed/" + videoId : rawUrl;
+      return videoId ? cleanYouTubeEmbedUrl("https://www.youtube.com/embed/" + videoId) : rawUrl;
     }
 
     if (url.hostname.indexOf("youtube.com") !== -1 || url.hostname.indexOf("youtube-nocookie.com") !== -1) {
       if (url.pathname.indexOf("/embed/") === 0) {
-        return rawUrl;
+        return cleanYouTubeEmbedUrl(rawUrl);
       }
 
       videoId = url.searchParams.get("v");
@@ -449,7 +449,7 @@
         videoId = match && match[1];
       }
 
-      return videoId ? "https://www.youtube.com/embed/" + videoId : rawUrl;
+      return videoId ? cleanYouTubeEmbedUrl("https://www.youtube.com/embed/" + videoId) : rawUrl;
     }
 
     if (url.hostname.indexOf("vimeo.com") !== -1 && url.hostname.indexOf("player.vimeo.com") === -1) {
@@ -458,6 +458,19 @@
     }
 
     return rawUrl;
+  }
+
+  function cleanYouTubeEmbedUrl(rawUrl) {
+    var url = new URL(rawUrl);
+
+    url.searchParams.set("controls", "0");
+    url.searchParams.set("rel", "0");
+    url.searchParams.set("iv_load_policy", "3");
+    url.searchParams.set("fs", "0");
+    url.searchParams.set("playsinline", "1");
+    url.searchParams.set("disablekb", "1");
+
+    return url.toString();
   }
 
   function renderActions(actions) {
