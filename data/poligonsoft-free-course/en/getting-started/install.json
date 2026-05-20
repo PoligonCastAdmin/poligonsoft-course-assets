@@ -2,8 +2,8 @@
   "videoUrl": "https://youtu.be/Ei8Y0pNDOZI",
   "summary": "Download PoligonSoft Free and complete the installation process on your computer.",
   "actions": [
-    "Create an account or sign in on the PoligonSoft website.",
-    "Download the PoligonSoft Free installer from your User Profile page.",
+    "Create an account or sign in on the <a href=\"https://www.poligoncast.com/\">PoligonSoft website</a>.",
+    "Download the PoligonSoft Free installer from your <a href=\"https://www.poligoncast.com/userpage\">User Profile page</a>.",
     "Run the installer.",
     "Follow the installation wizard until the process is complete."
   ],
