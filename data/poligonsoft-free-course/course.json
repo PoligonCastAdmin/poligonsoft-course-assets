@@ -121,7 +121,7 @@
         "loadingLesson": "Cargando leccion...",
         "previous": "Paso anterior",
         "next": "Siguiente paso",
-        "markComplete": "Marcar como completado",
+        "markComplete": "Completado",
         "completed": "Completado",
         "progressSync": "Sincronizacion de progreso",
         "guestProgress": "Inicie sesion para guardar lecciones completadas y continuar despues.",
