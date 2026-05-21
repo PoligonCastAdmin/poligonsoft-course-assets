@@ -1,5 +1,5 @@
 {
-  "videoUrl": "",
+  "videoUrl": "https://www.youtube.com/watch?v=oiKwUxilxPU",
   "summary": "Launch PoligonSoft, open the Master module, and load the prepared MED file to start the simulation workflow.",
   "actions": [
     "Download the geometry file <a href=\"https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/poligonsoft-free-course/3dMesh_Sym.med\">3dMesh_Sym.med</a>. It is a 3D mesh created in SALOME.",

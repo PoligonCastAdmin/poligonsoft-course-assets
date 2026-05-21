@@ -1,5 +1,5 @@
 {
-  "videoUrl": "",
+  "videoUrl": "https://www.youtube.com/watch?v=oiKwUxilxPU",
   "summary": "Abra PoligonSoft, acceda al módulo Master y cargue el archivo MED preparado para continuar con el curso.",
   "actions": [
     "Descargue el archivo de geometría <a href=\"https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/poligonsoft-free-course/3dMesh_Sym.med\">3dMesh_Sym.med</a>. Es una malla 3D creada en SALOME.",
