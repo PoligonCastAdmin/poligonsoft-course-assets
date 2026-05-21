@@ -1,0 +1,14 @@
+{
+  "videoUrl": "",
+  "summary": "Abra PoligonSoft, acceda al módulo Master y cargue el archivo MED preparado para continuar con el curso.",
+  "actions": [
+    "Descargue el archivo de geometría <a href=\"https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/poligonsoft-free-course/3dMesh_Sym.med\">3dMesh_Sym.med</a>. Es una malla 3D creada en SALOME.",
+    "Haga doble clic en el icono de PoligonSoft en el escritorio.",
+    "En la ventana principal de PoligonSoft, haga clic en Master.\n",
+    "Haga clic en el botón Load Geometry.",
+    "Seleccione el tipo de archivo SALOME, defina las unidades de medida del modelo, en este caso milímetros, y haga clic en OK.",
+    "En la ventana de selección de archivo, busque y seleccione el archivo 3dMesh_Sym.med.\nHaga clic en Open.",
+    "En la ventana Open Geometry, haga clic en No para cargar los parámetros de simulación por defecto."
+  ],
+  "expected": "El modelo aparecerá visible en el área de trabajo y estará listo para la siguiente etapa de preparación de la simulación."
+}

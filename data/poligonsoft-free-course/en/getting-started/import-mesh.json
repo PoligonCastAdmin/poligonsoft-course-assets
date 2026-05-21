@@ -1,0 +1,14 @@
+{
+  "videoUrl": "",
+  "summary": "Launch PoligonSoft, open the Master module, and load the prepared MED file to start the simulation workflow.",
+  "actions": [
+    "Download the geometry file <a href=\"https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/poligonsoft-free-course/3dMesh_Sym.med\">3dMesh_Sym.med</a>. It is a 3D mesh created in SALOME.",
+    "Double-click the PoligonSoft icon on the desktop.",
+    "In the main PoligonSoft window, click Master.",
+    "Сlick the Load Geometry File button.",
+    "Select the SALOME file type",
+    "Define the units of measurement for the model, in this case millimeters, and click OK.",
+    "In the Open Geometry window, click No to load the default simulation parameters."
+  ],
+  "expected": "The model will appear visible in the workspace and will be ready for the next stage of simulation setup."
+}

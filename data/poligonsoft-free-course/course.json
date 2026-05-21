@@ -36,7 +36,7 @@
       },
       "downloads": [
         {
-          "title": "3dMesh_Sym.med sample mesh",
+          "title": "3dMesh_Sym.med",
           "url": "https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/poligonsoft-free-course/3dMesh_Sym.med"
         },
         {
@@ -56,10 +56,10 @@
               "contentUrl": "en/getting-started/install.json"
             },
             {
-              "id": "new-project",
-              "title": "Create a sand casting project",
-              "duration": "7 min",
-              "contentUrl": "en/getting-started/new-project.json"
+              "id": "import-mesh",
+              "title": "Launch program and import mesh model",
+              "duration": "1 min",
+              "contentUrl": "en/getting-started/import-mesh.json"
             }
           ]
         },
@@ -136,8 +136,8 @@
       },
       "downloads": [
         {
-          "title": "Malla de ejemplo 3dMesh_Sym.med",
-          "url": "https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/poligonsoft-free-course/3dMesh_Sym.med"
+          "title": "Modelo de ejemplo para fundicion en arena",
+          "url": "#"
         },
         {
           "title": "Archivo del proyecto",
@@ -156,10 +156,10 @@
               "contentUrl": "es/getting-started/install.json"
             },
             {
-              "id": "new-project",
+              "id": "import-mesh",
               "title": "Crear un proyecto de fundicion en arena",
-              "duration": "7 min",
-              "contentUrl": "es/getting-started/new-project.json"
+              "duration": "1 min",
+              "contentUrl": "es/getting-started/import-mesh.json"
             }
           ]
         },
