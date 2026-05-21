@@ -151,7 +151,7 @@
           "steps": [
             {
               "id": "install",
-              "title": "Instalar y abrir PoligonSoft Free",
+              "title": "Instalar PoligonSoft Free",
               "duration": "5 min",
               "contentUrl": "es/getting-started/install.json"
             },
