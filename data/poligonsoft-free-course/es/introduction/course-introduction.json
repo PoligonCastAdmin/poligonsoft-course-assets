@@ -1,0 +1,12 @@
+{
+  "videoUrl": "",
+  "summary": "En este curso aprenderá paso a paso cómo configurar los parámetros principales de una simulación en PoligonSoft, ejecutar el cálculo, obtener los resultados y analizarlos correctamente.",
+  "actions": [
+    "Importación del modelo de malla y revisión de errores comunes.\n",
+    "Asignación de materiales a los cuerpos del modelo.\n",
+    "Ajuste de parámetros de transferencia de calor y condiciones de frontera.\n",
+    "Definición de los parámetros principales de simulación.\n",
+    "Ejecución del cálculo y análisis de resultados."
+  ],
+  "expected": "Como resultado, obtendrá la dinámica de solidificación de la pieza, localizará las zonas de puntos calientes y revisará la predicción de defectos de contracción."
+}

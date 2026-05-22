@@ -46,6 +46,18 @@
       ],
       "modules": [
         {
+          "id": "introduction",
+          "title": "Introduction",
+          "steps": [
+            {
+              "id": "course-introduction",
+              "title": "What you will learn in this course",
+              "duration": "1 min",
+              "contentUrl": "en/introduction/course-introduction.json"
+            }
+          ]
+        },
+        {
           "id": "getting-started",
           "title": "Getting Started",
           "steps": [
@@ -145,6 +157,18 @@
         }
       ],
       "modules": [
+        {
+          "id": "introduction",
+          "title": "Introducción",
+          "steps": [
+            {
+              "id": "course-introduction",
+              "title": "Qué aprenderá en este curso",
+              "duration": "1 min",
+              "contentUrl": "es/introduction/course-introduction.json"
+            }
+          ]
+        },
         {
           "id": "getting-started",
           "title": "Preparacion del proyecto",

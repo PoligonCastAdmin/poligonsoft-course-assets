@@ -1,0 +1,12 @@
+{
+  "videoUrl": "",
+  "summary": "In this course, you will learn step by step how to configure the main simulation parameters in PoligonSoft, run the calculation, obtain the results, and analyze them correctly.",
+  "actions": [
+    "Mesh model import and review of common errors.\n",
+    "Material assignment to the model bodies.\n",
+    "Adjustment of heat transfer parameters and boundary conditions.\n",
+    "Definition of the main simulation parameters.\n",
+    "Calculation run and results analysis."
+  ],
+  "expected": "As a result, you will obtain the solidification dynamics of the casting, locate hot spot areas, and review the prediction of shrinkage defects."
+}
