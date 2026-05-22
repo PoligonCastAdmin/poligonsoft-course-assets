@@ -397,7 +397,7 @@
       image.src = imageUrl;
       image.alt = step.title || "";
       image.loading = "lazy";
-      image.style.cssText = "position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#242424;";
+      image.style.cssText = "position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#ffffff;";
       frame.appendChild(image);
       return;
     }
