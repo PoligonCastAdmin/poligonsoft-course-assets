@@ -1,5 +1,5 @@
 {
-  "videoUrl": "",
+  "videoUrl": "https://youtu.be/H8F3MigWvic",
   "summary": "Revise la calidad de la malla antes de continuar con la configuración de la simulación. Los elementos con ángulos demasiado pequeños o demasiado grandes, así como los elementos degenerados, pueden provocar errores durante el cálculo.",
   "actions": [
     "En la pestaña Edit, haga clic en Check Mesh Quality para iniciar la revisión de la calidad de la malla.\n",

@@ -1,5 +1,5 @@
 {
-  "videoUrl": "",
+  "videoUrl": "https://youtu.be/H8F3MigWvic",
   "summary": "Review the mesh quality before continuing with the simulation setup. Elements with very small or very large angles, as well as degenerate elements, can cause errors during the calculation.",
   "actions": [
     "On the Edit tab, click Check Mesh Quality to start the mesh quality review.\n",
