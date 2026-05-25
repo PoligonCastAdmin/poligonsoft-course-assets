@@ -1,0 +1,12 @@
+{
+  "videoUrl": "",
+  "summary": "Review the mesh quality before continuing with the simulation setup. Elements with very small or very large angles, as well as degenerate elements, can cause errors during the calculation.",
+  "actions": [
+    "On the Edit tab, click Check Mesh Quality to start the mesh quality review.\n",
+    "Review the report in the Check Mesh Quality window. Pay attention to the number of elements with angles outside the allowed range and the number of degenerate elements.\n",
+    "Look at the model and review the elements marked as problematic.\n",
+    "If defective elements are detected, click Correct. In our example, the mesh does not contain errors, so correction is not required.\n",
+    "Close the window when the mesh review is complete.\n\n"
+  ],
+  "expected": "The mesh quality will be reviewed. If problematic elements are detected, PoligonSoft will try to correct them and update the mesh quality report.<br>Keep in mind that the calculation can still be run even if the model contains some defective elements. The correction mechanism is used to minimize their number before continuing."
+}

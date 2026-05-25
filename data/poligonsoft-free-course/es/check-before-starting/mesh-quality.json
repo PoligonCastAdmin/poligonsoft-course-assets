@@ -1,0 +1,13 @@
+{
+  "videoUrl": "",
+  "summary": "Revise la calidad de la malla antes de continuar con la configuración de la simulación. Los elementos con ángulos demasiado pequeños o demasiado grandes, así como los elementos degenerados, pueden provocar errores durante el cálculo.",
+  "actions": [
+    "En la pestaña Edit, haga clic en Check Mesh Quality para iniciar la revisión de la calidad de la malla.\n",
+    "Revise el reporte en la ventana Check Mesh Quality. Preste atención al número de elementos con ángulos fuera del rango permitido y al número de elementos degenerados.\n",
+    "Si se detectan elementos defectuosos, haga clic en Correct. En nuestro ejemplo, la malla no contiene errores, por lo que la corrección no es necesaria.",
+    "Revise el reporte actualizado después de la corrección.\n",
+    "Si todavía quedan elementos defectuosos, repita la corrección mientras el número de elementos problemáticos siga disminuyendo.\n",
+    "Cierre la ventana cuando la revisión de la malla esté completa.\n"
+  ],
+  "expected": "La calidad de la malla quedará revisada. Si se detectan elementos problemáticos, PoligonSoft intentará corregirlos y actualizará el reporte de calidad de la malla.<br>\nTenga en cuenta que el cálculo puede ejecutarse incluso si el modelo contiene algunos elementos defectuosos. El mecanismo de corrección se utiliza para minimizar su cantidad antes de continuar."
+}

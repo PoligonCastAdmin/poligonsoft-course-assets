@@ -90,6 +90,12 @@
               "title": "Checking the model units",
               "duration": "2 min",
               "contentUrl": "en/check-before-starting/model-units.json"
+            },
+            {
+              "id": "mesh-quality",
+              "title": "Mesh quality review",
+              "duration": "3 min",
+              "contentUrl": "en/check-before-starting/mesh-quality.json"
             }
           ]
         },
@@ -220,6 +226,12 @@
               "title": "Verificación de las unidades del modelo",
               "duration": "2 min",
               "contentUrl": "es/check-before-starting/model-units.json"
+            },
+            {
+              "id": "mesh-quality",
+              "title": "Nueva leccion",
+              "duration": "3 min",
+              "contentUrl": "es/check-before-starting/mesh-quality.json"
             }
           ]
         },
