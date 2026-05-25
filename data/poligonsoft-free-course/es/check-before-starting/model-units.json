@@ -1,5 +1,5 @@
 {
-  "videoUrl": "",
+  "videoUrl": "https://youtu.be/t6TU5nEw_co",
   "summary": "Compruebe que las unidades del modelo fueron definidas correctamente al cargar el archivo. Para ello, mida una distancia conocida en la geometría y confirme que la escala del modelo sea adecuada.",
   "actions": [
     "Coloque el modelo en una posición cómoda para realizar la medición: use el botón izquierdo del mouse para rotar, la rueda del mouse para acercar o alejar la vista y el botón derecho del mouse para desplazar el modelo.",

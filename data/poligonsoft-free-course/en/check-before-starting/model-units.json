@@ -1,5 +1,5 @@
 {
-  "videoUrl": "",
+  "videoUrl": "https://youtu.be/t6TU5nEw_co",
   "summary": "Check that the model units were defined correctly when the file was loaded. To do this, measure a known distance in the geometry and confirm that the model scale is correct.",
   "actions": [
     "Place the model in a convenient position for measurement: use the left mouse button to rotate, the mouse wheel to zoom in or out, and the right mouse button to pan the model.",
