@@ -1,0 +1,11 @@
+{
+  "videoUrl": "",
+  "summary": "Correct the model orientation in the PoligonSoft coordinate system. The orientation must match the real position of the casting during the casting process, because in the calculation <b>gravity acts along the Y coordinate direction</b>.",
+  "actions": [
+    "On the Main tab, click Reset Rotations to place the model in the base front view.\n",
+    "Check the model orientation relative to the X, Y, and Z axes.\n",
+    "Use the rotation buttons in the Orientation toolbar to place the model in the correct position.\nDo not use the mouse to orient the model, because it rotates the model around several axes at the same time and does not allow you to set the position precisely.",
+    "Click Fix Rotation to fix the model orientation.\n"
+  ],
+  "expected": "The model orientation will be fixed in the PoligonSoft coordinate system. The gravity direction will correctly match the real position of the casting during the casting process."
+}

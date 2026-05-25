@@ -1,0 +1,11 @@
+{
+  "videoUrl": "",
+  "summary": "Corrija la orientación del modelo en el sistema de coordenadas de PoligonSoft. La orientación debe corresponder a la posición real de la pieza durante el proceso de fundición, ya que en el cálculo <b>la gravedad actúa en la dirección de la coordenada Y</b>.",
+  "actions": [
+    "En la pestaña Main, haga clic en Reset Rotations para colocar el modelo en la vista frontal base.",
+    "Revise la orientación del modelo respecto a los ejes X, Y y Z.",
+    "Use los botones de la barra Rotations para colocar el modelo en la posición correcta.<br>\nNo utilice el mouse para orientar el modelo, porque la rotación se realiza simultáneamente alrededor de varios ejes y no permite establecer la posición con precisión.\n",
+    "Haga clic en Fix Rotation para fijar la orientación del modelo."
+  ],
+  "expected": "La orientación del modelo quedará fijada en el sistema de coordenadas de PoligonSoft. La dirección de la gravedad corresponderá correctamente a la posición real de la pieza durante el proceso de fundición."
+}

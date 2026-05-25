@@ -76,6 +76,18 @@
           ]
         },
         {
+          "id": "check-before-starting",
+          "title": "Check before starting",
+          "steps": [
+            {
+              "id": "model-orientation",
+              "title": "Model orientation",
+              "duration": "2 min",
+              "contentUrl": "en/check-before-starting/model-orientation.json"
+            }
+          ]
+        },
+        {
           "id": "geometry-materials",
           "title": "Geometry and materials",
           "steps": [
@@ -184,6 +196,18 @@
               "title": "Crear un proyecto de fundicion en arena",
               "duration": "1 min",
               "contentUrl": "es/getting-started/import-mesh.json"
+            }
+          ]
+        },
+        {
+          "id": "check-before-starting",
+          "title": "Antes de comenzar",
+          "steps": [
+            {
+              "id": "model-orientation",
+              "title": "Orientación del modelo",
+              "duration": "2 min",
+              "contentUrl": "es/check-before-starting/model-orientation.json"
             }
           ]
         },
