@@ -1,5 +1,5 @@
 {
-  "videoUrl": "",
+  "videoUrl": "https://youtu.be/PnQ18fkWifw",
   "summary": "Correct the model orientation in the PoligonSoft coordinate system. The orientation must match the real position of the casting during the casting process, because in the calculation <b>gravity acts along the Y coordinate direction</b>.",
   "actions": [
     "On the Main tab, click Reset Rotations to place the model in the base front view.\n",
