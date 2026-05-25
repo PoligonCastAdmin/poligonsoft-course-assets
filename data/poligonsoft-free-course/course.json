@@ -88,7 +88,7 @@
             {
               "id": "model-units",
               "title": "Checking the model units",
-              "duration": "",
+              "duration": "2 min",
               "contentUrl": "en/check-before-starting/model-units.json"
             }
           ]
@@ -218,7 +218,7 @@
             {
               "id": "model-units",
               "title": "Verificación de las unidades del modelo",
-              "duration": "",
+              "duration": "2 min",
               "contentUrl": "es/check-before-starting/model-units.json"
             }
           ]
