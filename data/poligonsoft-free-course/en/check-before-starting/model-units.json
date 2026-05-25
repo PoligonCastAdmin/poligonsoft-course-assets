@@ -1,0 +1,12 @@
+{
+  "videoUrl": "",
+  "summary": "Check that the model units were defined correctly when the file was loaded. To do this, measure a known distance in the geometry and confirm that the model scale is correct.",
+  "actions": [
+    "Place the model in a convenient position for measurement: use the left mouse button to rotate, the mouse wheel to zoom in or out, and the right mouse button to pan the model.",
+    "On the Main tab, click Measure.\n",
+    "Hold down the CTRL key and select two reference points on the model.\n",
+    "Check the measured distance and compare it with the known dimension of that part of the model.<br>\n\n",
+    "Keep in mind that an exact match is not required. The goal is to confirm that the overall model scale is correct and that the units were specified correctly when the project was opened."
+  ],
+  "expected": "The model scale will be verified. You will confirm that the units selected when loading the file correctly match the real dimensions of the model."
+}

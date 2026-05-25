@@ -1,0 +1,11 @@
+{
+  "videoUrl": "",
+  "summary": "Compruebe que las unidades del modelo fueron definidas correctamente al cargar el archivo. Para ello, mida una distancia conocida en la geometría y confirme que la escala del modelo sea adecuada.",
+  "actions": [
+    "Coloque el modelo en una posición cómoda para realizar la medición: use el botón izquierdo del mouse para rotar, la rueda del mouse para acercar o alejar la vista y el botón derecho del mouse para desplazar el modelo.",
+    "En la pestaña Main, haga clic en Measure.",
+    "Mantenga presionada la tecla CTRL y seleccione dos puntos de referencia en el modelo.",
+    "Revise la distancia medida y compárela con la dimensión conocida de esa zona del modelo. <br>\nTenga en cuenta que no es necesario obtener una coincidencia exacta. El objetivo es confirmar que la escala general del modelo es correcta y que las unidades fueron indicadas correctamente al abrir el proyecto.\n"
+  ],
+  "expected": "La escala del modelo quedará verificada. Usted confirmará que las unidades seleccionadas al cargar el archivo corresponden correctamente a las dimensiones reales del modelo."
+}
