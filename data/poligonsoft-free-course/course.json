@@ -100,20 +100,20 @@
           ]
         },
         {
-          "id": "geometry-materials",
-          "title": "Geometry and materials",
+          "id": "component-setup",
+          "title": "Component Setup",
           "steps": [
             {
               "id": "volume-type-assignment",
               "title": "Volume type assignment",
               "duration": "4 min",
-              "contentUrl": "en/geometry-materials/volume-type-assignment.json"
+              "contentUrl": "en/component-setup/volume-type-assignment.json"
             },
             {
               "id": "assign-material",
               "title": "Assign alloy and mold material",
               "duration": "9 min",
-              "contentUrl": "en/geometry-materials/assign-material.json"
+              "contentUrl": "en/component-setup/assign-material.json"
             }
           ]
         },
@@ -236,20 +236,20 @@
           ]
         },
         {
-          "id": "geometry-materials",
-          "title": "Geometria y materiales",
+          "id": "component-setup",
+          "title": "Configuración de componentes",
           "steps": [
             {
               "id": "volume-type-assignment",
               "title": "Asignación de tipos de volumen",
               "duration": "4 min",
-              "contentUrl": "es/geometry-materials/volume-type-assignment.json"
+              "contentUrl": "es/component-setup/volume-type-assignment.json"
             },
             {
               "id": "assign-material",
               "title": "Asignar aleacion y material del molde",
               "duration": "9 min",
-              "contentUrl": "es/geometry-materials/assign-material.json"
+              "contentUrl": "es/component-setup/assign-material.json"
             }
           ]
         },

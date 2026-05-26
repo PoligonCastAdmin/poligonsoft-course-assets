@@ -1,0 +1,10 @@
+{
+  "videoUrl": "",
+  "summary": "Configure materiales basicos de pieza y molde para el ejemplo de fundicion en arena.",
+  "actions": [
+    "Abra la lista de materiales.",
+    "Asigne una aleacion a la zona de la pieza.",
+    "Asigne propiedades de arena a la zona del molde."
+  ],
+  "expected": "Todas las zonas requeridas tienen materiales asignados."
+}

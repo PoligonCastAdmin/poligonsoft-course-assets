@@ -1,0 +1,15 @@
+{
+  "videoUrl": "",
+  "summary": "Asigne el tipo correcto a cada volumen del modelo. En PoligonSoft, los volúmenes de tipo Casting corresponden a la pieza fundida, mientras que los volúmenes de tipo Mold corresponden al molde y a los elementos auxiliares del proceso.",
+  "actions": [
+    "Cambie a la pestaña Modes y seleccione Volume Types para revisar cómo PoligonSoft clasificó los cuerpos después de importar la malla.\n",
+    "Revise los colores del modelo: los elementos rojos corresponden al tipo Casting y los elementos azules corresponden al tipo Mold.\n",
+    "Use los botones auxiliares de visibilidad Casting Surfaces y Mold Surfaces para activar o desactivar la visualización de los elementos de tipo Casting o Mold.\n",
+    "Haga doble clic sobre el volumen que desea editar para abrir la ventana Volume Parameters.\n",
+    "Seleccione el tipo de volumen correcto: Casting para la pieza fundida o Mold para los elementos del molde.\n",
+    "Asigne al volumen un nombre adecuado para facilitar el trabajo en los siguientes pasos. Presione OK para confirmar los cambios.\n\n",
+    "En la ventana de alerta, seleccione Yes para recalcular los índices de frontera. Este tema se explicará con más detalle en la lección sobre parámetros de transferencia de calor.\n",
+    "Repita el procedimiento hasta que todos los elementos correspondan al tipo de volumen correcto."
+  ],
+  "expected": "Todos los volúmenes quedarán clasificados correctamente como Casting o Mold. Además, cada volumen tendrá un nombre claro para facilitar la asignación de materiales, parámetros de transferencia de calor y condiciones de frontera en las siguientes lecciones."
+}
