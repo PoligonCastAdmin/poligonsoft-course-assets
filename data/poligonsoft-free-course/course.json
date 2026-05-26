@@ -229,7 +229,7 @@
             },
             {
               "id": "mesh-quality",
-              "title": "Nueva leccion",
+              "title": "Revisión de la calidad de la malla",
               "duration": "3 min",
               "contentUrl": "es/check-before-starting/mesh-quality.json"
             }
