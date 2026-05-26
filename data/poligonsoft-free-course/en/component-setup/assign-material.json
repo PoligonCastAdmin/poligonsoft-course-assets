@@ -1,10 +1,19 @@
 {
   "videoUrl": "",
-  "summary": "Set basic casting and mold materials for the sand casting example.",
+  "summary": "Assign the corresponding materials to the mold components. Each material contains its own thermophysical properties, which will be used by PoligonSoft during the calculation.",
   "actions": [
-    "Open the material list.",
-    "Assign an alloy to the casting region.",
-    "Assign sand mold properties to the mold region."
+    "On the Modes tab, switch to Volume Indices. In this mode, each color corresponds to a volume index, that is, to the material assigned to the component.\n",
+    "Download the <a href=\"https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/poligonsoft-free-course/Mold_Materials.pmms\">material template</a> and save it on your computer. Materials can also be assigned one by one from the database, but for real work it is more practical to use a template with common materials.\n",
+    "In the Model Tree, switch to the Project Overview tab.\n",
+    "Find the Mold Materials line and click the three-dot button to open the template import dialog.\n",
+    "Select the downloaded file and click Open.\n",
+    "Review the list of imported materials. Each material will have a number, corresponding to the volume index, and an assigned color.\n",
+    "Return to the Model Tree. Double-click the first Mold component.\n\n",
+    "In the pop-up window, assign the corresponding material and click OK.\n",
+    "Repeat the operation for all Mold components. The selected element will be shown as active in the workspace, while the other elements will appear semi-transparent.<br>\nIn this lesson, the large sleeves correspond to isothermic sleeves, the small sleeves correspond to exothermic sleeves, and the chills correspond to GS45 steel.\n",
+    "Also assign a clear name to each component to make the following steps easier.\n",
+    "For convenience, merge all elements with the same material into a single volume. Hold down the CTRL key and select all chills in the Model Tree. <br>\nRight-click and run Merge Volumes. The selected elements will be merged into a single volume in the Model Tree.\n\n\n",
+    "Repeat the same operation for the isothermic sleeves and for the exothermic sleeves."
   ],
-  "expected": "All required regions have assigned materials."
+  "expected": "The mold components will have the correct materials assigned. Elements with the same material will be grouped into single volumes, making the next project setup steps easier."
 }

@@ -1,10 +1,19 @@
 {
   "videoUrl": "",
-  "summary": "Configure materiales basicos de pieza y molde para el ejemplo de fundicion en arena.",
+  "summary": "Asigne los materiales correspondientes a los componentes del molde. Cada material contiene sus propias propiedades termofísicas, que serán utilizadas por PoligonSoft durante el cálculo.",
   "actions": [
-    "Abra la lista de materiales.",
-    "Asigne una aleacion a la zona de la pieza.",
-    "Asigne propiedades de arena a la zona del molde."
+    "En la pestaña Modes, cambie a Volume Indices. En este modo, cada color corresponde al índice de volumen, es decir, al material asignado al componente.\n",
+    "Descargue la  <a href=\"https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/poligonsoft-free-course/Mold_Materials.pmms\">plantilla de materiales</a> y guárdela en su equipo. Los materiales también pueden asignarse uno por uno desde la base de datos, pero para un trabajo real es más práctico usar una plantilla con materiales comunes.\n",
+    "En el árbol del modelo, cambie a la pestaña Project Overview.\n",
+    "Localice la línea Mold Materials y haga clic en el botón con tres puntos para abrir el diálogo de importación de la plantilla.\n",
+    "Seleccione el archivo descargado y haga clic en Open.\n",
+    "Revise la lista de materiales importados. Cada material tendrá un número, correspondiente al índice de volumen, y un color asignado.\n",
+    "Regrese al árbol del modelo. Haga doble clic en el primer componente de tipo Mold.\n\n",
+    "En la ventana emergente, asigne el material correspondiente y haga clic en OK.\n",
+    "Repita la operación para todos los componentes de tipo Mold. El elemento seleccionado se mostrará activo en el área de trabajo, mientras que los demás elementos aparecerán semitransparentes. <br>\nEn esta lección, los manguitos grandes corresponden a manguitos isotérmicos, los manguitos pequeños corresponden a manguitos exotérmicos y los enfriadores corresponden al acero GS45.\n\n",
+    "Asigne también un nombre claro a cada componente para facilitar el trabajo en los siguientes pasos.\n",
+    "Para mayor comodidad, una todos los elementos que tienen el mismo material en un solo volumen.Mantenga presionada la tecla CTRL y seleccione en el árbol del modelo todos los enfriadores.<br>\nHaga clic con el botón derecho del mouse y ejecute Merge Volumes. Los elementos seleccionados se unirán en un solo volumen dentro del árbol del modelo.",
+    "Repita la misma operación para los manguitos isotérmicos y para los manguitos exotérmicos."
   ],
-  "expected": "Todas las zonas requeridas tienen materiales asignados."
+  "expected": "Los componentes del molde quedarán con los materiales correctos asignados. Los elementos del mismo material quedarán agrupados en volúmenes únicos, lo que facilitará la configuración de los siguientes parámetros del proyecto."
 }
