@@ -1,10 +1,8 @@
 {
   "videoUrl": "",
-  "summary": "Start the calculation and make sure it begins without critical warnings.",
+  "summary": "This lesson is currently being prepared and will be published soon.",
   "actions": [
-    "Open calculation settings.",
-    "Review required parameters.",
-    "Start the simulation and check the log."
+    "Coming Soon"
   ],
-  "expected": "The simulation starts and the message log has no critical errors."
+  "expected": "Coming Soon"
 }

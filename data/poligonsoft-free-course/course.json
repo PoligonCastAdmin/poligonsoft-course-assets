@@ -126,12 +126,6 @@
               "title": "Run the first simulation",
               "duration": "6 min",
               "contentUrl": "en/simulation-results/run-simulation.json"
-            },
-            {
-              "id": "review-results",
-              "title": "Review casting results",
-              "duration": "11 min",
-              "contentUrl": "en/simulation-results/review-results.json"
             }
           ]
         }
@@ -262,12 +256,6 @@
               "title": "Ejecutar la primera simulacion",
               "duration": "6 min",
               "contentUrl": "es/simulation-results/run-simulation.json"
-            },
-            {
-              "id": "review-results",
-              "title": "Revisar resultados de fundicion",
-              "duration": "11 min",
-              "contentUrl": "es/simulation-results/review-results.json"
             }
           ]
         }

@@ -1,10 +1,8 @@
 {
   "videoUrl": "",
-  "summary": "Inicie el calculo y compruebe que comienza sin advertencias criticas.",
+  "summary": "Esta lección está en preparación y se publicará próximamente.",
   "actions": [
-    "Abra la configuracion de calculo.",
-    "Revise los parametros obligatorios.",
-    "Inicie la simulacion y revise el registro."
+    "Próximamente"
   ],
-  "expected": "La simulacion inicia y el registro no contiene errores criticos."
+  "expected": "Próximamente"
 }
