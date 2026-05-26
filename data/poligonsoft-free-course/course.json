@@ -104,10 +104,10 @@
           "title": "Geometry and materials",
           "steps": [
             {
-              "id": "import-geometry",
-              "title": "Import casting geometry",
-              "duration": "8 min",
-              "contentUrl": "en/geometry-materials/import-geometry.json"
+              "id": "volume-type-assignment",
+              "title": "Volume type assignment",
+              "duration": "4 min",
+              "contentUrl": "en/geometry-materials/volume-type-assignment.json"
             },
             {
               "id": "assign-material",
@@ -240,10 +240,10 @@
           "title": "Geometria y materiales",
           "steps": [
             {
-              "id": "import-geometry",
-              "title": "Importar geometria de la pieza",
-              "duration": "8 min",
-              "contentUrl": "es/geometry-materials/import-geometry.json"
+              "id": "volume-type-assignment",
+              "title": "Asignación de tipos de volumen",
+              "duration": "4 min",
+              "contentUrl": "es/geometry-materials/volume-type-assignment.json"
             },
             {
               "id": "assign-material",

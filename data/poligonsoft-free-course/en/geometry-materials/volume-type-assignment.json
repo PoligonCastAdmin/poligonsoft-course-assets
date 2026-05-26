@@ -1,0 +1,15 @@
+{
+  "videoUrl": "",
+  "summary": "Assign the correct type to each volume in the model. In PoligonSoft, Casting volumes correspond to the casting itself, while Mold volumes correspond to the mold and auxiliary process elements.",
+  "actions": [
+    "Switch to the Modes tab and select Volume Types to review how PoligonSoft classified the bodies after importing the mesh.",
+    "Review the model colors: red elements correspond to the Casting type and blue elements correspond to the Mold type.\n",
+    "Use the auxiliary visibility buttons Casting Surfaces and Mold Surfaces to show or hide the Casting and Mold elements.\n",
+    "Double-click the volume you want to edit to open the Volume Parameters window.",
+    "Select the correct volume type: Casting for the casting body or Mold for the mold elements.\n",
+    "Assign a clear name to the volume to make the following steps easier.\nPress OK to confirm the changes.\n",
+    "In the warning window, select Yes to recalculate the boundary indices. This topic will be explained in more detail in the lesson about heat transfer parameters.\n",
+    "Repeat the procedure until all elements correspond to the correct volume type."
+  ],
+  "expected": "All volumes will be correctly classified as Casting or Mold. Each volume will also have a clear name, making it easier to assign materials, heat transfer parameters, and boundary conditions in the following lessons."
+}
