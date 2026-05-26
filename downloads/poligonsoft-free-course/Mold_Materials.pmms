@@ -1,0 +1,2164 @@
+{
+    "MouldMaterials": [
+        {
+            "Material": {
+                "CompositionProperties": {
+                    "Base": "Other"
+                },
+                "FiltrationProperties": {
+                    "activationEnergy": {
+                        "units": "kJ/mol",
+                        "value": 25
+                    },
+                    "binderContent": {
+                        "units": "%",
+                        "value": 1.2
+                    },
+                    "destructStartTemp": {
+                        "units": "Celsius",
+                        "value": 300
+                    },
+                    "gasDynamicViscosity": {
+                        "Const": {
+                            "units": "N*s/m^2",
+                            "value": 1.82e-05
+                        },
+                        "GasDynamicViscosity": {
+                            "units": "N*s/m^2",
+                            "value": [
+                            ]
+                        },
+                        "Temp": {
+                            "units": "Celsius",
+                            "value": [
+                            ]
+                        },
+                        "ValueType": "Const"
+                    },
+                    "gasGeneration": {
+                        "units": "m^3/kg",
+                        "value": 0.5
+                    },
+                    "molarMass": {
+                        "units": "kg/mol",
+                        "value": 0.029
+                    },
+                    "moldPermeability": {
+                        "Const": {
+                            "units": "m^2",
+                            "value": 1.09e-10
+                        },
+                        "MoldPermeability": {
+                            "units": "m^2",
+                            "value": [
+                            ]
+                        },
+                        "Temp": {
+                            "units": "Celsius",
+                            "value": [
+                            ]
+                        },
+                        "ValueType": "Const"
+                    },
+                    "moldPorosity": {
+                        "units": "%",
+                        "value": 40.9
+                    },
+                    "preexponentialFactor": {
+                        "units": "1/s",
+                        "value": 252
+                    },
+                    "reactionDegree": {
+                        "units": "",
+                        "value": 0.32
+                    }
+                },
+                "FlowProperties": {
+                    "DynamicViscosityData": {
+                        "Const": {
+                            "units": "cP",
+                            "value": 0
+                        },
+                        "DynamicViscosity": {
+                            "units": "cP",
+                            "value": [
+                            ]
+                        },
+                        "Temp": {
+                            "units": "Celsius",
+                            "value": [
+                            ]
+                        },
+                        "ValueType": "Const"
+                    }
+                },
+                "HeatTreatmentProperties": {
+                    "CCTdata": {
+                    },
+                    "HardenabilityData": {
+                    }
+                },
+                "Name": "Resin-bonded (furan) sil 03 res 1_2 den 1565",
+                "Note": "Resin-bonded sand (furan): quartz grains aver. 0.3 mm (AFS 51) - 100% new sand, furan binder - 1.2%, density 1565 kg/m3\nSource: Midea T., Shah J.V. Mold Material Thermophysical Data. //AFS Transactions, 2002, vol. 110, pt. 1, p. 121-136",
+                "ThermomechanicalProperties": {
+                    "ThermomechanicalModel": "Elastoplastic"
+                },
+                "ThermophysicalProperties": {
+                    "DensityData": {
+                        "Const": {
+                            "units": "kg/(m^3)",
+                            "value": null
+                        },
+                        "Density": {
+                            "units": "kg/(m^3)",
+                            "value": [
+                                1565,
+                                1561,
+                                1557,
+                                1553,
+                                1548,
+                                1542,
+                                1535,
+                                1530,
+                                1526,
+                                1522,
+                                1518,
+                                1512,
+                                1508,
+                                1503,
+                                1498,
+                                1493,
+                                1488
+                            ]
+                        },
+                        "Temp": {
+                            "units": "Celsius",
+                            "value": [
+                                22,
+                                100,
+                                200,
+                                300,
+                                400,
+                                500,
+                                600,
+                                700,
+                                800,
+                                900,
+                                1000,
+                                1100,
+                                1200,
+                                1300,
+                                1400,
+                                1500,
+                                1600
+                            ]
+                        },
+                        "ValueType": "Curve"
+                    },
+                    "HeatCapacityData": {
+                        "Const": {
+                            "units": "J/kg/K",
+                            "value": null
+                        },
+                        "HeatCapacity": {
+                            "units": "J/kg/K",
+                            "value": [
+                                1045,
+                                1071,
+                                1096,
+                                1120,
+                                1143,
+                                1167,
+                                1191,
+                                1215,
+                                1238,
+                                1262,
+                                1285,
+                                1309,
+                                1333,
+                                1356,
+                                1380,
+                                1404
+                            ]
+                        },
+                        "Temp": {
+                            "units": "Celsius",
+                            "value": [
+                                100,
+                                200,
+                                300,
+                                400,
+                                500,
+                                600,
+                                700,
+                                800,
+                                900,
+                                1000,
+                                1100,
+                                1200,
+                                1300,
+                                1400,
+                                1500,
+                                1600
+                            ]
+                        },
+                        "ValueType": "Curve"
+                    },
+                    "ThermalConductivityData": {
+                        "Const": {
+                            "units": "W/m/K",
+                            "value": null
+                        },
+                        "Temp": {
+                            "units": "Celsius",
+                            "value": [
+                                100,
+                                200,
+                                300,
+                                400,
+                                500,
+                                600,
+                                700,
+                                800,
+                                900,
+                                1000,
+                                1100,
+                                1200,
+                                1300,
+                                1400,
+                                1500,
+                                1600
+                            ]
+                        },
+                        "ThermalConductivity": {
+                            "units": "W/m/K",
+                            "value": [
+                                0.478,
+                                0.505,
+                                0.517,
+                                0.516,
+                                0.511,
+                                0.507,
+                                0.507,
+                                0.517,
+                                0.547,
+                                0.6,
+                                0.682,
+                                0.805,
+                                0.973,
+                                1.194,
+                                1.479,
+                                1.836
+                            ]
+                        },
+                        "ValueType": "Curve"
+                    }
+                }
+            },
+            "VolumeId": 2
+        },
+        {
+            "Material": {
+                "CompositionProperties": {
+                    "Base": "Other"
+                },
+                "FlowProperties": {
+                    "DynamicViscosityData": {
+                        "Const": {
+                            "units": "cP",
+                            "value": 0
+                        },
+                        "DynamicViscosity": {
+                            "units": "cP",
+                            "value": [
+                            ]
+                        },
+                        "Temp": {
+                            "units": "Celsius",
+                            "value": [
+                            ]
+                        },
+                        "ValueType": "Const"
+                    }
+                },
+                "HeatTreatmentProperties": {
+                    "CCTdata": {
+                    },
+                    "HardenabilityData": {
+                    }
+                },
+                "Name": "Sleeve FOSECO Kalmin 70",
+                "Note": "Isothermic sleeve FOSECO Kalmin 70\nSource: Williams T.J., Hardin R.A., Beckermann C. Thermophysical Properties and Performance of Riser Sleeves for Steel Castings. //Int. Journ. of Metalcasting, 2016, vol. 10, Nr. 4, p. 535-555",
+                "ShrinkageProperties": {
+                    "CriticalPointsOfTheLiquid": {
+                        "units": "% liquid",
+                        "value": {
+                            "Pl1": 0.7,
+                            "Pl2": 0.4,
+                            "Pl3": 0.3
+                        }
+                    },
+                    "DAS": {
+                        "units": "um",
+                        "value": 30
+                    },
+                    "E_MODULE": {
+                        "units": "MPa",
+                        "value": 2000
+                    },
+                    "K0": {
+                        "units": "m^2[1E-13]",
+                        "value": 42
+                    },
+                    "LiquidStrength": {
+                        "units": "MPa",
+                        "value": 0.0196
+                    },
+                    "POREPRESSURE": {
+                        "units": "MPa",
+                        "value": -0.1
+                    },
+                    "PPKrit_005": {
+                        "units": "",
+                        "value": 0.05
+                    },
+                    "PPKrit_07": {
+                        "units": "",
+                        "value": 0.7
+                    },
+                    "SURFACE_TENSION": {
+                        "units": "N/m",
+                        "value": 1e-06
+                    },
+                    "n": {
+                        "units": "",
+                        "value": 2
+                    }
+                },
+                "ThermomechanicalProperties": {
+                    "ThermomechanicalModel": "Elastoplastic"
+                },
+                "ThermophysicalProperties": {
+                    "DensityData": {
+                        "Const": {
+                            "units": "kg/(m^3)",
+                            "value": 422
+                        },
+                        "Density": {
+                            "units": "kg/(m^3)",
+                            "value": [
+                            ]
+                        },
+                        "Temp": {
+                            "units": "Celsius",
+                            "value": [
+                            ]
+                        },
+                        "ValueType": "Const"
+                    },
+                    "HeatCapacityData": {
+                        "Const": {
+                            "units": "J/kg/K",
+                            "value": 600
+                        },
+                        "HeatCapacity": {
+                            "units": "J/kg/K",
+                            "value": [
+                                400,
+                                600,
+                                660,
+                                700
+                            ]
+                        },
+                        "Temp": {
+                            "units": "Celsius",
+                            "value": [
+                                20,
+                                380,
+                                1090,
+                                2000
+                            ]
+                        },
+                        "ValueType": "Curve"
+                    },
+                    "ThermalConductivityData": {
+                        "Const": {
+                            "units": "W/m/K",
+                            "value": 0.93
+                        },
+                        "Temp": {
+                            "units": "Celsius",
+                            "value": [
+                                0,
+                                655,
+                                1200,
+                                1300,
+                                1995
+                            ]
+                        },
+                        "ThermalConductivity": {
+                            "units": "W/m/K",
+                            "value": [
+                                0.2,
+                                0.2,
+                                0.2,
+                                0.99,
+                                0.99
+                            ]
+                        },
+                        "ValueType": "Curve"
+                    }
+                }
+            },
+            "VolumeId": 3
+        },
+        {
+            "Material": {
+                "CompositionProperties": {
+                    "Base": "Other"
+                },
+                "ExothermicProperties": {
+                    "BurntFractionData": {
+                        "BurntFraction": {
+                            "units": "",
+                            "value": [
+                                0,
+                                0.01,
+                                0.11,
+                                0.23,
+                                0.33,
+                                0.4,
+                                0.47,
+                                0.54,
+                                0.59,
+                                0.65,
+                                0.73,
+                                0.82,
+                                0.9,
+                                0.97,
+                                1
+                            ]
+                        },
+                        "Const": {
+                            "units": "",
+                            "value": null
+                        },
+                        "Time": {
+                            "units": "sec",
+                            "value": [
+                                0,
+                                0.7,
+                                2.7,
+                                4.7,
+                                6.8,
+                                8.8,
+                                10.8,
+                                12.8,
+                                14.8,
+                                16.9,
+                                18.9,
+                                20.9,
+                                23,
+                                25,
+                                27
+                            ]
+                        },
+                        "ValueType": "Curve"
+                    },
+                    "ExothermicEnergy": {
+                        "units": "kJ/kg",
+                        "value": 593
+                    },
+                    "IgnitionTemperature": {
+                        "units": "Celsius",
+                        "value": 200
+                    }
+                },
+                "FlowProperties": {
+                    "DynamicViscosityData": {
+                        "Const": {
+                            "units": "cP",
+                            "value": 0
+                        },
+                        "DynamicViscosity": {
+                            "units": "cP",
+                            "value": [
+                            ]
+                        },
+                        "Temp": {
+                            "units": "Celsius",
+                            "value": [
+                            ]
+                        },
+                        "ValueType": "Const"
+                    }
+                },
+                "HeatTreatmentProperties": {
+                    "CCTdata": {
+                    },
+                    "HardenabilityData": {
+                    }
+                },
+                "Name": "Sleeve ASK KMV-40",
+                "Note": "Exothermic sleeve ASK KMV-40 EXACTCAST Mini-Riser Sleeve KMV/KMV-QT (cold-box bonded)",
+                "ShrinkageProperties": {
+                    "CriticalPointsOfTheLiquid": {
+                        "units": "% liquid",
+                        "value": {
+                            "Pl1": 0.7,
+                            "Pl2": 0.4,
+                            "Pl3": 0.3
+                        }
+                    },
+                    "DAS": {
+                        "units": "um",
+                        "value": 30
+                    },
+                    "E_MODULE": {
+                        "units": "MPa",
+                        "value": 2000
+                    },
+                    "K0": {
+                        "units": "m^2[1E-13]",
+                        "value": 42
+                    },
+                    "LiquidStrength": {
+                        "units": "MPa",
+                        "value": 0.0196
+                    },
+                    "POREPRESSURE": {
+                        "units": "MPa",
+                        "value": -0.1
+                    },
+                    "PPKrit_005": {
+                        "units": "",
+                        "value": 0.05
+                    },
+                    "PPKrit_07": {
+                        "units": "",
+                        "value": 0.7
+                    },
+                    "SURFACE_TENSION": {
+                        "units": "N/m",
+                        "value": 1e-06
+                    },
+                    "n": {
+                        "units": "",
+                        "value": 2
+                    }
+                },
+                "ThermomechanicalProperties": {
+                    "ThermomechanicalModel": "Elastoplastic"
+                },
+                "ThermophysicalProperties": {
+                    "DensityData": {
+                        "Const": {
+                            "units": "kg/(m^3)",
+                            "value": 540
+                        },
+                        "Density": {
+                            "units": "kg/(m^3)",
+                            "value": [
+                            ]
+                        },
+                        "Temp": {
+                            "units": "Celsius",
+                            "value": [
+                            ]
+                        },
+                        "ValueType": "Const"
+                    },
+                    "HeatCapacityData": {
+                        "Const": {
+                            "units": "J/kg/K",
+                            "value": 600
+                        },
+                        "HeatCapacity": {
+                            "units": "J/kg/K",
+                            "value": [
+                            ]
+                        },
+                        "Temp": {
+                            "units": "Celsius",
+                            "value": [
+                            ]
+                        },
+                        "ValueType": "Const"
+                    },
+                    "ThermalConductivityData": {
+                        "Const": {
+                            "units": "W/m/K",
+                            "value": 0.93
+                        },
+                        "Temp": {
+                            "units": "Celsius",
+                            "value": [
+                            ]
+                        },
+                        "ThermalConductivity": {
+                            "units": "W/m/K",
+                            "value": [
+                            ]
+                        },
+                        "ValueType": "Const"
+                    }
+                }
+            },
+            "VolumeId": 4
+        },
+        {
+            "Material": {
+                "CompositionProperties": {
+                    "Base": "Fe",
+                    "Elements": {
+                        "Al": 0.03,
+                        "C": 0.21,
+                        "Mn": 0.675,
+                        "Si": 0.36
+                    }
+                },
+                "FlowProperties": {
+                    "DynamicViscosityData": {
+                        "Const": {
+                            "units": "cP",
+                            "value": null
+                        },
+                        "DynamicViscosity": {
+                            "units": "cP",
+                            "value": [
+                                4.536519,
+                                4.517122,
+                                4.510741,
+                                4.508546,
+                                4.507231,
+                                2.528986
+                            ]
+                        },
+                        "Temp": {
+                            "units": "Celsius",
+                            "value": [
+                                1499.521,
+                                1505.921,
+                                1509.121,
+                                1510.721,
+                                1512.121,
+                                2000
+                            ]
+                        },
+                        "ValueType": "Curve"
+                    }
+                },
+                "HeatTreatmentProperties": {
+                    "CCTdata": {
+                        "A1Temp": {
+                            "units": "celsius",
+                            "value": 720.14
+                        },
+                        "A3Temp": {
+                            "units": "celsius",
+                            "value": 828.53
+                        },
+                        "AustenitizingTemp": {
+                            "units": "celsius",
+                            "value": 900
+                        },
+                        "AustenitizingTime": {
+                            "units": "h",
+                            "value": 0.5
+                        },
+                        "BainiteFinishTemp": {
+                            "Const": {
+                                "units": "celsius",
+                                "value": null
+                            },
+                            "CoolingRate": {
+                                "units": "celsius_per_second",
+                                "value": [
+                                    4,
+                                    5,
+                                    6,
+                                    7,
+                                    8,
+                                    9,
+                                    10,
+                                    20,
+                                    30
+                                ]
+                            },
+                            "Temperature": {
+                                "units": "celsius",
+                                "value": [
+                                    550.58,
+                                    545.2,
+                                    538.01,
+                                    535.35,
+                                    530.5,
+                                    525.92,
+                                    523.85,
+                                    492.84,
+                                    455.17
+                                ]
+                            },
+                            "ValueType": "Curve"
+                        },
+                        "BainiteStartTemp": {
+                            "Const": {
+                                "units": "celsius",
+                                "value": null
+                            },
+                            "CoolingRate": {
+                                "units": "celsius_per_second",
+                                "value": [
+                                    4,
+                                    5,
+                                    6,
+                                    7,
+                                    8,
+                                    9,
+                                    10,
+                                    20,
+                                    30,
+                                    40,
+                                    50,
+                                    60,
+                                    70,
+                                    80,
+                                    90,
+                                    100
+                                ]
+                            },
+                            "Temperature": {
+                                "units": "celsius",
+                                "value": [
+                                    567.86,
+                                    566.63,
+                                    565.03,
+                                    564.43,
+                                    563.96,
+                                    563.32,
+                                    562.9,
+                                    558.06,
+                                    553.65,
+                                    549.49,
+                                    546.74,
+                                    542.52,
+                                    539.12,
+                                    535.9,
+                                    533.99,
+                                    530.36
+                                ]
+                            },
+                            "ValueType": "Curve"
+                        },
+                        "BainiteVolFraction": {
+                            "Const": {
+                                "units": "pct",
+                                "value": null
+                            },
+                            "CoolingRate": {
+                                "units": "celsius_per_second",
+                                "value": [
+                                    3,
+                                    4,
+                                    5,
+                                    6,
+                                    7,
+                                    8,
+                                    9,
+                                    10,
+                                    20,
+                                    30,
+                                    40,
+                                    50,
+                                    60,
+                                    70,
+                                    80,
+                                    90,
+                                    100
+                                ]
+                            },
+                            "ValueType": "Curve",
+                            "VolFraction": {
+                                "units": "pct",
+                                "value": [
+                                    0.11813399999999999,
+                                    23.5983,
+                                    42.9736,
+                                    51.4947,
+                                    54.4705,
+                                    57.262299999999996,
+                                    59.2929,
+                                    61.0682,
+                                    68.51610000000001,
+                                    72.2137,
+                                    70.5149,
+                                    59.5114,
+                                    48.195100000000004,
+                                    37.263400000000004,
+                                    28.9608,
+                                    23.285800000000002,
+                                    17.6462
+                                ]
+                            }
+                        },
+                        "EquilibriumFerrite": {
+                            "units": "pct",
+                            "value": 72
+                        },
+                        "EquilibriumPearlite": {
+                            "units": "pct",
+                            "value": 28
+                        },
+                        "FerriteStartTemp": {
+                            "Const": {
+                                "units": "celsius",
+                                "value": null
+                            },
+                            "CoolingRate": {
+                                "units": "celsius_per_second",
+                                "value": [
+                                    0.01,
+                                    0.02,
+                                    0.03,
+                                    0.04,
+                                    0.05,
+                                    0.06,
+                                    0.07,
+                                    0.08,
+                                    0.09,
+                                    0.1,
+                                    0.2,
+                                    0.3,
+                                    0.4,
+                                    0.5,
+                                    0.6,
+                                    0.7,
+                                    0.8,
+                                    0.9,
+                                    1,
+                                    2,
+                                    3,
+                                    4,
+                                    5,
+                                    6,
+                                    7,
+                                    8,
+                                    9,
+                                    10,
+                                    20,
+                                    30,
+                                    40,
+                                    50,
+                                    60,
+                                    70,
+                                    80,
+                                    90,
+                                    100
+                                ]
+                            },
+                            "Temperature": {
+                                "units": "celsius",
+                                "value": [
+                                    819.46,
+                                    818.1,
+                                    816.2,
+                                    814.63,
+                                    814.02,
+                                    813.4,
+                                    812.62,
+                                    811.84,
+                                    811.03,
+                                    809.93,
+                                    806.51,
+                                    803.7,
+                                    801.79,
+                                    799.47,
+                                    798.28,
+                                    797.17,
+                                    795.44,
+                                    794.46,
+                                    793.61,
+                                    785.67,
+                                    780.27,
+                                    776.56,
+                                    772.76,
+                                    769.71,
+                                    767.41,
+                                    764.63,
+                                    762.59,
+                                    760.64,
+                                    744.65,
+                                    732.7,
+                                    723.56,
+                                    715.21,
+                                    707.77,
+                                    701.04,
+                                    696.88,
+                                    689.99,
+                                    684.4
+                                ]
+                            },
+                            "ValueType": "Curve"
+                        },
+                        "FerriteVolFraction": {
+                            "Const": {
+                                "units": "pct",
+                                "value": null
+                            },
+                            "CoolingRate": {
+                                "units": "celsius_per_second",
+                                "value": [
+                                    0.01,
+                                    0.02,
+                                    0.03,
+                                    0.04,
+                                    0.05,
+                                    0.06,
+                                    0.07,
+                                    0.08,
+                                    0.09,
+                                    0.1,
+                                    0.2,
+                                    0.3,
+                                    0.4,
+                                    0.5,
+                                    0.6,
+                                    0.7,
+                                    0.8,
+                                    0.9,
+                                    1,
+                                    2,
+                                    3,
+                                    4,
+                                    5,
+                                    6,
+                                    7,
+                                    8,
+                                    9,
+                                    10,
+                                    20,
+                                    30,
+                                    40,
+                                    50,
+                                    60,
+                                    70,
+                                    80,
+                                    90,
+                                    100
+                                ]
+                            },
+                            "ValueType": "Curve",
+                            "VolFraction": {
+                                "units": "pct",
+                                "value": [
+                                    71.3056,
+                                    71.7124,
+                                    72.3009,
+                                    71.8903,
+                                    72.6091,
+                                    72.2978,
+                                    72.03829999999999,
+                                    72.7969,
+                                    72.58590000000001,
+                                    72.3692,
+                                    64.9023,
+                                    59.130300000000005,
+                                    55.9167,
+                                    53.057900000000004,
+                                    51.7254,
+                                    50.7624,
+                                    49.322700000000005,
+                                    48.8303,
+                                    47.7692,
+                                    43.8522,
+                                    41.9475,
+                                    40.4517,
+                                    39.440599999999996,
+                                    38.6753,
+                                    38.1118,
+                                    37.8695,
+                                    37.2517,
+                                    36.4259,
+                                    31.0514,
+                                    27.615099999999998,
+                                    24.932199999999998,
+                                    22.6366,
+                                    20.6959,
+                                    18.961,
+                                    17.5181,
+                                    16.0407,
+                                    14.8068
+                                ]
+                            }
+                        },
+                        "GrainSizeNo": {
+                            "units": "",
+                            "value": 8
+                        },
+                        "HardnessHV": {
+                            "Const": {
+                                "units": "HV",
+                                "value": null
+                            },
+                            "CoolingRate": {
+                                "units": "celsius_per_second",
+                                "value": [
+                                    0.01,
+                                    0.02,
+                                    0.03,
+                                    0.04,
+                                    0.05,
+                                    0.06,
+                                    0.07,
+                                    0.08,
+                                    0.09,
+                                    0.1,
+                                    0.2,
+                                    0.3,
+                                    0.4,
+                                    0.5,
+                                    0.6,
+                                    0.7,
+                                    0.8,
+                                    0.9,
+                                    1,
+                                    2,
+                                    3,
+                                    4,
+                                    5,
+                                    6,
+                                    7,
+                                    8,
+                                    9,
+                                    10,
+                                    20,
+                                    30,
+                                    40,
+                                    50,
+                                    60,
+                                    70,
+                                    80,
+                                    90,
+                                    100
+                                ]
+                            },
+                            "Hardness": {
+                                "units": "HV",
+                                "value": [
+                                    138.396,
+                                    140.29,
+                                    140.658,
+                                    141.892,
+                                    141.994,
+                                    142.831,
+                                    143.541,
+                                    143.294,
+                                    143.848,
+                                    144.377,
+                                    154.013,
+                                    161.577,
+                                    166.271,
+                                    170.404,
+                                    172.791,
+                                    174.665,
+                                    176.972,
+                                    178.177,
+                                    179.953,
+                                    188.538,
+                                    193.32,
+                                    197.508,
+                                    200.654,
+                                    203.014,
+                                    204.826,
+                                    206.149,
+                                    207.771,
+                                    209.594,
+                                    213.97,
+                                    222.762,
+                                    244.256,
+                                    288.998,
+                                    327.915,
+                                    361.85,
+                                    385.639,
+                                    401.838,
+                                    416.527
+                                ]
+                            },
+                            "ValueType": "Curve"
+                        },
+                        "MartensiteStartTemp": {
+                            "Const": {
+                                "units": "celsius",
+                                "value": null
+                            },
+                            "CoolingRate": {
+                                "units": "celsius_per_second",
+                                "value": [
+                                    40,
+                                    50,
+                                    60,
+                                    70,
+                                    80,
+                                    90,
+                                    100
+                                ]
+                            },
+                            "Temperature": {
+                                "units": "celsius",
+                                "value": [
+                                    397.86,
+                                    400.89,
+                                    403.32,
+                                    405.4,
+                                    407.06,
+                                    408.7,
+                                    410.03
+                                ]
+                            },
+                            "ValueType": "Curve"
+                        },
+                        "MartensiteVolFraction": {
+                            "Const": {
+                                "units": "pct",
+                                "value": null
+                            },
+                            "CoolingRate": {
+                                "units": "celsius_per_second",
+                                "value": [
+                                    40,
+                                    50,
+                                    60,
+                                    70,
+                                    80,
+                                    90,
+                                    100
+                                ]
+                            },
+                            "ValueType": "Curve",
+                            "VolFraction": {
+                                "units": "pct",
+                                "value": [
+                                    4.45694,
+                                    17.7881,
+                                    31.0548,
+                                    43.7275,
+                                    53.4785,
+                                    60.6329,
+                                    67.509
+                                ]
+                            }
+                        },
+                        "PearliteFinishTemp": {
+                            "Const": {
+                                "units": "celsius",
+                                "value": null
+                            },
+                            "CoolingRate": {
+                                "units": "celsius_per_second",
+                                "value": [
+                                    0.01,
+                                    0.02,
+                                    0.03,
+                                    0.04,
+                                    0.05,
+                                    0.06,
+                                    0.07,
+                                    0.08,
+                                    0.09,
+                                    0.1,
+                                    0.2,
+                                    0.3,
+                                    0.4,
+                                    0.5,
+                                    0.6,
+                                    0.7,
+                                    0.8,
+                                    0.9,
+                                    1,
+                                    2,
+                                    3
+                                ]
+                            },
+                            "Temperature": {
+                                "units": "celsius",
+                                "value": [
+                                    700.19,
+                                    695.21,
+                                    690.33,
+                                    690.22,
+                                    685.48,
+                                    685.27,
+                                    685.23,
+                                    680.63,
+                                    680.35,
+                                    680.28,
+                                    670.24,
+                                    660.46,
+                                    655.32,
+                                    650.3,
+                                    645.35,
+                                    640.51,
+                                    636.06,
+                                    635.27,
+                                    630.39,
+                                    600.97,
+                                    576.85
+                                ]
+                            },
+                            "ValueType": "Curve"
+                        },
+                        "PearliteStartTemp": {
+                            "Const": {
+                                "units": "celsius",
+                                "value": null
+                            },
+                            "CoolingRate": {
+                                "units": "celsius_per_second",
+                                "value": [
+                                    0.01,
+                                    0.02,
+                                    0.03,
+                                    0.04,
+                                    0.05,
+                                    0.06,
+                                    0.07,
+                                    0.08,
+                                    0.09,
+                                    0.1,
+                                    0.2,
+                                    0.3,
+                                    0.4,
+                                    0.5,
+                                    0.6,
+                                    0.7,
+                                    0.8,
+                                    0.9,
+                                    1,
+                                    2,
+                                    3,
+                                    4,
+                                    5,
+                                    6,
+                                    7,
+                                    8,
+                                    9,
+                                    10
+                                ]
+                            },
+                            "Temperature": {
+                                "units": "celsius",
+                                "value": [
+                                    707.57,
+                                    704.11,
+                                    701.25,
+                                    699.53,
+                                    698.47,
+                                    696.91,
+                                    694.99,
+                                    694.47,
+                                    693.86,
+                                    693.07,
+                                    685.95,
+                                    681.62,
+                                    678.1,
+                                    674.6,
+                                    672.26,
+                                    669.58,
+                                    667.75,
+                                    665.42,
+                                    663.66,
+                                    649.08,
+                                    638.44,
+                                    629.18,
+                                    621.18,
+                                    613.97,
+                                    607.45,
+                                    600.49,
+                                    594.5,
+                                    588.1
+                                ]
+                            },
+                            "ValueType": "Curve"
+                        },
+                        "PearliteVolFraction": {
+                            "Const": {
+                                "units": "pct",
+                                "value": null
+                            },
+                            "CoolingRate": {
+                                "units": "celsius_per_second",
+                                "value": [
+                                    0.01,
+                                    0.02,
+                                    0.03,
+                                    0.04,
+                                    0.05,
+                                    0.06,
+                                    0.07,
+                                    0.08,
+                                    0.09,
+                                    0.1,
+                                    0.2,
+                                    0.3,
+                                    0.4,
+                                    0.5,
+                                    0.6,
+                                    0.7,
+                                    0.8,
+                                    0.9,
+                                    1,
+                                    2,
+                                    3,
+                                    4,
+                                    5,
+                                    6,
+                                    7,
+                                    8,
+                                    9,
+                                    10,
+                                    20,
+                                    30,
+                                    40,
+                                    50,
+                                    60,
+                                    70,
+                                    80,
+                                    90,
+                                    100
+                                ]
+                            },
+                            "ValueType": "Curve",
+                            "VolFraction": {
+                                "units": "pct",
+                                "value": [
+                                    28.694399999999998,
+                                    28.2876,
+                                    27.699099999999998,
+                                    28.1097,
+                                    27.390900000000002,
+                                    27.702199999999998,
+                                    27.9617,
+                                    27.203100000000003,
+                                    27.4141,
+                                    27.6308,
+                                    35.097699999999996,
+                                    40.869699999999995,
+                                    44.083299999999994,
+                                    46.942099999999996,
+                                    48.2746,
+                                    49.2376,
+                                    50.6773,
+                                    51.1697,
+                                    52.2308,
+                                    56.147800000000004,
+                                    57.9344,
+                                    35.949999999999996,
+                                    17.5858,
+                                    9.83001,
+                                    7.41771,
+                                    4.86817,
+                                    3.45539,
+                                    2.5059299999999998,
+                                    0.432549,
+                                    0.17119800000000002,
+                                    0.0939917,
+                                    0.056687,
+                                    0.0423893,
+                                    0.0323518,
+                                    0.024243400000000002,
+                                    0.0205824,
+                                    0.016478
+                                ]
+                            }
+                        },
+                        "PhaseFractionThreshold": {
+                            "units": "pct",
+                            "value": 1
+                        }
+                    },
+                    "HardenabilityData": {
+                        "AustenitizingTemp": {
+                            "units": "Celsius",
+                            "value": 900
+                        },
+                        "AustenitizingTime": {
+                            "units": "h",
+                            "value": 0.5
+                        },
+                        "GrainSizeNo": {
+                            "units": "",
+                            "value": 8
+                        },
+                        "HardenabilityCurve": {
+                            "Const": {
+                                "units": "HRC",
+                                "value": null
+                            },
+                            "Distance": {
+                                "units": "mm",
+                                "value": [
+                                    1.5,
+                                    3,
+                                    4.5,
+                                    6
+                                ]
+                            },
+                            "HardnessHRC": {
+                                "units": "HRC",
+                                "value": [
+                                    43.84,
+                                    27.75,
+                                    20.36,
+                                    18.56
+                                ]
+                            },
+                            "ValueType": "Curve"
+                        }
+                    }
+                },
+                "Name": "20L (GS45)",
+                "Note": "C 0.21, Mn 0.675, Si 0.36",
+                "ShrinkageProperties": {
+                    "CriticalPointsOfTheLiquid": {
+                        "units": "% liquid",
+                        "value": {
+                            "Pl1": 0.7,
+                            "Pl2": 0.4,
+                            "Pl3": 0.3
+                        }
+                    },
+                    "DAS": {
+                        "units": "um",
+                        "value": 30
+                    },
+                    "E_MODULE": {
+                        "units": "MPa",
+                        "value": 2000
+                    },
+                    "K0": {
+                        "units": "m^2[1E-13]",
+                        "value": 42
+                    },
+                    "KinematicViscosity": {
+                        "units": "m*m/sec[1E-5]",
+                        "value": 0.064
+                    },
+                    "LiquidStrength": {
+                        "units": "MPa",
+                        "value": 0.0196
+                    },
+                    "POREPRESSURE": {
+                        "units": "MPa",
+                        "value": -0.1
+                    },
+                    "PPKrit_005": {
+                        "units": "",
+                        "value": 0.05
+                    },
+                    "PPKrit_07": {
+                        "units": "",
+                        "value": 0.7
+                    },
+                    "SURFACE_TENSION": {
+                        "units": "N/m",
+                        "value": 1e-06
+                    },
+                    "ThermalLiqVolumeChange": {
+                        "units": "1/K[1E-6]",
+                        "value": 125.199997
+                    },
+                    "VolumeChangeUponMelting": {
+                        "units": "%",
+                        "value": 4.471
+                    },
+                    "VolumeExpansion": {
+                        "units": "%",
+                        "value": 0
+                    },
+                    "VolumeFractionByFractionSolid": {
+                        "Const": {
+                            "units": "",
+                            "value": null
+                        },
+                        "PhaseSpectrum": {
+                            "units": "",
+                            "value": [
+                                0,
+                                0.03,
+                                0.15,
+                                0.28,
+                                0.46,
+                                1
+                            ]
+                        },
+                        "SpectrumAlterVolume": {
+                            "units": "",
+                            "value": [
+                                0,
+                                0.02,
+                                0.14,
+                                0.27,
+                                0.46,
+                                1
+                            ]
+                        },
+                        "ValueType": "Curve"
+                    },
+                    "n": {
+                        "units": "",
+                        "value": 2
+                    }
+                },
+                "ThermomechanicalProperties": {
+                    "HardeningCoefficientData": {
+                        "Const": {
+                            "units": "MPa",
+                            "value": null
+                        },
+                        "HardeningCoefficient": {
+                            "units": "MPa",
+                            "value": [
+                                11848.1,
+                                11848.1,
+                                11847.42,
+                                11839.02,
+                                11803.2,
+                                11767.06,
+                                11645.15,
+                                11447.18,
+                                11170.34,
+                                11003.64,
+                                10618.94,
+                                10174.58,
+                                9681.615,
+                                9150.715,
+                                8591.52,
+                                7717.65,
+                                6821.56,
+                                5920.335,
+                                5026.33,
+                                4148.202,
+                                3291.829,
+                                2461.019,
+                                1658.071,
+                                884.1895,
+                                381.579,
+                                171.9986,
+                                50.97455,
+                                1.97071
+                            ]
+                        },
+                        "Temp": {
+                            "units": "Celsius",
+                            "value": [
+                                27,
+                                114.7209,
+                                165.9209,
+                                217.1209,
+                                268.3209,
+                                293.9209,
+                                345.1208,
+                                396.3209,
+                                447.5209,
+                                473.1208,
+                                524.3209,
+                                575.5209,
+                                626.7209,
+                                677.9209,
+                                729.1209,
+                                805.9209,
+                                882.7209,
+                                959.5209,
+                                1036.321,
+                                1113.121,
+                                1189.921,
+                                1266.721,
+                                1343.521,
+                                1420.321,
+                                1471.521,
+                                1482.721,
+                                1494.721,
+                                1507.521
+                            ]
+                        },
+                        "ValueType": "Curve"
+                    },
+                    "PoissonRatioData": {
+                        "Const": {
+                            "units": "",
+                            "value": null
+                        },
+                        "PoissonRatio": {
+                            "units": "",
+                            "value": [
+                                0.2717859,
+                                0.2717859,
+                                0.359856,
+                                0.4048681,
+                                0.443298,
+                                0.4700892,
+                                0.4862897,
+                                0.5,
+                                0.5
+                            ]
+                        },
+                        "Temp": {
+                            "units": "Celsius",
+                            "value": [
+                                36.52087,
+                                1486.721,
+                                1499.521,
+                                1505.921,
+                                1509.121,
+                                1510.721,
+                                1511.521,
+                                1512.121,
+                                2000
+                            ]
+                        },
+                        "ValueType": "Curve"
+                    },
+                    "ThermalExpansionData": {
+                        "Const": {
+                            "units": "1/K",
+                            "value": null
+                        },
+                        "Temp": {
+                            "units": "Celsius",
+                            "value": [
+                                49.32089,
+                                100.5209,
+                                151.7209,
+                                202.9209,
+                                254.1208,
+                                311.7209,
+                                332.3209,
+                                383.5209,
+                                441.3209,
+                                492.5209,
+                                543.7209,
+                                594.9209,
+                                646.1208,
+                                703.7209,
+                                725.7209,
+                                751.3209,
+                                776.9209,
+                                802.5209,
+                                826.5209,
+                                872.3209,
+                                923.5209,
+                                974.7209,
+                                1025.921,
+                                1077.121,
+                                1128.321,
+                                1179.521,
+                                1230.721,
+                                1281.921,
+                                1333.121,
+                                1384.321,
+                                1435.521,
+                                1486.721,
+                                1499.521,
+                                1505.921,
+                                1509.121
+                            ]
+                        },
+                        "ThermalExpansion": {
+                            "units": "1/K",
+                            "value": [
+                                1.21399e-05,
+                                1.23244e-05,
+                                1.2531e-05,
+                                1.27629e-05,
+                                1.30192e-05,
+                                1.33307e-05,
+                                1.3038e-05,
+                                1.34553e-05,
+                                1.38936e-05,
+                                1.39765e-05,
+                                1.40669e-05,
+                                1.41586e-05,
+                                1.42448e-05,
+                                1.43249e-05,
+                                1.1735e-05,
+                                1.16745e-05,
+                                1.15603e-05,
+                                1.13577e-05,
+                                1.10462e-05,
+                                1.1618e-05,
+                                1.22328e-05,
+                                1.27779e-05,
+                                1.32639e-05,
+                                1.36997e-05,
+                                1.40922e-05,
+                                1.44473e-05,
+                                1.47698e-05,
+                                1.50637e-05,
+                                1.53324e-05,
+                                1.55788e-05,
+                                1.58053e-05,
+                                1.6014e-05,
+                                1.54036e-05,
+                                1.53236e-05,
+                                1.52708e-05
+                            ]
+                        },
+                        "ValueType": "Curve"
+                    },
+                    "ThermomechanicalModel": "Elastoplastic",
+                    "YieldStressData": {
+                        "Const": {
+                            "units": "MPa",
+                            "value": null
+                        },
+                        "Temp": {
+                            "units": "Celsius",
+                            "value": [
+                                26.1209,
+                                116.121,
+                                176.121,
+                                236.121,
+                                296.121,
+                                326.121,
+                                356.121,
+                                386.121,
+                                416.121,
+                                446.121,
+                                476.121,
+                                506.121,
+                                566.121,
+                                626.121,
+                                686.121,
+                                746.121,
+                                806.121,
+                                821.121,
+                                851.121,
+                                896.121,
+                                941.121,
+                                986.121,
+                                1031.12,
+                                1046.12,
+                                1076.12,
+                                1106.12,
+                                1136.12,
+                                1166.12,
+                                1196.12,
+                                1226.12,
+                                1256.12,
+                                1286.12,
+                                1316.12,
+                                1346.12,
+                                1376.12,
+                                1406.12,
+                                1436.12,
+                                1466.12,
+                                1496.12,
+                                1511.12
+                            ]
+                        },
+                        "ValueType": "Curve",
+                        "YieldStress": {
+                            "units": "MPa",
+                            "value": [
+                                166.409,
+                                166.409,
+                                166.402,
+                                166.292,
+                                165.78,
+                                165.25,
+                                164.482,
+                                163.45,
+                                162.137,
+                                160.538,
+                                158.658,
+                                156.507,
+                                151.461,
+                                145.555,
+                                138.962,
+                                131.845,
+                                124.351,
+                                74.0363,
+                                71.1359,
+                                67.603,
+                                64.035,
+                                60.4513,
+                                56.8682,
+                                54.2926,
+                                45.257,
+                                37.7252,
+                                31.4468,
+                                26.2133,
+                                21.8508,
+                                18.2143,
+                                15.183,
+                                12.6562,
+                                10.5499,
+                                8.7942,
+                                7.3306,
+                                6.1106,
+                                5.0937,
+                                4.246,
+                                3.5393,
+                                3.2314
+                            ]
+                        }
+                    },
+                    "YoungModulusData": {
+                        "Const": {
+                            "units": "MPa",
+                            "value": null
+                        },
+                        "Temp": {
+                            "units": "Celsius",
+                            "value": [
+                                36.52087,
+                                100.5209,
+                                151.7209,
+                                202.9209,
+                                254.1208,
+                                311.7209,
+                                357.9209,
+                                409.1208,
+                                441.3209,
+                                492.5209,
+                                543.7209,
+                                594.9209,
+                                671.7209,
+                                703.7209,
+                                725.7209,
+                                751.3209,
+                                776.9209,
+                                802.5209,
+                                826.5209,
+                                897.9209,
+                                949.1208,
+                                1000.321,
+                                1051.521,
+                                1102.721,
+                                1153.921,
+                                1205.121,
+                                1256.321,
+                                1307.521,
+                                1358.721,
+                                1409.921,
+                                1461.121,
+                                1486.721,
+                                1499.521,
+                                1505.921
+                            ]
+                        },
+                        "ValueType": "Curve",
+                        "YoungModulus": {
+                            "units": "MPa",
+                            "value": [
+                                240293.1,
+                                240293.1,
+                                240288.2,
+                                240190.7,
+                                239669.5,
+                                237952.9,
+                                235323.4,
+                                230906.5,
+                                227310,
+                                220366.3,
+                                212079.7,
+                                202667.8,
+                                186925.1,
+                                179932.7,
+                                172104.5,
+                                165506.3,
+                                158557,
+                                151096.1,
+                                143407.1,
+                                127221.2,
+                                115712.3,
+                                104254.2,
+                                92901.27,
+                                81696.09,
+                                70671.27,
+                                59851.38,
+                                49254.39,
+                                38892.96,
+                                28775.46,
+                                18906.81,
+                                9289.194,
+                                4574.604,
+                                506.1414,
+                                88.66506
+                            ]
+                        }
+                    }
+                },
+                "ThermophysicalProperties": {
+                    "DensityData": {
+                        "Const": {
+                            "units": "kg/(m^3)",
+                            "value": 7255
+                        },
+                        "Density": {
+                            "units": "kg/(m^3)",
+                            "value": [
+                                7798.681,
+                                7780.227,
+                                7757.03,
+                                7732.4,
+                                7708.451,
+                                7679.534,
+                                7649.571,
+                                7622.756,
+                                7595.518,
+                                7575.072,
+                                7609.459,
+                                7598.429,
+                                7594.516,
+                                7255.344,
+                                7083.583,
+                                7026.142,
+                                6987.295,
+                                6964.211,
+                                6941.496,
+                                6517.428
+                            ]
+                        },
+                        "Temp": {
+                            "units": "Celsius",
+                            "value": [
+                                36.52087,
+                                100.5209,
+                                177.3209,
+                                254.1208,
+                                332.3209,
+                                409.1208,
+                                492.5209,
+                                569.3209,
+                                646.1208,
+                                703.7209,
+                                725.7209,
+                                776.9209,
+                                826.5209,
+                                1486.721,
+                                1499.521,
+                                1505.921,
+                                1509.121,
+                                1510.721,
+                                1512.121,
+                                2000
+                            ]
+                        },
+                        "ValueType": "Curve"
+                    },
+                    "EnthalpyData": {
+                        "Const": {
+                            "units": "kJ/kg",
+                            "value": null
+                        },
+                        "Enthalpy": {
+                            "units": "kJ/kg",
+                            "value": [
+                                0,
+                                17.71045,
+                                42.32438,
+                                68.10329,
+                                95.12119,
+                                123.4715,
+                                154.3213,
+                                185.3051,
+                                222.0284,
+                                256.0587,
+                                292.2148,
+                                330.9301,
+                                372.8388,
+                                425.0199,
+                                470.2517,
+                                497.818,
+                                549.2854,
+                                573.3781,
+                                601.6705,
+                                632.9266,
+                                664.5862,
+                                696.6498,
+                                761.9921,
+                                828.9602,
+                                897.5704,
+                                1003.58,
+                                1160.891,
+                                1209.744,
+                                1242.865,
+                                1262.558,
+                                1281.939,
+                                1685.35
+                            ]
+                        },
+                        "Temp": {
+                            "units": "Celsius",
+                            "value": [
+                                36.52087,
+                                74.92087,
+                                126.1209,
+                                177.3209,
+                                228.5209,
+                                279.7209,
+                                332.3209,
+                                383.5209,
+                                441.3209,
+                                492.5209,
+                                543.7209,
+                                594.9209,
+                                646.1208,
+                                703.7209,
+                                725.7209,
+                                751.3209,
+                                802.5209,
+                                826.5209,
+                                872.3209,
+                                923.5209,
+                                974.7209,
+                                1025.921,
+                                1128.321,
+                                1230.721,
+                                1333.121,
+                                1486.721,
+                                1499.521,
+                                1505.921,
+                                1509.121,
+                                1510.721,
+                                1512.121,
+                                2000
+                            ]
+                        },
+                        "ValueType": "Curve"
+                    },
+                    "FractionSolidData": {
+                        "Const": {
+                            "units": "",
+                            "value": null
+                        },
+                        "FractionSolid": {
+                            "units": "",
+                            "value": [
+                                1,
+                                0.461251,
+                                0.278054,
+                                0.1512882,
+                                0.07523763,
+                                0.03333344,
+                                0
+                            ]
+                        },
+                        "Temp": {
+                            "units": "Celsius",
+                            "value": [
+                                1486.721,
+                                1499.521,
+                                1505.921,
+                                1509.121,
+                                1510.721,
+                                1511.521,
+                                1511.921
+                            ]
+                        },
+                        "ValueType": "Curve"
+                    },
+                    "T_lic": {
+                        "units": "Celsius",
+                        "value": 1511.921
+                    },
+                    "T_sol": {
+                        "units": "Celsius",
+                        "value": 1486.721
+                    },
+                    "ThermalConductivityData": {
+                        "Const": {
+                            "units": "W/m/K",
+                            "value": null
+                        },
+                        "Temp": {
+                            "units": "Celsius",
+                            "value": [
+                                36.52087,
+                                49.32089,
+                                74.92087,
+                                100.5209,
+                                126.1209,
+                                151.7209,
+                                177.3209,
+                                228.5209,
+                                279.7209,
+                                332.3209,
+                                383.5209,
+                                441.3209,
+                                543.7209,
+                                646.1208,
+                                703.7209,
+                                725.7209,
+                                751.3209,
+                                776.9209,
+                                802.5209,
+                                826.5209,
+                                846.7209,
+                                923.5209,
+                                1000.321,
+                                1077.121,
+                                1153.921,
+                                1230.721,
+                                1307.521,
+                                1384.321,
+                                1486.721,
+                                1499.521,
+                                1505.921,
+                                1509.121,
+                                1510.721,
+                                1512.121,
+                                2000
+                            ]
+                        },
+                        "ThermalConductivity": {
+                            "units": "W/m/K",
+                            "value": [
+                                62.50057,
+                                59.95633,
+                                55.88864,
+                                52.77472,
+                                50.30764,
+                                48.29847,
+                                46.6247,
+                                43.97756,
+                                41.95779,
+                                40.26059,
+                                39.02374,
+                                37.92836,
+                                36.50633,
+                                35.43705,
+                                34.9424,
+                                32.31779,
+                                31.46798,
+                                30.41824,
+                                29.02639,
+                                27.21991,
+                                27.25503,
+                                28.0097,
+                                28.80735,
+                                29.65176,
+                                30.54717,
+                                31.49834,
+                                32.51065,
+                                33.59019,
+                                35.14627,
+                                37.8638,
+                                35.97789,
+                                34.62912,
+                                33.80783,
+                                32.9881,
+                                41.82694
+                            ]
+                        },
+                        "ValueType": "Curve"
+                    }
+                }
+            },
+            "VolumeId": 5
+        }
+    ],
+    "NameOfMouldSet": "Mis materiales del molde",
+    "Version": "2025.0.975.4711"
+}
