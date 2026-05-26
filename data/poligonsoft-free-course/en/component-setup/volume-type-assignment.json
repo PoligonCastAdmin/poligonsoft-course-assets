@@ -1,5 +1,5 @@
 {
-  "videoUrl": "",
+  "videoUrl": "https://youtu.be/LpDDf7_n_-U",
   "summary": "Assign the correct type to each volume in the model. In PoligonSoft, Casting volumes correspond to the casting itself, while Mold volumes correspond to the mold and auxiliary process elements.",
   "actions": [
     "Switch to the Modes tab and select Volume Types to review how PoligonSoft classified the bodies after importing the mesh.",
