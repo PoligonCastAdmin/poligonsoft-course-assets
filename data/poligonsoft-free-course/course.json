@@ -111,7 +111,7 @@
             },
             {
               "id": "assign-material",
-              "title": "Assign alloy and mold material",
+              "title": "Mold material assignment",
               "duration": "9 min",
               "contentUrl": "en/component-setup/assign-material.json"
             }
