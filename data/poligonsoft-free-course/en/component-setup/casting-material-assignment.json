@@ -1,0 +1,14 @@
+{
+  "videoUrl": "https://youtu.be/rojthZKrxoc",
+  "summary": "Assign the corresponding material to the casting. Unlike mold materials, the casting material will be the same for all volumes with the Casting type. Its thermophysical properties will be used by PoligonSoft during the solidification calculation.",
+  "actions": [
+    "Double-click each element with the Casting volume type and select volume index 1. In this case, volume index 1 is assigned only as good practice to keep the model organized.",
+    "Download the ASTM_A297_HP.pmat file and save it on your computer.\n",
+    "In the Model Tree, switch to the Project Overview tab.\n",
+    "Find the Casting Material line and click the pencil button to open the import dialog.\n",
+    "Click Import and select the downloaded file.\n",
+    "Click Apply to save the changes.\n",
+    "Click Close to close the window."
+  ],
+  "expected": "The ASTM A297 HP material will be assigned to the casting. PoligonSoft will use its thermophysical properties during the solidification calculation."
+}

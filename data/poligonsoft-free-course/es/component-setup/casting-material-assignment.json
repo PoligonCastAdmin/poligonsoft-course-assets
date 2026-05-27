@@ -1,0 +1,14 @@
+{
+  "videoUrl": "https://youtu.be/rojthZKrxoc",
+  "summary": "Asigne el material correspondiente a la pieza fundida. A diferencia de los materiales del molde, el material de fundición será el mismo para todos los volúmenes de tipo Casting. Sus propiedades termofísicas serán utilizadas por PoligonSoft durante el cálculo de solidificación.",
+  "actions": [
+    "Haga doble clic en cada elemento con tipo de volumen Casting y seleccione el índice de volumen 1. En este caso, el índice de volumen 1 se asigna únicamente como una buena práctica para mantener el modelo organizado.",
+    "Descargue el archivo ASTM_A297_HP.pmat y guárdelo en su computadora.\n",
+    "En el árbol del modelo, cambie a la pestaña Project Overview.\n",
+    "Localice la línea Casting Material y haga clic en el botón con el lápiz para abrir el diálogo de importación.\n",
+    "Haga clic en Import y seleccione el archivo descargado.\n",
+    "Haga clic en Apply para guardar los cambios.\n",
+    "Haga clic en Close para cerrar la ventana."
+  ],
+  "expected": "El material ASTM A297 HP quedará asignado a la pieza fundida. PoligonSoft utilizará sus propiedades termofísicas durante el cálculo de solidificación."
+}

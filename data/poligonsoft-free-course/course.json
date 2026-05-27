@@ -118,6 +118,12 @@
               "title": "Mold material assignment",
               "duration": "9 min",
               "contentUrl": "en/component-setup/assign-material.json"
+            },
+            {
+              "id": "casting-material-assignment",
+              "title": "Casting material assignment",
+              "duration": "3 min",
+              "contentUrl": "en/component-setup/casting-material-assignment.json"
             }
           ]
         },
@@ -170,12 +176,12 @@
       },
       "downloads": [
         {
-          "title": "Modelo de ejemplo para fundicion en arena",
-          "url": "#"
+          "title": "3dMesh_Sym.med",
+          "url": "https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/poligonsoft-free-course/3dMesh_Sym.med"
         },
         {
-          "title": "Archivo del proyecto",
-          "url": "#"
+          "title": "Mold_Materials.pmms",
+          "url": "https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/poligonsoft-free-course/Mold_Materials.pmms"
         },
         {
           "title": "ASTM_A297_HP.pmat",
@@ -252,6 +258,12 @@
               "title": "Asignación de materiales del molde",
               "duration": "9 min",
               "contentUrl": "es/component-setup/assign-material.json"
+            },
+            {
+              "id": "casting-material-assignment",
+              "title": "Nueva leccion",
+              "duration": "3 min",
+              "contentUrl": "es/component-setup/casting-material-assignment.json"
             }
           ]
         },
