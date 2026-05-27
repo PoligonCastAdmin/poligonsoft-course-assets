@@ -1,5 +1,5 @@
 {
-  "videoUrl": "https://youtu.be/rojthZKrxoc",
+  "videoUrl": "https://youtu.be/8JllNfTErqU",
   "summary": "Assign the corresponding material to the casting. Unlike mold materials, the casting material will be the same for all volumes with the Casting type. Its thermophysical properties will be used by PoligonSoft during the solidification calculation.",
   "actions": [
     "Double-click each element with the Casting volume type and select volume index 1. In this case, volume index 1 is assigned only as good practice to keep the model organized.",

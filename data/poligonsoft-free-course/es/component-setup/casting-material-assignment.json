@@ -1,5 +1,5 @@
 {
-  "videoUrl": "https://youtu.be/rojthZKrxoc",
+  "videoUrl": "https://youtu.be/8JllNfTErqU",
   "summary": "Asigne el material correspondiente a la pieza fundida. A diferencia de los materiales del molde, el material de fundición será el mismo para todos los volúmenes de tipo Casting. Sus propiedades termofísicas serán utilizadas por PoligonSoft durante el cálculo de solidificación.",
   "actions": [
     "Haga doble clic en cada elemento con tipo de volumen Casting y seleccione el índice de volumen 1. En este caso, el índice de volumen 1 se asigna únicamente como una buena práctica para mantener el modelo organizado.",

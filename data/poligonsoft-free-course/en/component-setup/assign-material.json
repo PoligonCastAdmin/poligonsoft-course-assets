@@ -1,5 +1,5 @@
 {
-  "videoUrl": "https://youtu.be/rojthZKrxoc",
+  "videoUrl": "https://youtu.be/Q9TImzrOztQ",
   "summary": "Assign the corresponding materials to the mold components. Each material contains its own thermophysical properties, which will be used by PoligonSoft during the calculation.",
   "actions": [
     "On the Modes tab, switch to Volume Indices. In this mode, each color corresponds to a volume index, that is, to the material assigned to the component.\n",
