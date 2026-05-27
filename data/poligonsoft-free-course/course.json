@@ -42,6 +42,10 @@
         {
           "title": "Mold_Materials.pmms",
           "url": "https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/poligonsoft-free-course/Mold_Materials.pmms"
+        },
+        {
+          "title": "ASTM_A297_HP.pmat",
+          "url": "https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/poligonsoft-free-course/ASTM_A297_HP.pmat"
         }
       ],
       "modules": [
@@ -172,6 +176,10 @@
         {
           "title": "Archivo del proyecto",
           "url": "#"
+        },
+        {
+          "title": "ASTM_A297_HP.pmat",
+          "url": "https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/poligonsoft-free-course/ASTM_A297_HP.pmat"
         }
       ],
       "modules": [
