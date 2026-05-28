@@ -1,6 +1,12 @@
 {
   "videoUrl": "",
   "summary": "Defina los principales parámetros de transferencia de calor entre la pieza fundida, el molde y el ambiente. Estos parámetros describen el intercambio térmico en las fronteras entre los componentes del modelo.",
-  "actions": [],
-  "expected": ""
+  "actions": [
+    "En la pestaña Modes, seleccione Boundary Indices para visualizar los índices de frontera asignados en el modelo.<br>\nLos índices de frontera permiten definir el intercambio de calor en la frontera entre dos volúmenes diferentes.",
+    "Descargue el archivo <a href=\"https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/poligonsoft-free-course/SandCastingHeatTransfer.afo\">SandCastingHeatTransfer.afo</a> y guárdelo en su computadora.\n",
+    "En el árbol del modelo, cambie a la pestaña Project Overview.\nLocalice la sección Heat Transfer, haga clic en el botón con tres puntos y seleccione el archivo descargado para cargar la plantilla de parámetros de transferencia de calor.",
+    "En la parte superior de la ventana Project Overview, cambie el filtro de In Project a With Data para visualizar todos los datos cargados.<br>\nLos índices presentes en el modelo están marcados con el símbolo (+): el índice 1 corresponde a Casting/Mold, el índice 17 a Casting/Environment y el índice 18 a Mold/Environment.\n\n",
+    "Revise en el modelo que los colores correspondan al índice correcto: azul en la parte exterior del molde, morado entre el molde y la fundición, y naranja entre la fundición y el ambiente.<br>\nSi los índices fueron modificados anteriormente, puede restaurar los valores por defecto desde la pestaña Edit con el comando Set Default Boundary Indices.\n"
+  ],
+  "expected": "Los parámetros de transferencia de calor quedarán cargados y asociados a los índices de frontera del modelo. Las fronteras entre la fundición, el molde y el ambiente quedarán preparadas para el cálculo de solidificación."
 }
