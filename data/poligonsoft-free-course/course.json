@@ -137,7 +137,7 @@
           "steps": [
             {
               "id": "new-lesson",
-              "title": "Casting/Mold heat transfer",
+              "title": "Heat transfer between casting, mold, and environment",
               "duration": "",
               "contentUrl": "en/boundary-conditions/new-lesson.json"
             }
@@ -293,7 +293,7 @@
           "steps": [
             {
               "id": "new-lesson",
-              "title": "Transferencia de calor Casting/Mold",
+              "title": "Transferencia de calor entre fundición, molde y ambiente",
               "duration": "",
               "contentUrl": "es/boundary-conditions/new-lesson.json"
             }
