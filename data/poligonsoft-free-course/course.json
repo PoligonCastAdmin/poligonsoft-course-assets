@@ -48,8 +48,8 @@
           "url": "https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/poligonsoft-free-course/ASTM_A297_HP.pmat"
         },
         {
-          "title": "HeatTransfer.afo",
-          "url": "https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/poligonsoft-free-course/HeatTransfer.afo"
+          "title": "SandCastingHeatTransfer.afo",
+          "url": "https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/poligonsoft-free-course/SandCastingHeatTransfer.afo"
         }
       ],
       "modules": [
@@ -134,7 +134,14 @@
         {
           "id": "boundary-conditions",
           "title": "Boundary Conditions",
-          "steps": []
+          "steps": [
+            {
+              "id": "new-lesson",
+              "title": "Casting/Mold heat transfer",
+              "duration": "",
+              "contentUrl": "en/boundary-conditions/new-lesson.json"
+            }
+          ]
         },
         {
           "id": "simulation-results",
@@ -197,8 +204,8 @@
           "url": "https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/poligonsoft-free-course/ASTM_A297_HP.pmat"
         },
         {
-          "title": "HeatTransfer.afo",
-          "url": "https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/poligonsoft-free-course/HeatTransfer.afo"
+          "title": "SandCastingHeatTransfer.afo",
+          "url": "https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/poligonsoft-free-course/SandCastingHeatTransfer.afo"
         }
       ],
       "modules": [
@@ -283,7 +290,14 @@
         {
           "id": "boundary-conditions",
           "title": "Condiciones de frontera",
-          "steps": []
+          "steps": [
+            {
+              "id": "new-lesson",
+              "title": "Transferencia de calor Casting/Mold",
+              "duration": "",
+              "contentUrl": "es/boundary-conditions/new-lesson.json"
+            }
+          ]
         },
         {
           "id": "simulation-results",
