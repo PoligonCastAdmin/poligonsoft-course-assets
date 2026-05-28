@@ -1,5 +1,5 @@
 {
-  "videoUrl": "",
+  "videoUrl": "https://youtu.be/psx72j5ceo0",
   "summary": "Defina los principales parámetros de transferencia de calor entre la pieza fundida, el molde y el ambiente. Estos parámetros describen el intercambio térmico en las fronteras entre los componentes del modelo.",
   "actions": [
     "En la pestaña Modes, seleccione Boundary Indices para visualizar los índices de frontera asignados en el modelo.<br>\nLos índices de frontera permiten definir el intercambio de calor en la frontera entre dos volúmenes diferentes.",
