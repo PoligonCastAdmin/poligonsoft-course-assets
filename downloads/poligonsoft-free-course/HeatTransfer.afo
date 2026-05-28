@@ -1,0 +1,842 @@
+{
+    "Boundaries": [
+        {
+            "Alfa": 0,
+            "Beta1": {
+                "Const": {
+                    "units": "W/m^2*K",
+                    "value": 500
+                },
+                "Data": {
+                    "units": "W/m^2*K",
+                    "value": [
+                    ]
+                },
+                "Temp": {
+                    "units": "Celsius",
+                    "value": [
+                    ]
+                },
+                "ValueType": "Const"
+            },
+            "Beta2": {
+                "Const": {
+                    "units": "W/m^2*K",
+                    "value": 0
+                },
+                "Data": {
+                    "units": "W/m^2*K",
+                    "value": [
+                    ]
+                },
+                "Temp": {
+                    "units": "Celsius",
+                    "value": [
+                    ]
+                },
+                "ValueType": "Const"
+            },
+            "E": 0,
+            "EnvTempFromTime": {
+                "Const": {
+                    "units": "Celsius",
+                    "value": 20
+                },
+                "Temp": {
+                    "units": "Celsius",
+                    "value": [
+                    ]
+                },
+                "Time": {
+                    "units": "sec",
+                    "value": [
+                    ]
+                },
+                "ValueType": "Const"
+            },
+            "FaceId": 1,
+            "HeatFlux": {
+                "Const": {
+                    "units": "W/m^2",
+                    "value": 0
+                },
+                "HeatFlux": {
+                    "units": "W/m^2",
+                    "value": [
+                    ]
+                },
+                "Time": {
+                    "units": "sec",
+                    "value": [
+                    ]
+                },
+                "ValueType": "Const"
+            },
+            "HeatTransferMechanisms": {
+                "S1": 1,
+                "S2": 1,
+                "S3": 1
+            },
+            "Mode": "ToMould",
+            "NonCoincidentData": {
+                "InterfaceLogic": {
+                    "interfaceSwitch": "ifInterfaceNotFound",
+                    "switchToFaceId": 0
+                },
+                "interfaceFilter": "CastToMold",
+                "maxGap": {
+                    "units": "mm",
+                    "value": 1
+                }
+            },
+            "Note": "Casting - Sand Mold",
+            "interfaceType": "Coincident"
+        },
+        {
+            "Alfa": 0,
+            "Beta1": {
+                "Const": {
+                    "units": "W/m^2*K",
+                    "value": 0
+                },
+                "Data": {
+                    "units": "W/m^2*K",
+                    "value": [
+                        34,
+                        18,
+                        35,
+                        100
+                    ]
+                },
+                "Temp": {
+                    "units": "Celsius",
+                    "value": [
+                        20,
+                        1200,
+                        1300,
+                        1400
+                    ]
+                },
+                "ValueType": "Curve"
+            },
+            "Beta2": {
+                "Const": {
+                    "units": "W/m^2*K",
+                    "value": 0
+                },
+                "Data": {
+                    "units": "W/m^2*K",
+                    "value": [
+                    ]
+                },
+                "Temp": {
+                    "units": "Celsius",
+                    "value": [
+                    ]
+                },
+                "ValueType": "Const"
+            },
+            "E": 0,
+            "EnvTempFromTime": {
+                "Const": {
+                    "units": "Celsius",
+                    "value": 20
+                },
+                "Temp": {
+                    "units": "Celsius",
+                    "value": [
+                    ]
+                },
+                "Time": {
+                    "units": "sec",
+                    "value": [
+                    ]
+                },
+                "ValueType": "Const"
+            },
+            "FaceId": 2,
+            "HeatFlux": {
+                "Const": {
+                    "units": "W/m^2",
+                    "value": 0
+                },
+                "HeatFlux": {
+                    "units": "W/m^2",
+                    "value": [
+                    ]
+                },
+                "Time": {
+                    "units": "sec",
+                    "value": [
+                    ]
+                },
+                "ValueType": "Const"
+            },
+            "HeatTransferMechanisms": {
+                "S1": 1,
+                "S2": 1,
+                "S3": 1
+            },
+            "Mode": "ToMould",
+            "NonCoincidentData": {
+                "InterfaceLogic": {
+                    "interfaceSwitch": "ifInterfaceNotFound",
+                    "switchToFaceId": 0
+                },
+                "interfaceFilter": "CastToMold",
+                "maxGap": {
+                    "units": "mm",
+                    "value": 1
+                }
+            },
+            "Note": "Casting - Isothermic Sleeve",
+            "interfaceType": "Coincident"
+        },
+        {
+            "Alfa": 0,
+            "Beta1": {
+                "Const": {
+                    "units": "W/m^2*K",
+                    "value": 60
+                },
+                "Data": {
+                    "units": "W/m^2*K",
+                    "value": [
+                    ]
+                },
+                "Temp": {
+                    "units": "Celsius",
+                    "value": [
+                    ]
+                },
+                "ValueType": "Const"
+            },
+            "Beta2": {
+                "Const": {
+                    "units": "W/m^2*K",
+                    "value": 0
+                },
+                "Data": {
+                    "units": "W/m^2*K",
+                    "value": [
+                    ]
+                },
+                "Temp": {
+                    "units": "Celsius",
+                    "value": [
+                    ]
+                },
+                "ValueType": "Const"
+            },
+            "E": 0,
+            "EnvTempFromTime": {
+                "Const": {
+                    "units": "Celsius",
+                    "value": 20
+                },
+                "Temp": {
+                    "units": "Celsius",
+                    "value": [
+                    ]
+                },
+                "Time": {
+                    "units": "sec",
+                    "value": [
+                    ]
+                },
+                "ValueType": "Const"
+            },
+            "FaceId": 3,
+            "HeatFlux": {
+                "Const": {
+                    "units": "W/m^2",
+                    "value": 0
+                },
+                "HeatFlux": {
+                    "units": "W/m^2",
+                    "value": [
+                    ]
+                },
+                "Time": {
+                    "units": "sec",
+                    "value": [
+                    ]
+                },
+                "ValueType": "Const"
+            },
+            "HeatTransferMechanisms": {
+                "S1": 1,
+                "S2": 1,
+                "S3": 1
+            },
+            "Mode": "ToMould",
+            "NonCoincidentData": {
+                "InterfaceLogic": {
+                    "interfaceSwitch": "ifInterfaceNotFound",
+                    "switchToFaceId": 0
+                },
+                "interfaceFilter": "CastToMold",
+                "maxGap": {
+                    "units": "mm",
+                    "value": 1
+                }
+            },
+            "Note": "Sand Mold - Isothermic Sleeve",
+            "interfaceType": "Coincident"
+        },
+        {
+            "Alfa": 0,
+            "Beta1": {
+                "Const": {
+                    "units": "W/m^2*K",
+                    "value": 50
+                },
+                "Data": {
+                    "units": "W/m^2*K",
+                    "value": [
+                    ]
+                },
+                "Temp": {
+                    "units": "Celsius",
+                    "value": [
+                    ]
+                },
+                "ValueType": "Const"
+            },
+            "Beta2": {
+                "Const": {
+                    "units": "W/m^2*K",
+                    "value": 0
+                },
+                "Data": {
+                    "units": "W/m^2*K",
+                    "value": [
+                    ]
+                },
+                "Temp": {
+                    "units": "Celsius",
+                    "value": [
+                    ]
+                },
+                "ValueType": "Const"
+            },
+            "E": 0,
+            "EnvTempFromTime": {
+                "Const": {
+                    "units": "Celsius",
+                    "value": 20
+                },
+                "Temp": {
+                    "units": "Celsius",
+                    "value": [
+                    ]
+                },
+                "Time": {
+                    "units": "sec",
+                    "value": [
+                    ]
+                },
+                "ValueType": "Const"
+            },
+            "FaceId": 4,
+            "HeatFlux": {
+                "Const": {
+                    "units": "W/m^2",
+                    "value": 0
+                },
+                "HeatFlux": {
+                    "units": "W/m^2",
+                    "value": [
+                    ]
+                },
+                "Time": {
+                    "units": "sec",
+                    "value": [
+                    ]
+                },
+                "ValueType": "Const"
+            },
+            "HeatTransferMechanisms": {
+                "S1": 1,
+                "S2": 1,
+                "S3": 1
+            },
+            "Mode": "ToMould",
+            "NonCoincidentData": {
+                "InterfaceLogic": {
+                    "interfaceSwitch": "ifInterfaceNotFound",
+                    "switchToFaceId": 0
+                },
+                "interfaceFilter": "CastToMold",
+                "maxGap": {
+                    "units": "mm",
+                    "value": 1
+                }
+            },
+            "Note": "Casting - Exothermic Sleeve",
+            "interfaceType": "Coincident"
+        },
+        {
+            "Alfa": 0,
+            "Beta1": {
+                "Const": {
+                    "units": "W/m^2*K",
+                    "value": 0
+                },
+                "Data": {
+                    "units": "W/m^2*K",
+                    "value": [
+                    ]
+                },
+                "Temp": {
+                    "units": "Celsius",
+                    "value": [
+                    ]
+                },
+                "ValueType": "Const"
+            },
+            "Beta2": {
+                "Const": {
+                    "units": "W/m^2*K",
+                    "value": 60
+                },
+                "Data": {
+                    "units": "W/m^2*K",
+                    "value": [
+                    ]
+                },
+                "Temp": {
+                    "units": "Celsius",
+                    "value": [
+                    ]
+                },
+                "ValueType": "Const"
+            },
+            "E": 0,
+            "EnvTempFromTime": {
+                "Const": {
+                    "units": "Celsius",
+                    "value": 20
+                },
+                "Temp": {
+                    "units": "Celsius",
+                    "value": [
+                    ]
+                },
+                "Time": {
+                    "units": "sec",
+                    "value": [
+                    ]
+                },
+                "ValueType": "Const"
+            },
+            "FaceId": 5,
+            "HeatFlux": {
+                "Const": {
+                    "units": "W/m^2",
+                    "value": 0
+                },
+                "HeatFlux": {
+                    "units": "W/m^2",
+                    "value": [
+                    ]
+                },
+                "Time": {
+                    "units": "sec",
+                    "value": [
+                    ]
+                },
+                "ValueType": "Const"
+            },
+            "HeatTransferMechanisms": {
+                "S1": 1,
+                "S2": 1,
+                "S3": 1
+            },
+            "Mode": "ToMould",
+            "NonCoincidentData": {
+                "InterfaceLogic": {
+                    "interfaceSwitch": "ifInterfaceNotFound",
+                    "switchToFaceId": 0
+                },
+                "interfaceFilter": "CastToMold",
+                "maxGap": {
+                    "units": "mm",
+                    "value": 1
+                }
+            },
+            "Note": "Sand Mold - Exothermic Sleeve",
+            "interfaceType": "Coincident"
+        },
+        {
+            "Alfa": 0,
+            "Beta1": {
+                "Const": {
+                    "units": "W/m^2*K",
+                    "value": 2000
+                },
+                "Data": {
+                    "units": "W/m^2*K",
+                    "value": [
+                    ]
+                },
+                "Temp": {
+                    "units": "Celsius",
+                    "value": [
+                    ]
+                },
+                "ValueType": "Const"
+            },
+            "Beta2": {
+                "Const": {
+                    "units": "W/m^2*K",
+                    "value": 0
+                },
+                "Data": {
+                    "units": "W/m^2*K",
+                    "value": [
+                    ]
+                },
+                "Temp": {
+                    "units": "Celsius",
+                    "value": [
+                    ]
+                },
+                "ValueType": "Const"
+            },
+            "E": 0,
+            "EnvTempFromTime": {
+                "Const": {
+                    "units": "Celsius",
+                    "value": 20
+                },
+                "Temp": {
+                    "units": "Celsius",
+                    "value": [
+                    ]
+                },
+                "Time": {
+                    "units": "sec",
+                    "value": [
+                    ]
+                },
+                "ValueType": "Const"
+            },
+            "FaceId": 6,
+            "HeatFlux": {
+                "Const": {
+                    "units": "W/m^2",
+                    "value": 0
+                },
+                "HeatFlux": {
+                    "units": "W/m^2",
+                    "value": [
+                    ]
+                },
+                "Time": {
+                    "units": "sec",
+                    "value": [
+                    ]
+                },
+                "ValueType": "Const"
+            },
+            "HeatTransferMechanisms": {
+                "S1": 1,
+                "S2": 1,
+                "S3": 1
+            },
+            "Mode": "ToMould",
+            "NonCoincidentData": {
+                "InterfaceLogic": {
+                    "interfaceSwitch": "ifInterfaceNotFound",
+                    "switchToFaceId": 0
+                },
+                "interfaceFilter": "CastToMold",
+                "maxGap": {
+                    "units": "mm",
+                    "value": 1
+                }
+            },
+            "Note": "Casting - Chills",
+            "interfaceType": "Coincident"
+        },
+        {
+            "Alfa": 0,
+            "Beta1": {
+                "Const": {
+                    "units": "W/m^2*K",
+                    "value": 200
+                },
+                "Data": {
+                    "units": "W/m^2*K",
+                    "value": [
+                    ]
+                },
+                "Temp": {
+                    "units": "Celsius",
+                    "value": [
+                    ]
+                },
+                "ValueType": "Const"
+            },
+            "Beta2": {
+                "Const": {
+                    "units": "W/m^2*K",
+                    "value": 0
+                },
+                "Data": {
+                    "units": "W/m^2*K",
+                    "value": [
+                    ]
+                },
+                "Temp": {
+                    "units": "Celsius",
+                    "value": [
+                    ]
+                },
+                "ValueType": "Const"
+            },
+            "E": 0,
+            "EnvTempFromTime": {
+                "Const": {
+                    "units": "Celsius",
+                    "value": 20
+                },
+                "Temp": {
+                    "units": "Celsius",
+                    "value": [
+                    ]
+                },
+                "Time": {
+                    "units": "sec",
+                    "value": [
+                    ]
+                },
+                "ValueType": "Const"
+            },
+            "FaceId": 7,
+            "HeatFlux": {
+                "Const": {
+                    "units": "W/m^2",
+                    "value": 0
+                },
+                "HeatFlux": {
+                    "units": "W/m^2",
+                    "value": [
+                    ]
+                },
+                "Time": {
+                    "units": "sec",
+                    "value": [
+                    ]
+                },
+                "ValueType": "Const"
+            },
+            "HeatTransferMechanisms": {
+                "S1": 1,
+                "S2": 1,
+                "S3": 1
+            },
+            "Mode": "ToMould",
+            "NonCoincidentData": {
+                "InterfaceLogic": {
+                    "interfaceSwitch": "ifInterfaceNotFound",
+                    "switchToFaceId": 0
+                },
+                "interfaceFilter": "CastToMold",
+                "maxGap": {
+                    "units": "mm",
+                    "value": 1
+                }
+            },
+            "Note": "Sand Mold - Chills",
+            "interfaceType": "Coincident"
+        },
+        {
+            "Alfa": 0,
+            "Beta1": {
+                "Const": {
+                    "units": "W/m^2*K",
+                    "value": 0
+                },
+                "Data": {
+                    "units": "W/m^2*K",
+                    "value": [
+                    ]
+                },
+                "Temp": {
+                    "units": "Celsius",
+                    "value": [
+                    ]
+                },
+                "ValueType": "Const"
+            },
+            "Beta2": {
+                "Const": {
+                    "units": "W/m^2*K",
+                    "value": 10
+                },
+                "Data": {
+                    "units": "W/m^2*K",
+                    "value": [
+                    ]
+                },
+                "Temp": {
+                    "units": "Celsius",
+                    "value": [
+                    ]
+                },
+                "ValueType": "Const"
+            },
+            "E": 0.8,
+            "EnvTempFromTime": {
+                "Const": {
+                    "units": "Celsius",
+                    "value": 20
+                },
+                "Temp": {
+                    "units": "Celsius",
+                    "value": [
+                    ]
+                },
+                "Time": {
+                    "units": "sec",
+                    "value": [
+                    ]
+                },
+                "ValueType": "Const"
+            },
+            "FaceId": 17,
+            "HeatFlux": {
+                "Const": {
+                    "units": "W/m^2",
+                    "value": 0
+                },
+                "HeatFlux": {
+                    "units": "W/m^2",
+                    "value": [
+                    ]
+                },
+                "Time": {
+                    "units": "sec",
+                    "value": [
+                    ]
+                },
+                "ValueType": "Const"
+            },
+            "HeatTransferMechanisms": {
+                "S1": 1,
+                "S2": 1,
+                "S3": 1
+            },
+            "Mode": "TempEnv",
+            "NonCoincidentData": {
+                "InterfaceLogic": {
+                    "interfaceSwitch": "ifInterfaceNotFound",
+                    "switchToFaceId": 0
+                },
+                "interfaceFilter": "CastToMold",
+                "maxGap": {
+                    "units": "mm",
+                    "value": 1
+                }
+            },
+            "Note": "Casting - Environment (convection, radiation)",
+            "interfaceType": "Coincident"
+        },
+        {
+            "Alfa": 0,
+            "Beta1": {
+                "Const": {
+                    "units": "W/m^2*K",
+                    "value": 0
+                },
+                "Data": {
+                    "units": "W/m^2*K",
+                    "value": [
+                    ]
+                },
+                "Temp": {
+                    "units": "Celsius",
+                    "value": [
+                    ]
+                },
+                "ValueType": "Const"
+            },
+            "Beta2": {
+                "Const": {
+                    "units": "W/m^2*K",
+                    "value": 10
+                },
+                "Data": {
+                    "units": "W/m^2*K",
+                    "value": [
+                    ]
+                },
+                "Temp": {
+                    "units": "Celsius",
+                    "value": [
+                    ]
+                },
+                "ValueType": "Const"
+            },
+            "E": 0.5,
+            "EnvTempFromTime": {
+                "Const": {
+                    "units": "Celsius",
+                    "value": 20
+                },
+                "Temp": {
+                    "units": "Celsius",
+                    "value": [
+                    ]
+                },
+                "Time": {
+                    "units": "sec",
+                    "value": [
+                    ]
+                },
+                "ValueType": "Const"
+            },
+            "FaceId": 18,
+            "HeatFlux": {
+                "Const": {
+                    "units": "W/m^2",
+                    "value": 0
+                },
+                "HeatFlux": {
+                    "units": "W/m^2",
+                    "value": [
+                    ]
+                },
+                "Time": {
+                    "units": "sec",
+                    "value": [
+                    ]
+                },
+                "ValueType": "Const"
+            },
+            "HeatTransferMechanisms": {
+                "S1": 1,
+                "S2": 1,
+                "S3": 1
+            },
+            "Mode": "TempEnv",
+            "NonCoincidentData": {
+                "InterfaceLogic": {
+                    "interfaceSwitch": "ifInterfaceNotFound",
+                    "switchToFaceId": 0
+                },
+                "interfaceFilter": "CastToMold",
+                "maxGap": {
+                    "units": "mm",
+                    "value": 1
+                }
+            },
+            "Note": "Mold - Environment (convection, radiation)",
+            "interfaceType": "Coincident"
+        }
+    ],
+    "Note": "",
+    "Version": "2025.0.975.4711"
+}
