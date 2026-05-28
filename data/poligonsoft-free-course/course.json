@@ -261,7 +261,7 @@
             },
             {
               "id": "casting-material-assignment",
-              "title": "Nueva leccion",
+              "title": "Asignación del material de la fundición",
               "duration": "3 min",
               "contentUrl": "es/component-setup/casting-material-assignment.json"
             }
