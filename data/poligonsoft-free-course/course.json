@@ -213,7 +213,7 @@
             },
             {
               "id": "import-mesh",
-              "title": "Crear un proyecto de fundicion en arena",
+              "title": "Iniciar programa e importar malla",
               "duration": "1 min",
               "contentUrl": "es/getting-started/import-mesh.json"
             }
