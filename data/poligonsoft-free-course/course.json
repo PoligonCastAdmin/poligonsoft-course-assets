@@ -81,7 +81,7 @@
         },
         {
           "id": "check-before-starting",
-          "title": "Check before starting",
+          "title": "Check Before Starting",
           "steps": [
             {
               "id": "model-orientation",
@@ -126,6 +126,11 @@
               "contentUrl": "en/component-setup/casting-material-assignment.json"
             }
           ]
+        },
+        {
+          "id": "boundary-conditions",
+          "title": "Boundary Conditions",
+          "steps": []
         },
         {
           "id": "simulation-results",
@@ -266,6 +271,11 @@
               "contentUrl": "es/component-setup/casting-material-assignment.json"
             }
           ]
+        },
+        {
+          "id": "boundary-conditions",
+          "title": "Condiciones de frontera",
+          "steps": []
         },
         {
           "id": "simulation-results",
