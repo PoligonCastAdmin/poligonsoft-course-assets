@@ -136,10 +136,10 @@
           "title": "Boundary Conditions",
           "steps": [
             {
-              "id": "new-lesson",
+              "id": "heat-transfer-casting-mold",
               "title": "Heat transfer between casting, mold, and environment",
-              "duration": "",
-              "contentUrl": "en/boundary-conditions/new-lesson.json"
+              "duration": "3 min",
+              "contentUrl": "en/boundary-conditions/heat-transfer-casting-mold.json"
             }
           ]
         },
@@ -292,10 +292,10 @@
           "title": "Condiciones de frontera",
           "steps": [
             {
-              "id": "new-lesson",
+              "id": "heat-transfer-casting-mold",
               "title": "Transferencia de calor entre fundición, molde y ambiente",
-              "duration": "",
-              "contentUrl": "es/boundary-conditions/new-lesson.json"
+              "duration": "3 min",
+              "contentUrl": "es/boundary-conditions/heat-transfer-casting-mold.json"
             }
           ]
         },

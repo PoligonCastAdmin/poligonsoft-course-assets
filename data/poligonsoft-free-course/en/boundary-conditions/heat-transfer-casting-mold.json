@@ -1,0 +1,12 @@
+{
+  "videoUrl": "https://youtu.be/psx72j5ceo0",
+  "summary": "Define the main heat transfer parameters between the casting, the mold, and the environment. These parameters describe heat exchange at the boundaries between the model components.",
+  "actions": [
+    "On the Modes tab, select Boundary Indices to display the boundary indices assigned in the model.<br>\nBoundary indices define heat exchange at the boundary between two different volumes.",
+    "Download the <a href=\"https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/poligonsoft-free-course/SandCastingHeatTransfer.afo\">SandCastingHeatTransfer.afo</a> file and save it on your computer.\n",
+    "In the Model Tree, switch to the Project Overview tab.Find the Heat Transfer section, click the three-dot button, and select the downloaded file to load the heat transfer parameter template.",
+    "At the top of the Project Overview window, change the filter from In Project to With Data to display all loaded data.<br>\nThe indices present in the model are marked with the (+) symbol: index 1 corresponds to Casting/Mold, index 17 to Casting/Environment, and index 18 to Mold/Environment.\n",
+    "Check the model colors and make sure they correspond to the correct index: blue on the outer mold surface, purple between the mold and the casting, and orange between the casting and the environment.<br>\nIf the indices were modified earlier, you can restore the default values from the Edit tab using the Set Default Boundary Indices command."
+  ],
+  "expected": "The heat transfer parameters will be loaded and linked to the model boundary indices. The boundaries between the casting, the mold, and the environment will be ready for the solidification calculation."
+}
