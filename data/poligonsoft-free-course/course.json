@@ -140,6 +140,12 @@
               "title": "Heat transfer between casting, mold, and environment",
               "duration": "3 min",
               "contentUrl": "en/boundary-conditions/heat-transfer-casting-mold.json"
+            },
+            {
+              "id": "heat-transfer-for-chills-and-sleeves",
+              "title": "Heat transfer for chills and sleeves",
+              "duration": "9 min",
+              "contentUrl": "en/boundary-conditions/heat-transfer-for-chills-and-sleeves.json"
             }
           ]
         },
@@ -296,6 +302,12 @@
               "title": "Transferencia de calor entre fundición, molde y ambiente",
               "duration": "3 min",
               "contentUrl": "es/boundary-conditions/heat-transfer-casting-mold.json"
+            },
+            {
+              "id": "heat-transfer-for-chills-and-sleeves",
+              "title": "Transferencia de calor para enfriadores y manguitos",
+              "duration": "9 min",
+              "contentUrl": "es/boundary-conditions/heat-transfer-for-chills-and-sleeves.json"
             }
           ]
         },

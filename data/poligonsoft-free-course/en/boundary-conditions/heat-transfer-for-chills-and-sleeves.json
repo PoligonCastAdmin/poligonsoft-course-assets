@@ -1,0 +1,20 @@
+{
+  "videoUrl": "",
+  "summary": "Configure the heat transfer parameters for the auxiliary components of the model: chills and sleeves. <br>As we saw previously, the boundary indices for the Casting/Mold, Casting/Environment, and Mold/Environment pairs are assigned automatically according to the volume type. Therefore, the interface between the sleeves or chills and the casting uses boundary index 1 by default, since it is a contact between Casting and Mold volumes. In turn, the boundary between the auxiliary components and the mold uses index 0, representing ideal contact, because both components are of the Mold type. <br>In this lesson, you will learn how to set custom boundary indices when the default values are not sufficient.",
+  "actions": [
+    "On the Modes tab, select Boundary Indices to display the boundary indices assigned in the model.\n",
+    "In the Model Tree, keep only the chills volume visible.\n",
+    "Switch to the Edit tab and use Select Boundaries to select the chill surfaces that have boundary index 1 assigned.\n",
+    "In the pop-up window, set Volume type to Mold, select Index 1: Casting/Sand Mold, and enable Only Visible.\n",
+    "Click OK to confirm the selection. The selected surfaces will be highlighted in green.\n",
+    "Select Assign Boundary Index and assign the index corresponding to the contact between the chills and the casting. In this example, select index 6: Casting/Chills and click OK.\n",
+    "Check that boundary index 6 has been assigned to the internal contact surfaces between the chills and the casting.\n",
+    "Use Select Boundaries to select the contact surfaces between the chills and the mold. In this case, select the surfaces with index 0.\n",
+    "Select Assign Boundary Index and assign index 7, corresponding to the contact between the chills and the mold.\n",
+    "Repeat the procedure for the isothermic sleeves.\n",
+    "Repeat the procedure for the exothermic sleeves.\n",
+    "Turn the visibility of all elements back on.\n",
+    "<span class=\"red\">Important</span>: to make the program interpret the auxiliary mold volumes as independent elements, enable the Detach index option in the Model Tree. If this option is not enabled, the solver will treat the element as part of the mold and will not use the internal element/mold index. In that case, the contact will be treated as ideal, regardless of the assigned index."
+  ],
+  "expected": "The chills and sleeves will be configured with specific boundary indices for their contacts with the casting and the mold. The model will be ready to correctly calculate heat exchange for the auxiliary components."
+}

@@ -1,0 +1,20 @@
+{
+  "videoUrl": "",
+  "summary": "Configure los parámetros de transferencia de calor para los componentes auxiliares del modelo: enfriadores y manguitos.<br> Como vimos previamente, los índices de frontera para los pares Casting/Mold, Casting/Environment y Mold/Environment se asignan de forma automática según el volumen. Por tanto, la interfaz entre manguitos o enfriadores y la pieza fundida asume por defecto el índice 1, al tratarse de un contacto entre volúmenes Casting y Mold. Por su parte, el límite entre los componentes auxiliares y el molde adopta el índice 0, representando un contacto ideal, pues ambos son tipo Mold. <br>Hoy aprenderá a establecer índices de frontera personalizados cuando los predeterminados resulten insuficientes.",
+  "actions": [
+    "En la pestaña Modes, seleccione Boundary Indices para visualizar los índices de frontera asignados en el modelo.\n",
+    "En el árbol del modelo, deje visible solo el volumen de los enfriadores.\n",
+    "Cambie a la pestaña Edit y use Select Boundaries para seleccionar las superficies de los enfriadores que tienen asignado el índice de frontera 1.\n",
+    "En la ventana emergente, defina Volume type como Mold, seleccione Index 1: Casting/Sand Mold y active la opción Only Visible.",
+    "Haga clic en OK para confirmar la selección. Las superficies seleccionadas se marcarán en color verde.",
+    "Seleccione Assign Boundary Index y asigne el índice correspondiente al contacto entre los enfriadores y la pieza fundida. En nuestro caso, seleccione el índice 6: Casting/Chills y haga clic en OK.\n",
+    "Compruebe que a las superficies internas de contacto entre los enfriadores y la pieza fundida se les haya asignado el índice 6.\n",
+    "Use Select Boundaries para seleccionar las superficies de contacto entre los enfriadores y el molde. En este caso, seleccione las superficies con el índice 0.\n",
+    "Seleccione Assign Boundary Index y asigne el índice 7, correspondiente al contacto entre los enfriadores y el molde.\n",
+    "Repita el procedimiento para los manguitos isotérmicos.\n",
+    "Repita el procedimiento para los manguitos exotérmicos.\n",
+    "Active nuevamente la visibilidad de todos los elementos.\n",
+    "<span class=\"red\">Importante</span>: para que el programa interprete los volúmenes auxiliares del molde como elementos independientes, active la opción Detach index en el árbol del modelo. Si esta opción no está activada, el solucionador considerará el elemento como parte del molde y no utilizará el índice interno elemento/molde. En ese caso, el contacto se tratará como ideal, independientemente del índice asignado."
+  ],
+  "expected": "Los enfriadores y manguitos quedarán configurados con índices de frontera específicos para sus contactos con la pieza fundida y con el molde. El modelo estará preparado para calcular correctamente el intercambio térmico de los componentes auxiliares."
+}
