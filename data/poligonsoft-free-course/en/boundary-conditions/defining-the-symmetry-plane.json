@@ -1,0 +1,15 @@
+{
+  "videoUrl": "",
+  "summary": "This step is not required for common simulations. However, if the model has a symmetry plane, it is recommended to calculate only one of its symmetric parts. This significantly increases the calculation speed and also allows you to work with large models without exceeding the 500,000 polygon limit established for the free version. <br>The symmetry condition tells the solver that there is a symmetric copy of the mold on the other side of the symmetry plane, with the same properties as the visible part.<br> For PoligonSoft to interpret these surfaces as symmetry boundaries, they must have boundary index 0.",
+  "actions": [
+    "On the Modes tab, select Boundary Indices to display the boundary indices assigned in the model.\n",
+    "Review the flat surfaces where the model was cut by the symmetry plane.<br>\nKeep in mind that, after assigning the default indices, these surfaces will appear as environment boundaries, with indices 17 and 18.",
+    "On the Edit tab, enable Select Contiguous to activate surface selection mode.\n",
+    "Hold down the CTRL key and left-click the symmetry surfaces you want to select.<br>\nIf you select an incorrect surface, hold down the CTRL key and right-click the surface to remove it from the selection.",
+    "Check that all required surfaces are highlighted in green.\n",
+    "Click Assign Boundary Index.\n",
+    "In the assignment window, select index 0 and click OK.\n",
+    "Review the model again in Boundary Indices mode and check that the symmetry surfaces are gray. The gray color corresponds to index 0."
+  ],
+  "expected": "The symmetry plane surfaces will be assigned boundary index 0. PoligonSoft will interpret these boundaries as symmetry surfaces during the calculation."
+}

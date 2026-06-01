@@ -1,0 +1,15 @@
+{
+  "videoUrl": "",
+  "summary": "Este paso no es obligatorio para simulaciones comunes. Sin embargo, si el modelo tiene un plano de simetría, se recomienda calcular solo una de sus partes simétricas. Esto permite aumentar significativamente la velocidad de cálculo y, además, trabajar con modelos grandes sin superar el límite de 500 mil polígonos establecido para la versión gratuita. <br>La condición de simetría indica al solver que al otro lado del plano existe una copia simétrica del molde, con las mismas propiedades que la parte visible. <br>Para que PoligonSoft interprete estas superficies como fronteras de simetría, deben tener el índice de frontera 0.",
+  "actions": [
+    "En la pestaña Modes, seleccione Boundary Indices para visualizar los índices de frontera asignados en el modelo.\n",
+    "Revise las superficies planas donde el modelo fue cortado por el plano de simetría.<br>\nTenga en cuenta que, después de asignar los índices por defecto, estas superficies aparecerán como fronteras con el ambiente, con los índices 17 y 18.",
+    "En la pestaña Edit, active Select Contiguous para activar el modo de selección de superficies.",
+    "Mantenga presionada la tecla CTRL y haga clic con el botón izquierdo del mouse sobre las superficies de simetría que desea seleccionar.<br>\nSi selecciona una superficie incorrecta, mantenga presionada la tecla CTRL y haga clic con el botón derecho del mouse sobre la superficie para quitarla de la selección.",
+    "Compruebe que todas las superficies necesarias queden marcadas en color verde.\n",
+    "Haga clic en Assign Boundary Index.\n",
+    "En la ventana de asignación, seleccione el índice 0 y haga clic en OK.\n",
+    "Revise nuevamente el modelo en el modo Boundary Indices y compruebe que las superficies de simetría sean grises. El color gris corresponde al índice 0."
+  ],
+  "expected": "Las superficies del plano de simetría quedarán asignadas con el índice de frontera 0. PoligonSoft interpretará estas fronteras como superficies de simetría durante el cálculo."
+}

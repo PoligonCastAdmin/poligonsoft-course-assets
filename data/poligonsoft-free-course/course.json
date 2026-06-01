@@ -146,6 +146,12 @@
               "title": "Heat transfer for chills and sleeves",
               "duration": "9 min",
               "contentUrl": "en/boundary-conditions/heat-transfer-for-chills-and-sleeves.json"
+            },
+            {
+              "id": "defining-the-symmetry-plane",
+              "title": "Defining the symmetry plane",
+              "duration": "2 min",
+              "contentUrl": "en/boundary-conditions/defining-the-symmetry-plane.json"
             }
           ]
         },
@@ -308,6 +314,12 @@
               "title": "Transferencia de calor para enfriadores y manguitos",
               "duration": "9 min",
               "contentUrl": "es/boundary-conditions/heat-transfer-for-chills-and-sleeves.json"
+            },
+            {
+              "id": "defining-the-symmetry-plane",
+              "title": "Definición del plano de simetría",
+              "duration": "2 min",
+              "contentUrl": "es/boundary-conditions/defining-the-symmetry-plane.json"
             }
           ]
         },
