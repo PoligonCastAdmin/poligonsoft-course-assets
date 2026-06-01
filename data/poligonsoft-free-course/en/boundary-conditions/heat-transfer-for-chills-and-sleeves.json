@@ -1,5 +1,5 @@
 {
-  "videoUrl": "",
+  "videoUrl": "https://youtu.be/o0MCVVeyhhc",
   "summary": "Configure the heat transfer parameters for the auxiliary components of the model: chills and sleeves. <br>As we saw previously, the boundary indices for the Casting/Mold, Casting/Environment, and Mold/Environment pairs are assigned automatically according to the volume type. Therefore, the interface between the sleeves or chills and the casting uses boundary index 1 by default, since it is a contact between Casting and Mold volumes. In turn, the boundary between the auxiliary components and the mold uses index 0, representing ideal contact, because both components are of the Mold type. <br>In this lesson, you will learn how to set custom boundary indices when the default values are not sufficient.",
   "actions": [
     "On the Modes tab, select Boundary Indices to display the boundary indices assigned in the model.\n",

@@ -1,5 +1,5 @@
 {
-  "videoUrl": "",
+  "videoUrl": "https://youtu.be/o0MCVVeyhhc",
   "summary": "Configure los parámetros de transferencia de calor para los componentes auxiliares del modelo: enfriadores y manguitos.<br> Como vimos previamente, los índices de frontera para los pares Casting/Mold, Casting/Environment y Mold/Environment se asignan de forma automática según el volumen. Por tanto, la interfaz entre manguitos o enfriadores y la pieza fundida asume por defecto el índice 1, al tratarse de un contacto entre volúmenes Casting y Mold. Por su parte, el límite entre los componentes auxiliares y el molde adopta el índice 0, representando un contacto ideal, pues ambos son tipo Mold. <br>Hoy aprenderá a establecer índices de frontera personalizados cuando los predeterminados resulten insuficientes.",
   "actions": [
     "En la pestaña Modes, seleccione Boundary Indices para visualizar los índices de frontera asignados en el modelo.\n",
