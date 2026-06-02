@@ -1,5 +1,5 @@
 {
-  "videoUrl": "",
+  "videoUrl": "https://youtu.be/DeZtVesbEQ8",
   "summary": "Este paso no es obligatorio para simulaciones comunes. Sin embargo, si el modelo tiene un plano de simetría, se recomienda calcular solo una de sus partes simétricas. Esto permite aumentar significativamente la velocidad de cálculo y, además, trabajar con modelos grandes sin superar el límite de 500 mil polígonos establecido para la versión gratuita. <br>La condición de simetría indica al solver que al otro lado del plano existe una copia simétrica del molde, con las mismas propiedades que la parte visible. <br>Para que PoligonSoft interprete estas superficies como fronteras de simetría, deben tener el índice de frontera 0.",
   "actions": [
     "En la pestaña Modes, seleccione Boundary Indices para visualizar los índices de frontera asignados en el modelo.\n",

@@ -1,5 +1,5 @@
 {
-  "videoUrl": "",
+  "videoUrl": "https://youtu.be/DeZtVesbEQ8",
   "summary": "This step is not required for common simulations. However, if the model has a symmetry plane, it is recommended to calculate only one of its symmetric parts. This significantly increases the calculation speed and also allows you to work with large models without exceeding the 500,000 polygon limit established for the free version. <br>The symmetry condition tells the solver that there is a symmetric copy of the mold on the other side of the symmetry plane, with the same properties as the visible part.<br> For PoligonSoft to interpret these surfaces as symmetry boundaries, they must have boundary index 0.",
   "actions": [
     "On the Modes tab, select Boundary Indices to display the boundary indices assigned in the model.\n",
