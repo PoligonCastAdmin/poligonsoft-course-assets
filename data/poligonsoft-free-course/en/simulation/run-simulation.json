@@ -1,0 +1,16 @@
+{
+  "videoUrl": "",
+  "summary": "Set the basic calculation parameters, configure the solvers that will be used in the simulation, and run the calculation.",
+  "actions": [
+    "Click Start Simulation and Parameters to open the calculation setup window.",
+    "<p>On the General tab, define the basic calculation parameters:</p> <ul> <li>Alloy pouring temperature: 1520 C.</li> <li>Initial mold temperature: 27 C.</li> <li>Ambient temperature: 27 C.</li> <li>Number of calculation threads: according to the number of cores in your processor.</li> </ul>",
+    "Open the Flow tab and check that Enable Flow Model is disabled. The filling solver is not available in this version.\n",
+    "Open the Solidification tab and enable Enable Solidification Model, Save Casting Result, and Save Mold Result.\n",
+    "Set the calculation step to 1 s and the save step to 5 s.\n",
+    "Check that the simulation stop condition is set to Tsol.\n",
+    "Open the Porosity tab and enable Use Macroporosity Model, Use Microporosity Model, and Save Porosity Result.\n",
+    "Check that the solvers on the other tabs are disabled, as they are not available in this version.\n",
+    "Click Start Simulation, save the project file, and wait until the calculation is complete."
+  ],
+  "expected": "The calculation will run with the defined parameters. When it is complete, PoligonSoft will generate the solidification results, mold temperature results, and porosity prediction. Congratulations, you have completed your first simulation."
+}

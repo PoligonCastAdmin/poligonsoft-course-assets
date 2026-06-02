@@ -156,14 +156,14 @@
           ]
         },
         {
-          "id": "simulation-results",
-          "title": "Simulation and results",
+          "id": "simulation",
+          "title": "Start Simulation",
           "steps": [
             {
               "id": "run-simulation",
-              "title": "Run the first simulation",
+              "title": "Calculation setup and launch",
               "duration": "6 min",
-              "contentUrl": "en/simulation-results/run-simulation.json"
+              "contentUrl": "en/simulation/run-simulation.json"
             }
           ]
         }
@@ -324,14 +324,14 @@
           ]
         },
         {
-          "id": "simulation-results",
-          "title": "Simulacion y resultados",
+          "id": "simulation",
+          "title": "Simulación",
           "steps": [
             {
               "id": "run-simulation",
-              "title": "Ejecutar la primera simulacion",
+              "title": "Configuración e inicio del cálculo",
               "duration": "6 min",
-              "contentUrl": "es/simulation-results/run-simulation.json"
+              "contentUrl": "es/simulation/run-simulation.json"
             }
           ]
         }

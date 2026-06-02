@@ -1,0 +1,16 @@
+{
+  "videoUrl": "",
+  "summary": "Establezca los parámetros básicos del cálculo, configure los solvers que se usarán en la simulación y ejecute el cálculo.",
+  "actions": [
+    "Haga clic en Start Simulation and Parameters para abrir la ventana de configuración del cálculo.\n",
+    "<p>En la pestaña General, defina los parámetros básicos del cálculo:</p>\n<ul>\n  <li>Temperatura de vertido de la aleación: 1520 C.</li>\n  <li>Temperatura inicial del molde: 27 C.</li>\n  <li>Temperatura del ambiente: 27 C.</li>\n  <li>Número de hilos de cálculo: según la cantidad de núcleos de su procesador.</li>\n</ul>",
+    "Abra la pestaña Flow y compruebe que Enable Flow Model esté desactivado. El solver de llenado no está disponible en esta versión.\n",
+    "Abra la pestaña Solidification y active Enable Solidification Model, Save Casting Result y Save Mold Result.\n",
+    "Establezca el paso de cálculo en 1 s y el paso de guardado en 5 s.\n",
+    "Compruebe que la condición de finalización de la simulación esté configurada como Tsol.\n",
+    "Abra la pestaña Porosity y active Use Macroporosity Model, Use Microporosity Model y Save Porosity Result.\n",
+    "Revise que los solvers de las demás pestañas estén desactivados, ya que no están disponibles en esta versión.\n",
+    "Haga clic en Start Simulation, guarde el archivo del proyecto y espere a que el cálculo termine."
+  ],
+  "expected": "El cálculo se ejecutará con los parámetros definidos. Al finalizar, PoligonSoft generará los resultados de solidificación, temperatura del molde y predicción de porosidad. Felicidades, ha realizado su primera simulación."
+}
