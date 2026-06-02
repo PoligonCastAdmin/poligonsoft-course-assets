@@ -1,5 +1,5 @@
 {
-  "videoUrl": "",
+  "videoUrl": "https://youtu.be/inu1VJHegpI",
   "summary": "Establezca los parámetros básicos del cálculo, configure los solvers que se usarán en la simulación y ejecute el cálculo.",
   "actions": [
     "Haga clic en Start Simulation and Parameters para abrir la ventana de configuración del cálculo.\n",
