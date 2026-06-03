@@ -1,4 +1,6 @@
 const state = {
+  courses: [],
+  selectedCourseId: "",
   course: null,
   lessons: {},
   view: "general",
@@ -11,6 +13,9 @@ const langNames = {
   en: "English",
   es: "Spanish"
 };
+
+const COURSE_ID_STORAGE_KEY = "poligonsoft-course-editor-course-id";
+const COURSE_SCRIPT_URL = "https://poligoncastadmin.github.io/poligonsoft-course-assets/js/poligonsoft-free-course.js";
 
 function $(selector) {
   return document.querySelector(selector);
@@ -40,12 +45,32 @@ function setStatus(message, isError = false) {
   status.classList.toggle("is-error", isError);
 }
 
+function selectedCourseMeta() {
+  return state.courses.find(course => course.id === state.selectedCourseId) || null;
+}
+
+function selectedCoursePath() {
+  return `data/${state.selectedCourseId}/course.json`;
+}
+
+function selectedCourseEmbedCode() {
+  return `<script src="${COURSE_SCRIPT_URL}" data-course-src="${selectedCoursePath()}"></script>`;
+}
+
+function courseApiUrl() {
+  return `/api/course?course=${encodeURIComponent(state.selectedCourseId)}`;
+}
+
 function markDirty() {
   state.dirty = true;
   setStatus("Unsaved changes.");
 }
 
 function languages() {
+  if (!state.course || !state.course.languages) {
+    return [];
+  }
+
   return Object.keys(state.course.languages || {});
 }
 
@@ -255,6 +280,8 @@ function downloadsToText(downloads) {
 }
 
 function render() {
+  renderCourseControls();
+
   if (!state.course) {
     return;
   }
@@ -264,6 +291,28 @@ function render() {
   renderTabs();
   renderSidebar();
   renderCurrentView();
+}
+
+function renderCourseControls() {
+  const select = $("#course-select");
+  const title = $("#app-title");
+  const meta = selectedCourseMeta();
+  const liveTitle = state.course && languages().length
+    ? langCourse(primaryLang()).title
+    : "";
+
+  if (title) {
+    title.textContent = liveTitle || (meta ? meta.title : "PoligonSoft Course Editor");
+  }
+
+  if (!select) {
+    return;
+  }
+
+  select.innerHTML = state.courses.map(course => `
+    <option value="${escapeHtml(course.id)}">${escapeHtml(course.title || course.id)}</option>
+  `).join("");
+  select.value = state.selectedCourseId;
 }
 
 function renderTabs() {
@@ -340,6 +389,9 @@ function htmlCodeEditor(scope, lang, field, label, html) {
     <div class="html-field is-wide">
       <div class="field-label">${escapeHtml(label)} HTML</div>
       <div class="html-toolbar" aria-label="${escapeHtml(label)} HTML toolbar">
+        <button type="button" data-html-template="strong">B</button>
+        <button type="button" data-html-template="italic">I</button>
+        <button type="button" data-html-template="br">BR</button>
         <button type="button" data-html-template="paragraph">P</button>
         <button type="button" data-html-template="heading">H3</button>
         <button type="button" data-html-template="list">List</button>
@@ -380,6 +432,9 @@ function actionItemEditor(lang, index, html) {
         </div>
       </div>
       <div class="html-toolbar" aria-label="Action ${index + 1} HTML toolbar">
+        <button type="button" data-html-template="strong">B</button>
+        <button type="button" data-html-template="italic">I</button>
+        <button type="button" data-html-template="br">BR</button>
         <button type="button" data-html-template="paragraph">Text</button>
         <button type="button" data-html-template="link">Link</button>
         <button type="button" data-html-template="image">Image</button>
@@ -412,44 +467,98 @@ function syncActionPreview(target, value) {
   }
 }
 
-function htmlTemplate(name) {
+function selectedText(textarea, fallback) {
+  if (!textarea) {
+    return fallback;
+  }
+
+  const selected = textarea.value.slice(textarea.selectionStart, textarea.selectionEnd);
+
+  return selected || fallback;
+}
+
+function hasSelection(textarea) {
+  return textarea && textarea.selectionStart !== textarea.selectionEnd;
+}
+
+function wrappedTemplate(textarea, before, fallback, after) {
+  const text = selectedText(textarea, fallback);
+  const html = `${before}${text}${after}`;
+
+  if (hasSelection(textarea)) {
+    return {
+      html,
+      cursorStart: html.length,
+      cursorEnd: html.length
+    };
+  }
+
+  return {
+    html,
+    cursorStart: before.length,
+    cursorEnd: before.length + text.length
+  };
+}
+
+function htmlTemplate(name, textarea) {
+  if (name === "strong") {
+    return wrappedTemplate(textarea, "<strong>", "Text", "</strong>");
+  }
+
+  if (name === "italic") {
+    return wrappedTemplate(textarea, "<em>", "Text", "</em>");
+  }
+
+  if (name === "br") {
+    return {
+      html: "<br>",
+      selectText: false
+    };
+  }
+
   if (name === "paragraph") {
-    return "<p>Text</p>";
+    return wrappedTemplate(textarea, "<p>", "Text", "</p>");
   }
 
   if (name === "heading") {
-    return "<h3>Heading</h3>";
+    return wrappedTemplate(textarea, "<h3>", "Heading", "</h3>");
   }
 
   if (name === "list") {
-    return "<ul>\n  <li>Item</li>\n</ul>";
+    return {
+      html: "<ul>\n  <li>Item</li>\n</ul>",
+      selectText: false
+    };
   }
 
   if (name === "link") {
     const url = window.prompt("Link URL", "https://");
 
     if (!url) {
-      return "";
+      return null;
     }
 
-    return `<a href="${escapeAttribute(url)}">Link text</a>`;
+    return wrappedTemplate(textarea, `<a href="${escapeAttribute(url)}" target="_blank" rel="noopener">`, "Link text", "</a>");
   }
 
   if (name === "image") {
     const url = window.prompt("Image URL", "https://");
 
     if (!url) {
-      return "";
+      return null;
     }
 
-    return `<img src="${escapeAttribute(url)}" alt="">`;
+    return {
+      html: `<img src="${escapeAttribute(url)}" alt="">`,
+      selectText: false
+    };
   }
 
   if (name === "button") {
-    return '<a class="course-button is-primary" href="#">Button text</a>';
+    return wrappedTemplate(textarea, '<a class="course-button is-primary" href="#">', "Button text", "</a>");
   }
 
-  return "";
+  return null;
 }
 
 function escapeAttribute(value) {
@@ -459,23 +568,31 @@ function escapeAttribute(value) {
 function insertHtmlTemplate(button) {
   const field = button.closest(".html-field, .action-item");
   const textarea = field && field.querySelector(".html-source-editor, .action-source-editor");
-  const template = htmlTemplate(button.dataset.htmlTemplate);
   const start = textarea ? textarea.selectionStart : 0;
   const end = textarea ? textarea.selectionEnd : 0;
+  const template = htmlTemplate(button.dataset.htmlTemplate, textarea);
 
   if (!textarea || !template) {
     return;
   }
 
-  textarea.value = textarea.value.slice(0, start) + template + textarea.value.slice(end);
+  textarea.value = textarea.value.slice(0, start) + template.html + textarea.value.slice(end);
   textarea.focus();
-  textarea.selectionStart = start;
-  textarea.selectionEnd = start + template.length;
+  textarea.selectionStart = start + (Number.isInteger(template.cursorStart) ? template.cursorStart : template.html.length);
+  textarea.selectionEnd = start + (Number.isInteger(template.cursorEnd) ? template.cursorEnd : template.html.length);
   textarea.dispatchEvent(new Event("input", { bubbles: true }));
 }
 
 function renderGeneral() {
-  $("#general-form").innerHTML = languageColumns(lang => {
+  $("#general-form").innerHTML = `
+    <div class="embed-panel">
+      <div>
+        <div class="field-label">Webflow embed code for this course</div>
+        <p>Use this exact code on the Webflow page for the selected course.</p>
+      </div>
+      <textarea readonly rows="3">${escapeHtml(selectedCourseEmbedCode())}</textarea>
+    </div>
+  ` + languageColumns(lang => {
     const course = langCourse(lang);
 
     return `
@@ -648,6 +765,11 @@ function handleInput(event) {
 function handleChange(event) {
   const target = event.target;
 
+  if (target.id === "course-select") {
+    switchCourse(target.value);
+    return;
+  }
+
   if (target.dataset.scope === "course" && target.dataset.field === "labels") {
     try {
       langCourse(target.dataset.lang).labels = JSON.parse(target.value || "{}");
@@ -813,11 +935,98 @@ function regenerateLessonPaths() {
   render();
 }
 
+async function switchCourse(courseId) {
+  if (!courseId || courseId === state.selectedCourseId) {
+    renderCourseControls();
+    return;
+  }
+
+  if (state.dirty && !window.confirm("Switch course and discard unsaved changes?")) {
+    renderCourseControls();
+    return;
+  }
+
+  await loadCourse(courseId);
+}
+
+function promptCourseDetails(mode) {
+  const source = selectedCourseMeta();
+  const suggestedId = mode === "duplicate" && source
+    ? `${source.id}-copy`
+    : "new-course";
+  const id = window.prompt("Course folder / ID, for example sand-casting-basics", suggestedId);
+
+  if (id === null) {
+    return null;
+  }
+
+  const titleEn = window.prompt("English course title", mode === "duplicate" && source ? `${source.title} copy` : "New course");
+
+  if (titleEn === null) {
+    return null;
+  }
+
+  const titleEs = window.prompt("Spanish course title", titleEn);
+
+  if (titleEs === null) {
+    return null;
+  }
+
+  return {
+    id,
+    titleEn,
+    titleEs
+  };
+}
+
+async function createCourse(mode) {
+  if (state.dirty && !window.confirm("Create a course and discard unsaved changes in the current course?")) {
+    return;
+  }
+
+  const details = promptCourseDetails(mode);
+
+  if (!details) {
+    return;
+  }
+
+  if (mode === "duplicate") {
+    details.sourceCourseId = state.selectedCourseId;
+  }
+
+  setStatus(mode === "duplicate" ? "Duplicating course..." : "Creating course...");
+
+  try {
+    const response = await fetch("/api/courses", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(details)
+    });
+    const result = await response.json();
+
+    if (!response.ok) {
+      throw new Error(result.error || `Course create failed: ${response.status}`);
+    }
+
+    await loadCourseList(result.courseId);
+    await loadCourse(result.courseId);
+    setStatus("Course created.");
+  } catch (error) {
+    setStatus(error.message, true);
+  }
+}
+
 function handleAction(action, button) {
   if (action === "reload") {
     if (!state.dirty || window.confirm("Reload files and discard unsaved changes?")) {
       load();
     }
+  } else if (action === "new-course") {
+    createCourse("new");
+  } else if (action === "duplicate-course") {
+    createCourse("duplicate");
   } else if (action === "save") {
     save();
   } else if (action === "publish") {
@@ -859,22 +1068,60 @@ function handleAction(action, button) {
 }
 
 async function load() {
+  setStatus("Loading course list...");
+
+  try {
+    await loadCourseList();
+    await loadCourse(state.selectedCourseId);
+  } catch (error) {
+    setStatus(error.message, true);
+  }
+}
+
+async function loadCourseList(preferredCourseId) {
+  const response = await fetch("/api/courses");
+
+  if (!response.ok) {
+    throw new Error(`Course list load failed: ${response.status}`);
+  }
+
+  const data = await response.json();
+  const savedCourseId = preferredCourseId || window.localStorage.getItem(COURSE_ID_STORAGE_KEY);
+  const courses = data.courses || [];
+  const selected = courses.find(course => course.id === savedCourseId)
+    || courses.find(course => course.id === data.defaultCourse)
+    || courses[0];
+
+  state.courses = courses;
+  state.selectedCourseId = selected ? selected.id : "";
+
+  if (!state.selectedCourseId) {
+    throw new Error("No course data found.");
+  }
+
+  renderCourseControls();
+}
+
+async function loadCourse(courseId) {
   setStatus("Loading course files...");
 
   try {
-    const response = await fetch("/api/course");
+    state.selectedCourseId = courseId;
+    const response = await fetch(courseApiUrl());
 
     if (!response.ok) {
       throw new Error(`Load failed: ${response.status}`);
     }
 
     const data = await response.json();
+    state.selectedCourseId = data.courseId || state.selectedCourseId;
     state.course = data.course;
     state.lessons = data.lessons || {};
     state.view = "general";
     state.moduleIndex = 0;
     state.stepIndex = 0;
     state.dirty = false;
+    window.localStorage.setItem(COURSE_ID_STORAGE_KEY, state.selectedCourseId);
     ensureParallelStructure();
     render();
     setStatus("Ready.");
@@ -889,7 +1136,7 @@ async function save() {
   try {
     ensureParallelStructure();
 
-    const response = await fetch("/api/course", {
+    const response = await fetch(courseApiUrl(), {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -906,6 +1153,8 @@ async function save() {
     }
 
     state.dirty = false;
+    await loadCourseList(state.selectedCourseId);
+    renderCourseControls();
     setStatus(`Saved ${result.written.length} files.\n${result.written.join("\n")}`);
   } catch (error) {
     setStatus(error.message, true);
@@ -913,7 +1162,7 @@ async function save() {
 }
 
 async function publish() {
-  const message = window.prompt("Commit message", "Update course content");
+  const message = window.prompt("Commit message", `Update ${state.selectedCourseId} course content`);
 
   if (message === null) {
     return;
@@ -931,7 +1180,10 @@ async function publish() {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ message })
+      body: JSON.stringify({
+        courseId: state.selectedCourseId,
+        message
+      })
     });
     const result = await response.json();
 

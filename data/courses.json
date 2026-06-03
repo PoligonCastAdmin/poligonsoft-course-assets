@@ -1,0 +1,14 @@
+{
+  "defaultCourse": "poligonsoft-free-course",
+  "courses": [
+    {
+      "id": "poligonsoft-free-course",
+      "title": "Step-by-Step Sand Casting Simulation in PoligonSoft Free",
+      "folder": "poligonsoft-free-course",
+      "languages": [
+        "en",
+        "es"
+      ]
+    }
+  ]
+}

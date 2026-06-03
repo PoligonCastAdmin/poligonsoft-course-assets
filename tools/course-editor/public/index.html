@@ -10,7 +10,15 @@
   <header class="app-header">
     <div>
       <p class="eyebrow">Local editor</p>
-      <h1>PoligonSoft Free Course</h1>
+      <h1 id="app-title">PoligonSoft Course Editor</h1>
+    </div>
+    <div class="course-switcher">
+      <label>
+        Course
+        <select id="course-select"></select>
+      </label>
+      <button data-action="new-course" class="button is-secondary" type="button">New course</button>
+      <button data-action="duplicate-course" class="button is-secondary" type="button">Duplicate</button>
     </div>
     <div class="header-actions">
       <button data-action="reload" class="button is-secondary" type="button">Reload</button>

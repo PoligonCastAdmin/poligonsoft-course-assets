@@ -21,6 +21,7 @@ body {
 
 button,
 input,
+select,
 textarea {
   font: inherit;
 }
@@ -56,6 +57,17 @@ textarea {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+}
+
+.course-switcher {
+  display: grid;
+  grid-template-columns: minmax(260px, 380px) auto auto;
+  align-items: end;
+  gap: 10px;
+}
+
+.course-switcher label {
+  gap: 5px;
 }
 
 .view-tabs {
@@ -371,6 +383,7 @@ label.is-wide {
 }
 
 input,
+select,
 textarea {
   width: 100%;
   border: 1px solid #cfcfcf;
@@ -387,6 +400,11 @@ input {
   padding: 8px 10px;
 }
 
+select {
+  height: 42px;
+  padding: 8px 36px 8px 10px;
+}
+
 input[readonly] {
   background: #f2f2f2;
   color: #666666;
@@ -399,9 +417,34 @@ textarea {
 }
 
 input:focus,
+select:focus,
 textarea:focus {
   border-color: var(--red);
   outline: 2px solid rgba(255, 40, 40, 0.16);
+}
+
+.embed-panel {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  background: #fafafa;
+}
+
+.embed-panel p {
+  margin: 4px 0 0;
+  color: #666666;
+  font-size: 0.875rem;
+  line-height: 1.35;
+}
+
+.embed-panel textarea {
+  min-height: 78px;
+  background: #ffffff;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.875rem;
+  line-height: 1.45;
 }
 
 .html-field {
@@ -551,6 +594,11 @@ textarea:focus {
   .app-header,
   .layout {
     display: block;
+  }
+
+  .course-switcher {
+    grid-template-columns: 1fr;
+    margin-top: 14px;
   }
 
   .sidebar {
