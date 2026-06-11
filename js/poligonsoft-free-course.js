@@ -212,6 +212,37 @@
     }
   }
 
+  function setEyebrowText(value) {
+    var node = el("eyebrow");
+    var line;
+    var index;
+    var child;
+
+    if (!node) {
+      return;
+    }
+
+    line = node.querySelector(".beforeline");
+
+    if (!line || line.parentNode !== node) {
+      line = document.createElement("div");
+      line.className = "beforeline";
+      node.insertBefore(line, node.firstChild);
+    } else if (node.firstChild !== line) {
+      node.insertBefore(line, node.firstChild);
+    }
+
+    for (index = node.childNodes.length - 1; index >= 0; index -= 1) {
+      child = node.childNodes[index];
+
+      if (child.nodeType === 3) {
+        node.removeChild(child);
+      }
+    }
+
+    node.appendChild(document.createTextNode(value || ""));
+  }
+
   function setHtml(name, value) {
     var node = el(name);
 
@@ -252,7 +283,7 @@
 
     state.requestedPath = active.path;
 
-    setText("eyebrow", currentCourse.eyebrow || text.eyebrow || "");
+    setEyebrowText(currentCourse.eyebrow || text.eyebrow || "");
     setText("title", currentCourse.title);
     setHtml("description", currentCourse.description);
     setStatText("stat-modules", 0, (currentCourse.modules || []).length);
