@@ -3,6 +3,7 @@
   "languages": {
     "en": {
       "courseId": "poligonsoft-free-sand-casting",
+      "eyebrow": "Free training course",
       "title": "Step-by-Step Sand Casting Simulation in PoligonSoft Free",
       "sidebarTitle": "PoligonSoft Free Course",
       "description": "Learn sand casting simulation in PoligonSoft Free with step-by-step video lessons. Create a project, prepare geometry, set materials, run a simulation, and review casting results.",
@@ -171,6 +172,7 @@
     },
     "es": {
       "courseId": "poligonsoft-free-sand-casting",
+      "eyebrow": "Curso gratuito",
       "title": "Simulacion de fundicion en arena paso a paso en PoligonSoft Free",
       "sidebarTitle": "Curso PoligonSoft Free",
       "description": "Domine la simulación de fundición en arena en PoligonSoft Free con videotutoriales paso a paso. Cree un proyecto, prepare la geometría, configure los materiales, ejecute la simulación y revise los resultados.",

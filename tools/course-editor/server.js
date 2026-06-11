@@ -442,6 +442,7 @@ async function blankCourseTemplate(courseId, titleEn, titleEs) {
     languages: {
       en: {
         courseId,
+        eyebrow: "Free training course",
         title: titleEn || "New course",
         sidebarTitle: titleEn || "New course",
         description: "",
@@ -465,6 +466,7 @@ async function blankCourseTemplate(courseId, titleEn, titleEs) {
       },
       es: {
         courseId,
+        eyebrow: "Curso gratuito",
         title: titleEs || titleEn || "Nuevo curso",
         sidebarTitle: titleEs || titleEn || "Nuevo curso",
         description: "",

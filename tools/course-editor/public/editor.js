@@ -602,6 +602,10 @@ function renderGeneral() {
           <input data-scope="course" data-lang="${lang}" data-field="title" type="text" value="${escapeHtml(course.title)}">
         </label>
         <label>
+          Eyebrow
+          <input data-scope="course" data-lang="${lang}" data-field="eyebrow" type="text" value="${escapeHtml(course.eyebrow)}">
+        </label>
+        <label>
           Sidebar title
           <input data-scope="course" data-lang="${lang}" data-field="sidebarTitle" type="text" value="${escapeHtml(course.sidebarTitle)}">
         </label>

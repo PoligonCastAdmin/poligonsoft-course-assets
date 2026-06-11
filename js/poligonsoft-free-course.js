@@ -252,6 +252,7 @@
 
     state.requestedPath = active.path;
 
+    setText("eyebrow", currentCourse.eyebrow || text.eyebrow || "");
     setText("title", currentCourse.title);
     setHtml("description", currentCourse.description);
     setStatText("stat-modules", 0, (currentCourse.modules || []).length);
