@@ -11,9 +11,9 @@
       ]
     },
     {
-      "id": "test",
+      "id": "salome-mesh-generator-course",
       "title": "Creating Meshes with SALOME Mesh Generator",
-      "folder": "test",
+      "folder": "salome-mesh-generator-course",
       "languages": [
         "en",
         "es"

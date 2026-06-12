@@ -1,6 +1,9 @@
 const state = {
   courses: [],
   selectedCourseId: "",
+  pendingCourseId: "",
+  previousCourseId: "",
+  courseIdManuallyEdited: false,
   course: null,
   lessons: {},
   view: "general",
@@ -50,7 +53,7 @@ function selectedCourseMeta() {
 }
 
 function selectedCoursePath() {
-  return `data/${state.selectedCourseId}/course.json`;
+  return `data/${courseFolderId()}/course.json`;
 }
 
 function selectedCourseEmbedCode() {
@@ -59,6 +62,31 @@ function selectedCourseEmbedCode() {
 
 function courseApiUrl() {
   return `/api/course?course=${encodeURIComponent(state.selectedCourseId)}`;
+}
+
+function courseFolderId() {
+  return state.pendingCourseId || state.selectedCourseId;
+}
+
+function normalizeCourseId(value, fallback = state.selectedCourseId) {
+  return slugify(value, fallback);
+}
+
+function isTemporaryCourseId(value) {
+  return value === "test" || value === "new-course" || /^new-course-\d+$/.test(value) || /-copy(?:-\d+)?$/.test(value);
+}
+
+function setPendingCourseId(value, manual = true) {
+  state.pendingCourseId = normalizeCourseId(value, state.selectedCourseId);
+  state.courseIdManuallyEdited = manual;
+}
+
+function maybeAutoRenameCourseId(title) {
+  if (state.courseIdManuallyEdited || !isTemporaryCourseId(state.selectedCourseId)) {
+    return;
+  }
+
+  state.pendingCourseId = normalizeCourseId(title, state.selectedCourseId);
 }
 
 function markDirty() {
@@ -313,6 +341,35 @@ function renderCourseControls() {
     <option value="${escapeHtml(course.id)}">${escapeHtml(course.title || course.id)}</option>
   `).join("");
   select.value = state.selectedCourseId;
+}
+
+function renderEmbedPanel() {
+  return `
+    <div class="embed-panel">
+      <div>
+        <div class="field-label">Course folder / ID</div>
+        <p>This controls the data folder and the Webflow embed path. Use lowercase English letters, numbers, and hyphens.</p>
+      </div>
+      <input data-scope="course-meta" data-field="courseId" data-course-id-input="true" type="text" value="${escapeHtml(courseFolderId())}">
+      <div>
+        <div class="field-label">Webflow embed code for this course</div>
+        <p>Use this exact code on the Webflow page for the selected course.</p>
+      </div>
+      <textarea data-embed-code="true" readonly rows="3">${escapeHtml(selectedCourseEmbedCode())}</textarea>
+    </div>
+  `;
+}
+
+function syncCourseIdControls() {
+  document.querySelectorAll("[data-course-id-input]").forEach(input => {
+    if (document.activeElement !== input) {
+      input.value = courseFolderId();
+    }
+  });
+
+  document.querySelectorAll("[data-embed-code]").forEach(textarea => {
+    textarea.value = selectedCourseEmbedCode();
+  });
 }
 
 function renderTabs() {
@@ -584,15 +641,7 @@ function insertHtmlTemplate(button) {
 }
 
 function renderGeneral() {
-  $("#general-form").innerHTML = `
-    <div class="embed-panel">
-      <div>
-        <div class="field-label">Webflow embed code for this course</div>
-        <p>Use this exact code on the Webflow page for the selected course.</p>
-      </div>
-      <textarea readonly rows="3">${escapeHtml(selectedCourseEmbedCode())}</textarea>
-    </div>
-  ` + languageColumns(lang => {
+  $("#general-form").innerHTML = renderEmbedPanel() + languageColumns(lang => {
     const course = langCourse(lang);
 
     return `
@@ -712,6 +761,10 @@ function handleInput(event) {
     return;
   }
 
+  if (scope === "course-meta" && field === "courseId") {
+    setPendingCourseId(value);
+  }
+
   if (scope === "course") {
     const course = langCourse(lang);
 
@@ -719,6 +772,10 @@ function handleInput(event) {
       course.downloads = textToDownloads(value);
     } else if (field !== "labels") {
       course[field] = value;
+
+      if (field === "title" && lang === primaryLang()) {
+        maybeAutoRenameCourseId(value);
+      }
     }
   }
 
@@ -764,6 +821,10 @@ function handleInput(event) {
   }
 
   markDirty();
+
+  if (scope === "course-meta" || (scope === "course" && field === "title" && lang === primaryLang())) {
+    syncCourseIdControls();
+  }
 }
 
 function handleChange(event) {
@@ -955,15 +1016,6 @@ async function switchCourse(courseId) {
 
 function promptCourseDetails(mode) {
   const source = selectedCourseMeta();
-  const suggestedId = mode === "duplicate" && source
-    ? `${source.id}-copy`
-    : "new-course";
-  const id = window.prompt("Course folder / ID, for example sand-casting-basics", suggestedId);
-
-  if (id === null) {
-    return null;
-  }
-
   const titleEn = window.prompt("English course title", mode === "duplicate" && source ? `${source.title} copy` : "New course");
 
   if (titleEn === null) {
@@ -973,6 +1025,15 @@ function promptCourseDetails(mode) {
   const titleEs = window.prompt("Spanish course title", titleEn);
 
   if (titleEs === null) {
+    return null;
+  }
+
+  const suggestedId = mode === "duplicate" && source
+    ? normalizeCourseId(`${titleEn}-copy`, `${source.id}-copy`)
+    : normalizeCourseId(titleEn, "new-course");
+  const id = window.prompt("Course folder / ID", suggestedId);
+
+  if (id === null) {
     return null;
   }
 
@@ -1121,6 +1182,9 @@ async function loadCourse(courseId) {
     state.selectedCourseId = data.courseId || state.selectedCourseId;
     state.course = data.course;
     state.lessons = data.lessons || {};
+    state.pendingCourseId = state.selectedCourseId;
+    state.previousCourseId = "";
+    state.courseIdManuallyEdited = false;
     state.view = "general";
     state.moduleIndex = 0;
     state.stepIndex = 0;
@@ -1146,6 +1210,7 @@ async function save() {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
+        courseId: courseFolderId(),
         course: state.course,
         lessons: state.lessons
       })
@@ -1156,9 +1221,21 @@ async function save() {
       throw new Error(result.error || `Save failed: ${response.status}`);
     }
 
+    if (result.previousCourseId) {
+      state.previousCourseId = state.previousCourseId || result.previousCourseId;
+    }
+
+    state.selectedCourseId = result.courseId || state.selectedCourseId;
+    state.pendingCourseId = state.selectedCourseId;
+    languages().forEach(lang => {
+      langCourse(lang).courseId = state.selectedCourseId;
+    });
+
     state.dirty = false;
+    window.localStorage.setItem(COURSE_ID_STORAGE_KEY, state.selectedCourseId);
     await loadCourseList(state.selectedCourseId);
     renderCourseControls();
+    syncCourseIdControls();
     setStatus(`Saved ${result.written.length} files.\n${result.written.join("\n")}`);
   } catch (error) {
     setStatus(error.message, true);
@@ -1186,6 +1263,7 @@ async function publish() {
       },
       body: JSON.stringify({
         courseId: state.selectedCourseId,
+        previousCourseId: state.previousCourseId,
         message
       })
     });
@@ -1195,6 +1273,7 @@ async function publish() {
       throw new Error(result.error || `Publish failed: ${response.status}`);
     }
 
+    state.previousCourseId = "";
     setStatus(result.output || "Published.");
   } catch (error) {
     setStatus(error.message, true);

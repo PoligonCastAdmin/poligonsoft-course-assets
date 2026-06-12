@@ -294,9 +294,19 @@ async function writeCoursesIndex(index) {
   });
 }
 
-async function upsertCourseIndex(courseId, course) {
+async function upsertCourseIndex(courseId, course, previousCourseId) {
   const index = await loadCoursesIndex();
   const metadata = courseMetadata(courseId, course);
+  const previousId = previousCourseId ? normalizeCourseId(previousCourseId) : "";
+
+  if (previousId && previousId !== courseId) {
+    index.courses = index.courses.filter(item => item.id !== previousId);
+
+    if (index.defaultCourse === previousId) {
+      index.defaultCourse = courseId;
+    }
+  }
+
   const existingIndex = index.courses.findIndex(item => item.id === courseId);
 
   if (existingIndex >= 0) {
@@ -310,6 +320,12 @@ async function upsertCourseIndex(courseId, course) {
   }
 
   await writeCoursesIndex(index);
+}
+
+function setCourseId(course, courseId) {
+  Object.keys(course.languages || {}).forEach(lang => {
+    course.languages[lang].courseId = courseId;
+  });
 }
 
 async function loadEditorData(courseId) {
@@ -336,17 +352,34 @@ async function loadEditorData(courseId) {
 
 async function saveEditorData(courseId, payload) {
   const id = normalizeCourseId(courseId);
+  const nextId = normalizeCourseId(payload.courseId || id);
+  const renamedFrom = nextId !== id ? id : "";
   const lessons = payload.lessons && typeof payload.lessons === "object" ? payload.lessons : {};
   const course = normalizeCourse(payload.course, lessons);
   const written = [];
-  const file = courseFileFor(id);
+  const file = courseFileFor(nextId);
+
+  if (renamedFrom) {
+    if (!(await pathExists(courseFileFor(id)))) {
+      throw new Error(`Course not found: ${id}`);
+    }
+
+    if (await pathExists(courseFileFor(nextId))) {
+      throw new Error(`Course folder already exists: ${nextId}`);
+    }
+
+    await fs.rename(courseDirFor(id), courseDirFor(nextId));
+    written.push(`renamed data/${id} -> data/${nextId}`);
+  }
+
+  setCourseId(course, nextId);
 
   await writeJson(file, course);
   written.push(path.relative(repoRoot, file));
 
   for (const contentUrl of collectStepUrls(course)) {
     const content = lessons[contentUrl] || defaultLessonContent();
-    const lessonFile = safeCoursePath(id, contentUrl);
+    const lessonFile = safeCoursePath(nextId, contentUrl);
 
     await writeJson(lessonFile, {
       videoUrl: content.videoUrl || "",
@@ -358,10 +391,14 @@ async function saveEditorData(courseId, payload) {
     written.push(path.relative(repoRoot, lessonFile));
   }
 
-  await upsertCourseIndex(id, course);
+  await upsertCourseIndex(nextId, course, renamedFrom);
   written.push(path.relative(repoRoot, coursesIndexFile));
 
-  return written;
+  return {
+    courseId: nextId,
+    previousCourseId: renamedFrom,
+    written
+  };
 }
 
 function defaultLabels(lang, sourceCourse) {
@@ -582,13 +619,18 @@ function runGit(args) {
   });
 }
 
-async function publish(courseId, message) {
+async function publish(courseId, message, previousCourseId) {
   const id = normalizeCourseId(courseId);
+  const previousId = previousCourseId ? normalizeCourseId(previousCourseId) : "";
   const coursePath = `data/${id}`;
   const indexPath = "data/courses.json";
   const paths = [coursePath, indexPath];
 
-  await runGit(["add", "--", ...paths]);
+  if (previousId && previousId !== id) {
+    paths.push(`data/${previousId}`);
+  }
+
+  await runGit(["add", "-A", "--", ...paths]);
 
   const afterAdd = await runGit(["diff", "--cached", "--name-only", "--", ...paths]);
 
@@ -653,8 +695,8 @@ async function handleApi(req, res, url) {
     }
 
     if (req.method === "POST" && url.pathname === "/api/course") {
-      const written = await saveEditorData(await resolveCourseId(url), await readBody(req));
-      sendJson(res, 200, { ok: true, written });
+      const result = await saveEditorData(await resolveCourseId(url), await readBody(req));
+      sendJson(res, 200, { ok: true, ...result });
       return;
     }
 
@@ -666,7 +708,7 @@ async function handleApi(req, res, url) {
 
     if (req.method === "POST" && url.pathname === "/api/publish") {
       const body = await readBody(req);
-      sendJson(res, 200, await publish(body.courseId || await resolveCourseId(url), body.message));
+      sendJson(res, 200, await publish(body.courseId || await resolveCourseId(url), body.message, body.previousCourseId));
       return;
     }
 
