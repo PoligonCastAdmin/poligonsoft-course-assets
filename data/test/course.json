@@ -1,0 +1,105 @@
+{
+  "defaultLang": "en",
+  "languages": {
+    "en": {
+      "courseId": "test",
+      "title": "Creating Meshes with SALOME Mesh Generator",
+      "sidebarTitle": "SALOME Mesh Generator",
+      "description": "<p>Learn how to create finite element meshes with SALOME Mesh Generator for further use in PoligonSoft simulations.</p>\n<p>In this course, you will import a CAD model, prepare the geometry, create 2D and 3D meshes, check mesh quality, correct common mesh problems, and export the final mesh in MED format.</p>",
+      "level": "Free",
+      "labels": {
+        "modules": "modules",
+        "steps": "steps",
+        "approx": "approx.",
+        "level": "course level",
+        "progress": "Progress",
+        "lesson": "Lesson",
+        "step": "Step",
+        "of": "of",
+        "actions": "Actions",
+        "expected": "Expected result",
+        "loadingLesson": "Loading lesson...",
+        "previous": "Previous step",
+        "next": "Next step",
+        "markComplete": "Mark as completed",
+        "completed": "Completed",
+        "progressSync": "Progress sync",
+        "guestProgress": "Sign in to save completed lessons and continue later.",
+        "loadingProgress": "Loading saved progress...",
+        "savedProgress": "Signed in. Completed {done} of {total} steps.",
+        "progressUnavailable": "Progress sync is not available on this page yet.",
+        "login": "Log in",
+        "resetProgress": "Reset progress",
+        "resetConfirm": "Reset your course progress?",
+        "videoMissing": "Video will be added later",
+        "videoCaption": "Placeholder for YouTube / Vimeo embed"
+      },
+      "downloads": [],
+      "modules": [
+        {
+          "id": "introduction",
+          "title": "Introduction",
+          "steps": [
+            {
+              "id": "course-introduction",
+              "title": "Course introduction",
+              "duration": "1 min",
+              "contentUrl": "en/introduction/course-introduction.json"
+            }
+          ]
+        }
+      ],
+      "eyebrow": "Free training course"
+    },
+    "es": {
+      "courseId": "test",
+      "title": "Generación de mallas para PoligonSoft en SALOME",
+      "sidebarTitle": "Generador de mallas SALOME",
+      "description": "<p>Aprenda a crear mallas de elementos finitos con el generador de mallas SALOME para su uso posterior en simulaciones de PoligonSoft.</p>\n<p>En este curso, importará un modelo CAD, preparará la geometría, creará mallas 2D y 3D, revisará la calidad de la malla, corregirá problemas comunes y exportará la malla final en formato MED.</p>",
+      "level": "Gratis",
+      "labels": {
+        "modules": "modulos",
+        "steps": "pasos",
+        "approx": "aprox.",
+        "level": "nivel del curso",
+        "progress": "Progreso",
+        "lesson": "Leccion",
+        "step": "Paso",
+        "of": "de",
+        "actions": "Que hacer",
+        "expected": "Resultado esperado",
+        "loadingLesson": "Cargando leccion...",
+        "previous": "Paso anterior",
+        "next": "Siguiente paso",
+        "markComplete": "Completado",
+        "completed": "Completado",
+        "progressSync": "Sincronizacion de progreso",
+        "guestProgress": "Inicie sesion para guardar lecciones completadas y continuar despues.",
+        "loadingProgress": "Cargando progreso guardado...",
+        "savedProgress": "Sesion iniciada. Completado {done} de {total} pasos.",
+        "progressUnavailable": "La sincronizacion de progreso aun no esta disponible en esta pagina.",
+        "login": "Log in",
+        "resetProgress": "Restablecer progreso",
+        "resetConfirm": "Restablecer el progreso del curso?",
+        "videoMissing": "El video se agregara mas tarde",
+        "videoCaption": "Marcador para YouTube / Vimeo embed"
+      },
+      "downloads": [],
+      "modules": [
+        {
+          "id": "introduction",
+          "title": "Introduccion",
+          "steps": [
+            {
+              "id": "course-introduction",
+              "title": "Introduccion del curso",
+              "duration": "1 min",
+              "contentUrl": "es/introduction/course-introduction.json"
+            }
+          ]
+        }
+      ],
+      "eyebrow": "Curso gratuito"
+    }
+  }
+}

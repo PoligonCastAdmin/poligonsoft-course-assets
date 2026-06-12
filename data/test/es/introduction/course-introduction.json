@@ -1,0 +1,8 @@
+{
+  "videoUrl": "",
+  "summary": "<p>Describa lo que los estudiantes aprenderan en este curso.</p>",
+  "actions": [
+    "<p>Agregue la primera accion.</p>"
+  ],
+  "expected": "<p>Describa el resultado esperado.</p>"
+}

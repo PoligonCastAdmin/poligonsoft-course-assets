@@ -9,6 +9,15 @@
         "en",
         "es"
       ]
+    },
+    {
+      "id": "test",
+      "title": "Creating Meshes with SALOME Mesh Generator",
+      "folder": "test",
+      "languages": [
+        "en",
+        "es"
+      ]
     }
   ]
 }
