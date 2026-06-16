@@ -1,8 +1,13 @@
 {
-  "videoUrl": "",
-  "summary": "<p>Describe what students will learn in this course.</p>",
+  "videoUrl": "https://cdn.prod.website-files.com/6543a5ce0aad040374803470/6a31a5ee81e9a44c62487a59_mesh.avif",
+  "summary": "<p>In this lesson, you will learn the purpose of the course and understand the role of finite element meshes in preparing casting simulation models for PoligonSoft. The course will guide you through the main stages of mesh creation: geometry import, geometry preparation, 2D mesh creation, submesh setup, mesh quality checking, automatic correction, 3D mesh generation, and MED export.</p>",
   "actions": [
-    "<p>Add the first action.</p>"
+    "<p>CAD model requirements for mesh generation.</p>",
+    "<p>Geometry import and partitioning.</p>",
+    "<p>2D surface mesh creation.</p>",
+    "<p>Submesh setup for the casting.</p>",
+    "<p>2D mesh quality checking and automatic correction.</p>",
+    "<p>3D mesh generation and MED export.</p>"
   ],
-  "expected": "<p>Describe the expected result.</p>"
+  "expected": "<p>As a result, you will understand the complete workflow for creating a finite element mesh with SALOME Mesh Generator and preparing it for further use in PoligonSoft simulations.</p>"
 }

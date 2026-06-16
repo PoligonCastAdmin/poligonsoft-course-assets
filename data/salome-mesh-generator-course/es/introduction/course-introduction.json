@@ -1,8 +1,13 @@
 {
-  "videoUrl": "",
-  "summary": "<p>Describa lo que los estudiantes aprenderan en este curso.</p>",
+  "videoUrl": "https://cdn.prod.website-files.com/6543a5ce0aad040374803470/6a31a5ee81e9a44c62487a59_mesh.avif",
+  "summary": "<p>En esta lección, conocerá el propósito del curso y comprenderá el papel de las mallas de elementos finitos en la preparación de modelos de simulación de fundición para PoligonSoft. El curso le guiará por las etapas principales de creación de la malla: importación de geometría, preparación de la geometría, creación de la malla 2D, configuración de submalla, revisión de calidad de la malla, corrección automática, generación de malla 3D y exportación en formato MED.</p>",
   "actions": [
-    "<p>Agregue la primera accion.</p>"
+    "<p>Requisitos del modelo CAD para la generación de mallas.</p>",
+    "<p>Importación y partición de la geometría.</p>",
+    "<p>Creación de la malla superficial 2D.</p>",
+    "<p>Configuración de submalla para la pieza fundida.</p>",
+    "<p>Revisión de calidad de la malla 2D y corrección automática.</p>",
+    "<p>Generación de la malla 3D y exportación en formato MED.</p>"
   ],
-  "expected": "<p>Describa el resultado esperado.</p>"
+  "expected": "<p>Como resultado, comprenderá el flujo de trabajo completo para crear una malla de elementos finitos con SALOME Mesh Generator y prepararla para su uso posterior en simulaciones de PoligonSoft.</p>"
 }
