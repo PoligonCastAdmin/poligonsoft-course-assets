@@ -1,0 +1,13 @@
+{
+  "videoUrl": "https://cdn.prod.website-files.com/6543a5ce0aad040374803470/6a32d91de6b6e14eafc99ea6_mistakesES.avif",
+  "summary": "<p>En esta lección, conocerá los requisitos básicos que debe cumplir un modelo CAD antes de crear una malla de elementos finitos para simulaciones en PoligonSoft. Un modelo CAD correcto debe estar creado en escala 1:1, incluir los elementos principales del proceso de fundición y estar preparado de forma que el generador de mallas pueda detectar correctamente las superficies comunes entre los cuerpos.</p>",
+  "actions": [
+    "<p>Compruebe que el modelo 3D esté creado en escala 1:1.</p>",
+    "<p>Asegúrese de que el modelo incluya los elementos principales del proceso de fundición: la pieza fundida, el molde, el sistema de colada y los elementos auxiliares, como insertos exotérmicos, manguitos aislantes y otros componentes necesarios.</p>",
+    "<p>No reste la pieza fundida del molde en el modelo CAD. El molde debe ser un sólido sin cavidades en su interior.</p>",
+    "<p>Asegúrese de que las superficies entre los elementos auxiliares y el molde coincidan correctamente. Evite superficies sobresalientes pequeñas e intersecciones no intencionales de cuerpos.</p>",
+    "<p>Tenga en cuenta que las superficies planas o con geometría simple en contacto pueden ser detectadas y unidas por el generador de mallas. En el caso de superficies de contacto con curvaturas complejas, es mejor dejar que la pieza interior esté dentro de la exterior, sin restarla en el sistema CAD. De esta forma, el generador de mallas podrá determinar la superficie común y separar las piezas mediante su propio algoritmo.</p>",
+    "<p>Elimine detalles pequeños innecesarios y problemas de geometría durante la etapa de preparación CAD, antes de generar la malla.</p>"
+  ],
+  "expected": "<p>El modelo CAD cumplirá los requisitos básicos para la generación de mallas. Estará creado en escala 1:1, incluirá los elementos necesarios del proceso de fundición y permitirá que el generador de mallas determine correctamente las superficies comunes entre los cuerpos.</p>"
+}

@@ -1,0 +1,13 @@
+{
+  "videoUrl": "https://cdn.prod.website-files.com/6543a5ce0aad040374803470/6a32d91d0fc4dcbddc4a9dc2_mistakesEn.avif",
+  "summary": "<p>In this lesson, you will learn the basic requirements that a CAD model must meet before creating a finite element mesh for PoligonSoft simulations. A correct CAD model must be created at a 1:1 scale, include the main elements of the casting process, and be prepared so that the mesh generator can correctly detect common surfaces between bodies.</p>",
+  "actions": [
+    "<p>Check that the 3D model is created at a 1:1 scale.</p>",
+    "<p>Make sure the model includes the main elements of the casting process: the casting, the mold, the gating system, and auxiliary elements such as exothermic inserts, insulating sleeves, and other required components.</p>",
+    "<p>Do not subtract the casting from the mold in the CAD model. The mold must be a solid body without internal cavities.</p>",
+    "<p>Make sure that the surfaces between the auxiliary elements and the mold match correctly. Avoid small protruding surfaces and unintended body intersections.</p>",
+    "<p>Keep in mind that flat contact surfaces or surfaces with simple geometry can be detected and joined by the mesh generator. For contact surfaces with complex curvature, it is better to leave the inner part inside the outer part without subtracting it in the CAD system. This allows the mesh generator to determine the common surface and separate the parts using its own algorithm.</p>",
+    "<p>Remove unnecessary small details and geometry problems during the CAD preparation stage, before generating the mesh.</p>"
+  ],
+  "expected": "<p>The CAD model will meet the basic requirements for mesh generation. It will be created at a 1:1 scale, include the required casting process elements, and allow the mesh generator to correctly determine common surfaces between bodies.</p>"
+}

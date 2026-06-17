@@ -45,6 +45,12 @@
               "title": "Course introduction",
               "duration": "1 min",
               "contentUrl": "en/introduction/course-introduction.json"
+            },
+            {
+              "id": "cad-model-requirements",
+              "title": "CAD model requirements",
+              "duration": "3 min",
+              "contentUrl": "en/introduction/cad-model-requirements.json"
             }
           ]
         }
@@ -96,6 +102,12 @@
               "title": "Introducción al curso",
               "duration": "1 min",
               "contentUrl": "es/introduction/course-introduction.json"
+            },
+            {
+              "id": "cad-model-requirements",
+              "title": "Requisitos del modelo CAD",
+              "duration": "3 min",
+              "contentUrl": "es/introduction/cad-model-requirements.json"
             }
           ]
         }
