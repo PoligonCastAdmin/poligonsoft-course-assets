@@ -1,5 +1,5 @@
 {
-  "videoUrl": "https://cdn.prod.website-files.com/6543a5ce0aad040374803470/6a32d91d0fc4dcbddc4a9dc2_mistakesEn.avif",
+  "videoUrl": "https://cdn.prod.website-files.com/6543a5ce0aad040374803470/6a32d91d0fc4dcbddc4a9dc2_a4bdc0ce9e4354d32c0cfdfdee5e2669_mistakesEn.avif",
   "summary": "<p>In this lesson, you will learn the basic requirements that a CAD model must meet before creating a finite element mesh for PoligonSoft simulations. A correct CAD model must be created at a 1:1 scale, include the main elements of the casting process, and be prepared so that the mesh generator can correctly detect common surfaces between bodies.</p>",
   "actions": [
     "<p>Check that the 3D model is created at a 1:1 scale.</p>",

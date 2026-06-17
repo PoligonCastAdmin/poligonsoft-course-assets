@@ -1,5 +1,5 @@
 {
-  "videoUrl": "https://cdn.prod.website-files.com/6543a5ce0aad040374803470/6a32d91de6b6e14eafc99ea6_mistakesES.avif",
+  "videoUrl": "https://cdn.prod.website-files.com/6543a5ce0aad040374803470/6a32d91de6b6e14eafc99ea6_3e1de7cc398a725180b83d39a52dc544_mistakesES.avif",
   "summary": "<p>En esta lección, conocerá los requisitos básicos que debe cumplir un modelo CAD antes de crear una malla de elementos finitos para simulaciones en PoligonSoft. Un modelo CAD correcto debe estar creado en escala 1:1, incluir los elementos principales del proceso de fundición y estar preparado de forma que el generador de mallas pueda detectar correctamente las superficies comunes entre los cuerpos.</p>",
   "actions": [
     "<p>Compruebe que el modelo 3D esté creado en escala 1:1.</p>",
