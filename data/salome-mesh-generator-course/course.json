@@ -34,7 +34,12 @@
         "videoMissing": "Video will be added later",
         "videoCaption": "Placeholder for YouTube / Vimeo embed"
       },
-      "downloads": [],
+      "downloads": [
+        {
+          "title": "Example1simetria.step",
+          "url": "https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/poligonsoft-free-course/Example1simetria.step"
+        }
+      ],
       "modules": [
         {
           "id": "introduction",
@@ -103,7 +108,12 @@
         "videoMissing": "El video se agregara mas tarde",
         "videoCaption": "Marcador para YouTube / Vimeo embed"
       },
-      "downloads": [],
+      "downloads": [
+        {
+          "title": "Example1simetria.step",
+          "url": "https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/poligonsoft-free-course/Example1simetria.step"
+        }
+      ],
       "modules": [
         {
           "id": "introduction",
