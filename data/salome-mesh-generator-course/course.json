@@ -53,6 +53,18 @@
               "contentUrl": "en/introduction/cad-model-requirements.json"
             }
           ]
+        },
+        {
+          "id": "geometry-import-preparation",
+          "title": "Geometry Import and Preparation",
+          "steps": [
+            {
+              "id": "import-automatic-partition",
+              "title": "Import and automatic partition",
+              "duration": "8 min",
+              "contentUrl": "en/geometry-import-preparation/import-automatic-partition.json"
+            }
+          ]
         }
       ],
       "eyebrow": "Free training course",
@@ -108,6 +120,18 @@
               "title": "Requisitos del modelo CAD",
               "duration": "3 min",
               "contentUrl": "es/introduction/cad-model-requirements.json"
+            }
+          ]
+        },
+        {
+          "id": "geometry-import-preparation",
+          "title": "Importación y preparación de la geometría",
+          "steps": [
+            {
+              "id": "import-automatic-partition",
+              "title": "Importación y partición automática",
+              "duration": "8 min",
+              "contentUrl": "es/geometry-import-preparation/import-automatic-partition.json"
             }
           ]
         }

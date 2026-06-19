@@ -1,0 +1,25 @@
+{
+  "videoUrl": "",
+  "summary": "<p>En esta lección, aprenderá a importar un modelo CAD en SALOME Mesh Generator y a ejecutar la operación de partición automática. Esta operación analiza la geometría, detecta superficies de contacto entre cuerpos, une superficies duplicadas cuando es posible y separa el modelo en elementos adecuados para la generación de la malla.</p>",
+  "actions": [
+    "<p>Descargue el archivo <a href=\"https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/poligonsoft-free-course/Example1simetria.step\" download=\"Example1simetria.step\" target=\"_blank\" rel=\"noopener\">Example1simetria.step</a>.</p>",
+    "<p>Ejecute PoligonSoft.</p>",
+    "<p>Haga clic en Mesh para iniciar SALOME Mesh Generator.</p>",
+    "<p>Cambie al modo de preparación de geometría: Geometry.</p>",
+    "<p>Abra el menú File y seleccione el comando Import.</p>",
+    "<p>Seleccione el formato STEP.</p>",
+    "<p>Elija el archivo Example1simetria.step.</p>",
+    "<p>En la ventana emergente de conversión de unidades, haga clic en No para mantener el modelo en milímetros. Si hace clic en Yes, las unidades del modelo cambiarán a metros.</p>",
+    "<p>En la siguiente ventana emergente, Shape Processing, seleccione Yes. El programa revisará automáticamente el modelo y eliminará posibles problemas de geometría.<br><span class=\"red\">Importante</span>: a veces la corrección automática de geometría puede provocar la pérdida de integridad del modelo. Si esto sucede, repita la operación desde el principio y seleccione No en este paso.</p>",
+    "<p>En la ventana emergente Create Partition, seleccione Yes para realizar la separación de cuerpos y ejecutar la operación de partición automática.</p>",
+    "<p>Espere hasta que finalicen la importación de la geometría y la operación de partición.</p>",
+    "<p>Use el mouse para revisar la geometría importada: botón izquierdo para rotar, rueda del mouse para acercar o alejar la vista y botón de la rueda para desplazar la vista.</p>",
+    "<p>Revise el historial de operaciones de geometría en el panel izquierdo.</p>",
+    "<p>Compruebe que el archivo fue cargado, que los cuerpos fueron detectados y que el comando de partición fue ejecutado.</p>",
+    "<p>Revise los cuerpos obtenidos después de la operación de partición automática.</p>",
+    "<p>Desactive la visualización de la pieza fundida para revisar el cuerpo del molde por separado.</p>",
+    "<p>Asegúrese de que, en la rama Partition_1, el molde esté representado como un cuerpo sólido con cavidades internas.</p>",
+    "<p>Cambie el nombre del cuerpo correspondiente a Mold. Esto facilitará su localización en el siguiente paso.</p>"
+  ],
+  "expected": "<p>El modelo CAD quedará importado en SALOME Mesh Generator con las unidades correctas. La operación de partición automática preparará la geometría para la generación de la malla, separará los cuerpos principales y creará una estructura clara que podrá utilizarse en los siguientes pasos.</p>"
+}
