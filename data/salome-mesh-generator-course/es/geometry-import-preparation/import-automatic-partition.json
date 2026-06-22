@@ -1,5 +1,5 @@
 {
-  "videoUrl": "",
+  "videoUrl": "https://youtu.be/cVVmfBdzSTs",
   "summary": "<p>En esta lección, aprenderá a importar un modelo CAD en SALOME Mesh Generator y a ejecutar la operación de partición automática. Esta operación analiza la geometría, detecta superficies de contacto entre cuerpos, une superficies duplicadas cuando es posible y separa el modelo en elementos adecuados para la generación de la malla.</p>",
   "actions": [
     "<p>Descargue el archivo <a href=\"https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/poligonsoft-free-course/Example1simetria.step\" download=\"Example1simetria.step\" target=\"_blank\" rel=\"noopener\">Example1simetria.step</a>.</p>",
