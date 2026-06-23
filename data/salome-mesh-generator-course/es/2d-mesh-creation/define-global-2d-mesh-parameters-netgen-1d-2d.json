@@ -1,0 +1,20 @@
+{
+  "videoUrl": "",
+  "summary": "<p>En esta lección, cambiará al modo de generación de mallas y creará el objeto de malla principal para toda la geometría. Definirá los parámetros globales de la malla 2D utilizando el algoritmo NETGEN 1D-2D. Estos parámetros se aplicarán a todos los cuerpos dentro del grupo Partition_1 y definirán la malla superficial inicial del modelo.</p>",
+  "actions": [
+    "<p>Cambie al modo de generación de mallas.</p>",
+    "<p>Seleccione Partition_1 en el árbol de objetos.</p>",
+    "<p>Ejecute el comando Create Mesh.</p>",
+    "<p>En la ventana de configuración de la malla, abra la pestaña 2D.</p>",
+    "<p>Seleccione el algoritmo NETGEN 1D-2D.</p>",
+    "<p>Cree una nueva hipótesis utilizando NETGEN 2D Parameters.</p>",
+    "<p>Defina el tamaño máximo del elemento como 40 mm.</p>",
+    "<p>Defina el tamaño mínimo del elemento como 1 mm.</p>",
+    "<p>Defina el nivel de finura como Coarse.</p>",
+    "<p>Confirme los parámetros de la hipótesis y haga clic en OK.</p>",
+    "<p>Haga clic en Apply y Close para crear la configuración de la malla.</p>",
+    "<p>Expanda Mesh_1 en el árbol de objetos y compruebe que el algoritmo NETGEN 1D-2D y la nueva hipótesis hayan sido asignados a la malla.</p>",
+    "<p>Tenga en cuenta que estos parámetros globales se aplicarán a todos los cuerpos dentro de Partition_1, salvo que se cree una submalla separada para un cuerpo específico.</p>"
+  ],
+  "expected": "<p>El objeto de malla principal quedará creado para Partition_1. El algoritmo NETGEN 1D-2D y los parámetros globales de la malla 2D quedarán asignados a Mesh_1, preparando el modelo para el cálculo de la malla superficial 2D y la configuración de submallas locales.</p>"
+}

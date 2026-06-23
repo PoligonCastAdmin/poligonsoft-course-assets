@@ -1,0 +1,20 @@
+{
+  "videoUrl": "",
+  "summary": "<p>In this lesson, you will switch to the mesh generation mode and create the main mesh object for the entire geometry. You will define the global 2D mesh parameters using the NETGEN 1D-2D algorithm. These parameters will be applied to all bodies inside the Partition_1 group and will define the initial surface mesh for the model.</p>",
+  "actions": [
+    "<p>Switch to the mesh generation mode.</p>",
+    "<p>Select Partition_1 in the object tree.</p>",
+    "<p>Run the Create Mesh command.</p>",
+    "<p>In the mesh settings window, open the 2D tab.</p>",
+    "<p>Select the NETGEN 1D-2D algorithm.</p>",
+    "<p>Create a new hypothesis using NETGEN 2D Parameters.</p>",
+    "<p>Set the maximum element size to 40 mm.</p>",
+    "<p>Set the minimum element size to 1 mm.</p>",
+    "<p>Set the fineness level to Coarse.</p>",
+    "<p>Confirm the hypothesis settings and click OK.</p>",
+    "<p>Click Apply and Close to create the mesh settings.</p>",
+    "<p>Expand Mesh_1 in the object tree and check that the NETGEN 1D-2D algorithm and the new hypothesis were assigned to the mesh.</p>",
+    "<p>Keep in mind that these global parameters will be applied to all bodies in Partition_1 unless a separate submesh is created for a specific body.</p>"
+  ],
+  "expected": "<p>The main mesh object will be created for Partition_1. The NETGEN 1D-2D algorithm and global 2D mesh parameters will be assigned to Mesh_1, preparing the model for 2D surface mesh calculation and local submesh setup.</p>"
+}

@@ -70,6 +70,18 @@
               "contentUrl": "en/geometry-import-preparation/import-automatic-partition.json"
             }
           ]
+        },
+        {
+          "id": "2d-mesh-creation",
+          "title": "2D Mesh Creation",
+          "steps": [
+            {
+              "id": "define-global-2d-mesh-parameters-netgen-1d-2d",
+              "title": "Define global 2D mesh parameters (NETGEN 1D-2D)",
+              "duration": "5 min",
+              "contentUrl": "en/2d-mesh-creation/define-global-2d-mesh-parameters-netgen-1d-2d.json"
+            }
+          ]
         }
       ],
       "eyebrow": "Free training course",
@@ -142,6 +154,18 @@
               "title": "Importación y partición automática",
               "duration": "8 min",
               "contentUrl": "es/geometry-import-preparation/import-automatic-partition.json"
+            }
+          ]
+        },
+        {
+          "id": "2d-mesh-creation",
+          "title": "Creación de la malla 2D",
+          "steps": [
+            {
+              "id": "define-global-2d-mesh-parameters-netgen-1d-2d",
+              "title": "Definición de parámetros globales de la malla 2D (NETGEN 1D-2D)",
+              "duration": "5 min",
+              "contentUrl": "es/2d-mesh-creation/define-global-2d-mesh-parameters-netgen-1d-2d.json"
             }
           ]
         }
