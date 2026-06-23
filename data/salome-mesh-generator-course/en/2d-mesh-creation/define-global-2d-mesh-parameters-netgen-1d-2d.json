@@ -1,5 +1,5 @@
 {
-  "videoUrl": "",
+  "videoUrl": "https://youtu.be/WM_nmOlR_IQ",
   "summary": "<p>In this lesson, you will switch to the mesh generation mode and create the main mesh object for the entire geometry. You will define the global 2D mesh parameters using the NETGEN 1D-2D algorithm. These parameters will be applied to all bodies inside the Partition_1 group and will define the initial surface mesh for the model.</p>",
   "actions": [
     "<p>Switch to the mesh generation mode.</p>",

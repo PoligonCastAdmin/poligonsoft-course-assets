@@ -1,5 +1,5 @@
 {
-  "videoUrl": "",
+  "videoUrl": "https://youtu.be/WM_nmOlR_IQ",
   "summary": "<p>En esta lección, cambiará al modo de generación de mallas y creará el objeto de malla principal para toda la geometría. Definirá los parámetros globales de la malla 2D utilizando el algoritmo NETGEN 1D-2D. Estos parámetros se aplicarán a todos los cuerpos dentro del grupo Partition_1 y definirán la malla superficial inicial del modelo.</p>",
   "actions": [
     "<p>Cambie al modo de generación de mallas.</p>",
