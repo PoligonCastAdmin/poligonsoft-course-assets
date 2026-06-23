@@ -77,7 +77,7 @@
           "steps": [
             {
               "id": "define-global-2d-mesh-parameters-netgen-1d-2d",
-              "title": "Define global 2D mesh parameters (NETGEN 1D-2D)",
+              "title": "Define global 2D mesh parameters",
               "duration": "5 min",
               "contentUrl": "en/2d-mesh-creation/define-global-2d-mesh-parameters-netgen-1d-2d.json"
             }
@@ -163,7 +163,7 @@
           "steps": [
             {
               "id": "define-global-2d-mesh-parameters-netgen-1d-2d",
-              "title": "Definición de parámetros globales de la malla 2D (NETGEN 1D-2D)",
+              "title": "Definición de parámetros globales de la malla 2D",
               "duration": "5 min",
               "contentUrl": "es/2d-mesh-creation/define-global-2d-mesh-parameters-netgen-1d-2d.json"
             }
