@@ -1,5 +1,5 @@
 {
-  "videoUrl": "",
+  "videoUrl": "https://youtu.be/B-dszi8YN8Y",
   "summary": "<p>En esta lección, revisará la calidad de la malla superficial 2D antes de crear la malla 3D. Este paso permite detectar elementos triangulares problemáticos y corregirlos automáticamente cuando sea posible. Revisar y corregir la malla 2D es importante porque esta malla superficial servirá como base para la malla volumétrica final.</p>",
   "actions": [
     "<p>Asegúrese de que la malla global 2D Mesh_1 haya sido calculada.</p>",
@@ -7,7 +7,7 @@
     "<p>Ejecute el comando Check 2D Mesh Quality.</p>",
     "<p>Revise la ventana de control de calidad de la malla.</p>",
     "<p>Compruebe los parámetros principales de calidad: ángulo mínimo del triángulo, relación de aspecto máxima y longitud mínima del segmento 2D.</p>",
-    "<p>Haga clic en Correct para ejecutar el procedimiento de corrección automática.</p>",
+    "<p>Haga clic en Correct All para ejecutar el procedimiento de corrección automática.</p>",
     "<p>Espere hasta que finalice el proceso de corrección y revise el informe de calidad actualizado.</p>",
     "<p>Repita el comando Correct hasta que la cantidad de elementos que no cumplen los requisitos deje de disminuir. <span class=\"red\">Importante</span>: no es necesario lograr una malla completamente sin defectos; el objetivo de la operación es minimizar la cantidad de elementos defectuosos.</p>",
     "<p>Revise visualmente la malla superficial y asegúrese de que la malla 2D corregida sea adecuada para el siguiente paso.</p>",
