@@ -86,6 +86,12 @@
               "title": "Define local mesh parameters",
               "duration": "5 min",
               "contentUrl": "en/2d-mesh-creation/define-local-mesh-parameters.json"
+            },
+            {
+              "id": "2d-mesh-quality-check-and-correction",
+              "title": "2D Mesh Quality Check and Correction",
+              "duration": "5 min",
+              "contentUrl": "en/2d-mesh-creation/2d-mesh-quality-check-and-correction.json"
             }
           ]
         }
@@ -178,6 +184,12 @@
               "title": "Definición de parámetros locales de malla",
               "duration": "5 min",
               "contentUrl": "es/2d-mesh-creation/define-local-mesh-parameters.json"
+            },
+            {
+              "id": "2d-mesh-quality-check-and-correction",
+              "title": "Revisión y corrección de la malla 2D",
+              "duration": "5 min",
+              "contentUrl": "es/2d-mesh-creation/2d-mesh-quality-check-and-correction.json"
             }
           ]
         }

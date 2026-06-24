@@ -1,0 +1,17 @@
+{
+  "videoUrl": "",
+  "summary": "<p>In this lesson, you will check the quality of the 2D surface mesh before creating the 3D mesh. This step helps detect problematic triangular elements and correct them automatically when possible. Checking and correcting the 2D mesh is important because this surface mesh will be used as the basis for the final volumetric mesh.</p>",
+  "actions": [
+    "<p>Make sure the global 2D mesh Mesh_1 has been computed.</p>",
+    "<p>Select Mesh_1 in the object tree.</p>",
+    "<p>Run the Check 2D Mesh Quality command.</p>",
+    "<p>Review the mesh quality control window.</p>",
+    "<p>Check the main quality parameters: minimum triangle angle, maximum aspect ratio, and minimum 2D segment length.</p>",
+    "<p>Click Correct to run the automatic correction procedure.</p>",
+    "<p>Wait until the correction process is complete and review the updated quality report.</p>",
+    "<p>Repeat the Correct command until the number of elements that do not meet the requirements stops decreasing. <span class=\"red\">Important</span>: it is not necessary to obtain a completely defect-free mesh; the goal of this operation is to minimize the number of defective elements.</p>",
+    "<p>Visually review the surface mesh and make sure that the corrected 2D mesh is suitable for the next step.</p>",
+    "<p>Do not proceed to 3D mesh generation until the 2D mesh quality has been checked and corrected.</p>"
+  ],
+  "expected": "<p>The 2D surface mesh will be checked and corrected where possible. The number of defective elements will be reduced as much as possible, and the model will be ready for the next step: generating the 3D volumetric mesh.</p>"
+}
