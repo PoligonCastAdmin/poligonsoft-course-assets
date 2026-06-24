@@ -1,0 +1,24 @@
+{
+  "videoUrl": "",
+  "summary": "<p>In this lesson, you will create a local submesh for the casting and auxiliary elements. The global mesh parameters are applied to the entire model, but the casting and auxiliary elements usually require a finer mesh than the mold. For this reason, we will create a 2D submesh rule with higher resolution for the bodies that require more precision.</p>",
+  "actions": [
+    "<p>Select Mesh_1 in the object tree.</p>",
+    "<p>Right-click Mesh_1 and select Create Sub-mesh.</p>",
+    "<p>In the Geometry field, select the bodies to which the submesh will be applied. In this case, select all bodies except the mold.</p>",
+    "<p>Open the 2D tab.</p>",
+    "<p>Select the Gmsh 2D algorithm.</p>",
+    "<p><span class=\"red\">Important</span>: you can also use the NETGEN 1D-2D method used in the previous lesson. In this lesson, we combine the methods for educational purposes. The NETGEN method generates very good quality meshes, but it can sometimes fail on complex geometries. The Gmsh method is usually more stable on complex geometries, although it generates a less regular mesh with a larger number of elements.</p>",
+    "<p>Create a new hypothesis using Gmsh Parameters.</p>",
+    "<p>Choose the Frontal-Delaunay algorithm.</p>",
+    "<p>Set the maximum element size to 10 mm.</p>",
+    "<p>Set the minimum element size to 1 mm.</p>",
+    "<p>Confirm the hypothesis settings and click OK.</p>",
+    "<p>Click Apply and Close to create the submesh settings.</p>",
+    "<p>Expand Mesh_1 in the object tree and check that the new submesh was created for the selected bodies.</p>",
+    "<p>Right-click the submesh and select Compute Sub-mesh.</p>",
+    "<p>Wait until the surface mesh of the selected bodies is calculated.</p>",
+    "<p>Review the generated submesh and check that the element size is suitable for the geometry.</p>",
+    "<p>Right-click the global mesh Mesh_1 and select Compute.</p>"
+  ],
+  "expected": "<p>A local 2D submesh will be created for the casting and auxiliary elements, which require higher precision. The mold will keep a coarser 2D mesh defined by the global Mesh_1 parameters.</p>"
+}

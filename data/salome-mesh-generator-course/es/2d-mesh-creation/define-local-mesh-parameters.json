@@ -1,0 +1,24 @@
+{
+  "videoUrl": "",
+  "summary": "<p>En esta lección, creará una submalla local para la pieza fundida y los elementos auxiliares. Los parámetros globales de malla se aplican a todo el modelo, pero la pieza fundida y los elementos auxiliares normalmente requieren una malla más fina que el molde. Por esta razón, crearemos una regla de submalla 2D con mayor resolución para los cuerpos que requieren más precisión.</p>",
+  "actions": [
+    "<p>Seleccione Mesh_1 en el árbol de objetos.</p>",
+    "<p>Haga clic con el botón derecho sobre Mesh_1 y seleccione Create Sub-mesh.</p>",
+    "<p>En el campo Geometry, seleccione los cuerpos a los que aplicaremos la submalla. En nuestro caso, se trata de todos los cuerpos excepto el molde.</p>",
+    "<p>Abra la pestaña 2D.</p>",
+    "<p>Seleccione el algoritmo Gmsh 2D.</p>",
+    "<p><span class=\"red\">Importante</span>: también puede usar el método NETGEN 1D-2D utilizado en la clase anterior. En esta clase combinamos los métodos con fines educativos. El método NETGEN genera mallas de muy buena calidad, pero a veces puede fallar en geometrías complejas. El método Gmsh suele ser más estable en geometrías complejas, aunque genera una malla menos regular y con mayor número de elementos.</p>",
+    "<p>Cree una nueva hipótesis utilizando Gmsh Parameters.</p>",
+    "<p>Elija el algoritmo Frontal-Delaunay.</p>",
+    "<p>Defina el tamaño máximo del elemento como 10 mm.</p>",
+    "<p>Defina el tamaño mínimo del elemento como 1 mm.</p>",
+    "<p>Confirme los parámetros de la hipótesis y haga clic en OK.</p>",
+    "<p>Haga clic en Apply y Close para crear la configuración de la submalla.</p>",
+    "<p>Expanda Mesh_1 en el árbol de objetos y compruebe que la nueva submalla haya sido creada para los cuerpos seleccionados.</p>",
+    "<p>Haga clic con el botón derecho sobre la submalla y seleccione Compute Sub-mesh.</p>",
+    "<p>Espere hasta que se calcule la malla superficial de los cuerpos seleccionados.</p>",
+    "<p>Revise la submalla generada y compruebe que el tamaño de los elementos sea adecuado para la geometría.</p>",
+    "<p>Haga clic con el botón derecho sobre la malla global Mesh_1 y seleccione Compute.</p>"
+  ],
+  "expected": "<p>Se creará una submalla 2D local para la pieza fundida y los elementos auxiliares, que requieren mayor precisión. El molde mantendrá una malla 2D más gruesa, definida por los parámetros globales de Mesh_1.</p>"
+}

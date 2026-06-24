@@ -80,6 +80,12 @@
               "title": "Define global 2D mesh parameters",
               "duration": "5 min",
               "contentUrl": "en/2d-mesh-creation/define-global-2d-mesh-parameters-netgen-1d-2d.json"
+            },
+            {
+              "id": "define-local-mesh-parameters",
+              "title": "Define local mesh parameters",
+              "duration": "5 min",
+              "contentUrl": "en/2d-mesh-creation/define-local-mesh-parameters.json"
             }
           ]
         }
@@ -166,6 +172,12 @@
               "title": "Definición de parámetros globales de la malla 2D",
               "duration": "5 min",
               "contentUrl": "es/2d-mesh-creation/define-global-2d-mesh-parameters-netgen-1d-2d.json"
+            },
+            {
+              "id": "define-local-mesh-parameters",
+              "title": "Definición de parámetros locales de malla",
+              "duration": "5 min",
+              "contentUrl": "es/2d-mesh-creation/define-local-mesh-parameters.json"
             }
           ]
         }
