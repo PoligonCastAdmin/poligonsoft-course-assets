@@ -1,5 +1,5 @@
 {
-  "videoUrl": "",
+  "videoUrl": "https://youtu.be/T40DJHXGyFw",
   "summary": "<p>In this lesson, you will create a local submesh for the casting and auxiliary elements. The global mesh parameters are applied to the entire model, but the casting and auxiliary elements usually require a finer mesh than the mold. For this reason, we will create a 2D submesh rule with higher resolution for the bodies that require more precision. </p>",
   "actions": [
     "<p>Select Mesh_1 in the object tree.</p>",
@@ -10,7 +10,7 @@
     "<p>Create a new hypothesis using Gmsh Parameters.</p>",
     "<p>Choose the Frontal-Delaunay algorithm.</p>",
     "<p>Set the maximum element size to 10 mm.</p>",
-    "<p>Set the minimum element size to 1 mm. </p>\n<p><span class=\"red\">The minimum size should be selected so that at least two tetrahedral elements can fit across the thinnest part of the geometry.</p>",
+    "<p>Set the minimum element size to 1 mm. </p>\n<p><span class=\"red\">Important</span>The minimum size should be selected so that at least two tetrahedral elements can fit across the thinnest part of the geometry.</p>",
     "<p>Confirm the hypothesis settings and click OK.</p>",
     "<p>Click Apply and Close to create the submesh settings.</p>",
     "<p>Expand Mesh_1 in the object tree and check that the new submesh was created for the selected bodies.</p>",
