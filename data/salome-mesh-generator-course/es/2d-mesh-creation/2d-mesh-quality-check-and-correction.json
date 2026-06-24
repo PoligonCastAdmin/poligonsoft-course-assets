@@ -9,7 +9,7 @@
     "<p>Compruebe los parámetros principales de calidad: ángulo mínimo del triángulo, relación de aspecto máxima y longitud mínima del segmento 2D.</p>",
     "<p>Haga clic en Correct All para ejecutar el procedimiento de corrección automática.</p>",
     "<p>Espere hasta que finalice el proceso de corrección y revise el informe de calidad actualizado.</p>",
-    "<p>Repita el comando Correct hasta que la cantidad de elementos que no cumplen los requisitos deje de disminuir. <span class=\"red\">Importante</span>: no es necesario lograr una malla completamente sin defectos; el objetivo de la operación es minimizar la cantidad de elementos defectuosos.</p>",
+    "<p>Repita el comando Correct hasta que la cantidad de elementos que no cumplen los requisitos deje de disminuir.</p><p> <span class=\"red\">Importante</span>: no es necesario lograr una malla completamente sin defectos; el objetivo de la operación es minimizar la cantidad de elementos defectuosos.</p>",
     "<p>Revise visualmente la malla superficial y asegúrese de que la malla 2D corregida sea adecuada para el siguiente paso.</p>",
     "<p>No pase a la generación de la malla 3D hasta revisar y corregir la calidad de la malla 2D.</p>"
   ],

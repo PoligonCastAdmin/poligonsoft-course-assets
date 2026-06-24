@@ -9,7 +9,7 @@
     "<p>Check the main quality parameters: minimum triangle angle, maximum aspect ratio, and minimum 2D segment length.</p>",
     "<p>Click Correct All to run the automatic correction procedure.</p>",
     "<p>Wait until the correction process is complete and review the updated quality report.</p>",
-    "<p>Repeat the Correct command until the number of elements that do not meet the requirements stops decreasing. <span class=\"red\">Important</span>: it is not necessary to obtain a completely defect-free mesh; the goal of this operation is to minimize the number of defective elements.</p>",
+    "<p>Repeat the Correct command until the number of elements that do not meet the requirements stops decreasing.</p><p> <span class=\"red\">Important</span>: it is not necessary to obtain a completely defect-free mesh; the goal of this operation is to minimize the number of defective elements.</p>",
     "<p>Visually review the surface mesh and make sure that the corrected 2D mesh is suitable for the next step.</p>",
     "<p>Do not proceed to 3D mesh generation until the 2D mesh quality has been checked and corrected.</p>"
   ],
