@@ -1,6 +1,6 @@
 {
   "videoUrl": "",
-  "summary": "<p>In this lesson, you will create a local submesh for the casting and auxiliary elements. The global mesh parameters are applied to the entire model, but the casting and auxiliary elements usually require a finer mesh than the mold. For this reason, we will create a 2D submesh rule with higher resolution for the bodies that require more precision.</p>",
+  "summary": "<p>In this lesson, you will create a local submesh for the casting and auxiliary elements. The global mesh parameters are applied to the entire model, but the casting and auxiliary elements usually require a finer mesh than the mold. For this reason, we will create a 2D submesh rule with higher resolution for the bodies that require more precision. </p>",
   "actions": [
     "<p>Select Mesh_1 in the object tree.</p>",
     "<p>Right-click Mesh_1 and select Create Sub-mesh.</p>",
