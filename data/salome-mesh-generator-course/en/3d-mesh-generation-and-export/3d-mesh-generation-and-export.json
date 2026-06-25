@@ -1,0 +1,18 @@
+{
+  "videoUrl": "",
+  "summary": "<p>In this lesson, you will generate the 3D volumetric mesh based on the 2D surface mesh that was already checked and corrected. After the calculation is complete, you will review the final mesh report, export the result in MED format, and save the mesh generator project in HTF format so that it can be edited later.</p>",
+  "actions": [
+    "<p>Make sure the 2D mesh has been computed, checked, and corrected.</p>",
+    "<p>Select Mesh_1 in the object tree.</p>",
+    "<p>Run the Compute 3D Mesh command.</p>",
+    "<p>Wait until the 3D mesh generation is complete.</p>",
+    "<p>Review the final mesh calculation report.</p>",
+    "<p>Check the total number of created elements.</p>",
+    "<p>Right-click Mesh_1 and select Export.</p>",
+    "<p>Select the MED format.</p>",
+    "<p>Define the file name and click Save.</p>",
+    "<p>Check that the MED file has been saved correctly.</p>",
+    "<p>Also save the complete mesh generator project in HTF format. This file keeps the operation history and will allow you to modify the mesh later without repeating the entire setup from the beginning.</p>"
+  ],
+  "expected": "<p>The 3D volumetric mesh will be generated and exported in MED format. The mesh generator project will also be saved in HTF format for future modifications.</p>"
+}

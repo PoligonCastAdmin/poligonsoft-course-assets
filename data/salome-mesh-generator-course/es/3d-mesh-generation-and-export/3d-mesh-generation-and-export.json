@@ -1,0 +1,18 @@
+{
+  "videoUrl": "",
+  "summary": "<p>En esta lección, generará la malla volumétrica 3D a partir de la malla superficial 2D ya revisada y corregida. Después de completar el cálculo, revisará el informe final de la malla, exportará el resultado en formato MED y guardará el proyecto del generador de mallas en formato HTF para poder editarlo en el futuro.</p>",
+  "actions": [
+    "<p>Asegúrese de que la malla 2D haya sido calculada, revisada y corregida.</p>",
+    "<p>Seleccione Mesh_1 en el árbol de objetos.</p>",
+    "<p>Ejecute el comando Compute 3D Mesh.</p>",
+    "<p>Espere hasta que finalice la generación de la malla 3D.</p>",
+    "<p>Revise el informe final de cálculo de la malla.</p>",
+    "<p>Compruebe el número total de elementos creados.</p>",
+    "<p>Haga clic con el botón derecho sobre Mesh_1 y seleccione Export.</p>",
+    "<p>Seleccione el formato MED.</p>",
+    "<p>Defina el nombre del archivo y haga clic en Save.</p>",
+    "<p>Compruebe que el archivo MED haya sido guardado correctamente.</p>",
+    "<p>Guarde también el proyecto completo del generador de mallas en formato HTF. Este archivo conserva el historial de operaciones y permitirá modificar la malla en el futuro sin repetir toda la configuración desde el principio.</p>"
+  ],
+  "expected": "<p>La malla volumétrica 3D quedará generada y exportada en formato MED. Además, el proyecto del generador de mallas quedará guardado en formato HTF para futuras modificaciones.</p>"
+}

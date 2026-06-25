@@ -94,6 +94,18 @@
               "contentUrl": "en/2d-mesh-creation/2d-mesh-quality-check-and-correction.json"
             }
           ]
+        },
+        {
+          "id": "3d-mesh-generation-and-export",
+          "title": "3D Mesh Generation and Export",
+          "steps": [
+            {
+              "id": "3d-mesh-generation-and-export",
+              "title": "3D Mesh Generation and Export",
+              "duration": "5 min",
+              "contentUrl": "en/3d-mesh-generation-and-export/3d-mesh-generation-and-export.json"
+            }
+          ]
         }
       ],
       "eyebrow": "Free training course",
@@ -190,6 +202,18 @@
               "title": "Revisión y corrección de la malla 2D",
               "duration": "5 min",
               "contentUrl": "es/2d-mesh-creation/2d-mesh-quality-check-and-correction.json"
+            }
+          ]
+        },
+        {
+          "id": "3d-mesh-generation-and-export",
+          "title": "Generación de la malla 3D y exportación",
+          "steps": [
+            {
+              "id": "3d-mesh-generation-and-export",
+              "title": "Generación de la malla 3D y exportación",
+              "duration": "5 min",
+              "contentUrl": "es/3d-mesh-generation-and-export/3d-mesh-generation-and-export.json"
             }
           ]
         }
