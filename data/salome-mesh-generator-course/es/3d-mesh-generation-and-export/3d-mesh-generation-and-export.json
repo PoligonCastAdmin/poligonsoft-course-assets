@@ -1,5 +1,5 @@
 {
-  "videoUrl": "",
+  "videoUrl": "https://youtu.be/aWTbH27_cgg",
   "summary": "<p>En esta lección, generará la malla volumétrica 3D a partir de la malla superficial 2D ya revisada y corregida. Después de completar el cálculo, revisará el informe final de la malla, exportará el resultado en formato MED y guardará el proyecto del generador de mallas en formato HTF para poder editarlo en el futuro.</p>",
   "actions": [
     "<p>Asegúrese de que la malla 2D haya sido calculada, revisada y corregida.</p>",

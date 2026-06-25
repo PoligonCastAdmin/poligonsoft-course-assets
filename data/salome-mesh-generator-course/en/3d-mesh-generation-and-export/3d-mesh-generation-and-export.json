@@ -1,5 +1,5 @@
 {
-  "videoUrl": "",
+  "videoUrl": "https://youtu.be/aWTbH27_cgg",
   "summary": "<p>In this lesson, you will generate the 3D volumetric mesh based on the 2D surface mesh that was already checked and corrected. After the calculation is complete, you will review the final mesh report, export the result in MED format, and save the mesh generator project in HTF format so that it can be edited later.</p>",
   "actions": [
     "<p>Make sure the 2D mesh has been computed, checked, and corrected.</p>",
