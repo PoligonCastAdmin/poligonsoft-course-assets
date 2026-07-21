@@ -1,0 +1,13 @@
+{
+  "videoUrl": "",
+  "summary": "<p>En esta lección, iniciará Mirage y abrirá un archivo CST con los resultados del cálculo de solidificación. Este archivo contiene los campos de temperatura y fase guardados durante el cálculo.</p>",
+  "actions": [
+    "<p>Ejecute PoligonSoft.</p>",
+    "<p>En la ventana principal de PoligonSoft, haga clic en Mirage.</p>",
+    "<p>Haga clic en Load the file Temperature. También puede utilizar la combinación de teclas Ctrl+T.</p>",
+    "<p>En la ventana de selección de archivos, localice y seleccione el archivo CST con los resultados del curso y haga clic en Open.</p>",
+    "<p>Espere hasta que finalice la carga del archivo.</p>",
+    "<p>Compruebe que el modelo aparezca en el área de trabajo.</p>"
+  ],
+  "expected": "<p>El archivo CST quedará abierto en Mirage. El modelo aparecerá en el área de trabajo con los campos de temperatura y fase disponibles para su visualización.</p>"
+}

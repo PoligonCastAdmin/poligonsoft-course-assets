@@ -1,0 +1,239 @@
+{
+  "defaultLang": "en",
+  "languages": {
+    "en": {
+      "courseId": "mirage-results-course",
+      "title": "Visualizing Solidification and Porosity in Mirage",
+      "eyebrow": "Free training course",
+      "sidebarTitle": "Mirage: Solidification and Porosity",
+      "description": "<p>Learn how to open and visualize solidification and porosity results in Mirage.</p>\n<p>Use model display controls, time controls, temperature, phase, and porosity scales, sections, isosurfaces, and shrinkage cavity visualization to examine results inside the casting.</p>",
+      "sidebarDescription": "",
+      "level": "Free",
+      "labels": {
+        "modules": "modules",
+        "steps": "steps",
+        "approx": "approx.",
+        "level": "course level",
+        "progress": "Progress",
+        "lesson": "Lesson",
+        "step": "Step",
+        "of": "of",
+        "actions": "Actions",
+        "expected": "Expected result",
+        "loadingLesson": "Loading lesson...",
+        "previous": "Previous step",
+        "next": "Next step",
+        "markComplete": "Mark as completed",
+        "completed": "Completed",
+        "progressSync": "Progress sync",
+        "guestProgress": "Sign in to save completed lessons and continue later.",
+        "loadingProgress": "Loading saved progress...",
+        "savedProgress": "Signed in. Completed {done} of {total} steps.",
+        "progressUnavailable": "Progress sync is not available on this page yet.",
+        "login": "Log in",
+        "resetProgress": "Reset progress",
+        "resetConfirm": "Reset your course progress?",
+        "videoMissing": "Video will be added later",
+        "videoCaption": "Placeholder for YouTube / Vimeo embed"
+      },
+      "downloads": [],
+      "modules": [
+        {
+          "id": "getting-started",
+          "title": "Getting Started in Mirage",
+          "steps": [
+            {
+              "id": "open-cst-results",
+              "title": "Launching Mirage and Opening a CST File",
+              "duration": "2 min",
+              "contentUrl": "en/getting-started/open-cst-results.json"
+            },
+            {
+              "id": "model-navigation",
+              "title": "Navigating the Model and Controlling the Display",
+              "duration": "",
+              "contentUrl": "en/getting-started/model-navigation.json"
+            }
+          ]
+        },
+        {
+          "id": "solidification-results",
+          "title": "Visualizing Solidification",
+          "steps": [
+            {
+              "id": "time-controls",
+              "title": "Using the Time Controls",
+              "duration": "",
+              "contentUrl": "en/solidification-results/time-controls.json"
+            },
+            {
+              "id": "temperature-phase-scale",
+              "title": "Adjusting the Temperature and Phase Scale",
+              "duration": "",
+              "contentUrl": "en/solidification-results/temperature-phase-scale.json"
+            },
+            {
+              "id": "sections",
+              "title": "Creating and Positioning Sections",
+              "duration": "",
+              "contentUrl": "en/solidification-results/sections.json"
+            },
+            {
+              "id": "isosurfaces",
+              "title": "Creating Isosurfaces",
+              "duration": "",
+              "contentUrl": "en/solidification-results/isosurfaces.json"
+            }
+          ]
+        },
+        {
+          "id": "porosity-results",
+          "title": "Visualizing Porosity",
+          "steps": [
+            {
+              "id": "open-p3d-results",
+              "title": "Opening a P3D File",
+              "duration": "",
+              "contentUrl": "en/porosity-results/open-p3d-results.json"
+            },
+            {
+              "id": "porosity-scale",
+              "title": "Adjusting the Porosity Scale",
+              "duration": "",
+              "contentUrl": "en/porosity-results/porosity-scale.json"
+            },
+            {
+              "id": "porosity-sections",
+              "title": "Inspecting Porosity with Sections",
+              "duration": "",
+              "contentUrl": "en/porosity-results/porosity-sections.json"
+            },
+            {
+              "id": "shrinkage-cavities",
+              "title": "Displaying Shrinkage Cavities",
+              "duration": "",
+              "contentUrl": "en/porosity-results/shrinkage-cavities.json"
+            }
+          ]
+        }
+      ]
+    },
+    "es": {
+      "courseId": "mirage-results-course",
+      "title": "Visualización de la solidificación y la porosidad en Mirage",
+      "eyebrow": "Curso gratuito",
+      "sidebarTitle": "Mirage: solidificación y porosidad",
+      "description": "<p>Aprenda a abrir y visualizar resultados de solidificación y porosidad en Mirage.</p>\n<p>Utilice los controles de visualización del modelo, los controles de tiempo, las escalas de temperatura, fase y porosidad, las secciones, las isosuperficies y la visualización de cavidades de contracción para examinar los resultados dentro de la pieza fundida.</p>",
+      "sidebarDescription": "",
+      "level": "Gratis",
+      "labels": {
+        "modules": "modulos",
+        "steps": "pasos",
+        "approx": "aprox.",
+        "level": "nivel del curso",
+        "progress": "Progreso",
+        "lesson": "Leccion",
+        "step": "Paso",
+        "of": "de",
+        "actions": "Que hacer",
+        "expected": "Resultado esperado",
+        "loadingLesson": "Cargando leccion...",
+        "previous": "Paso anterior",
+        "next": "Siguiente paso",
+        "markComplete": "Completado",
+        "completed": "Completado",
+        "progressSync": "Sincronizacion de progreso",
+        "guestProgress": "Inicie sesion para guardar lecciones completadas y continuar despues.",
+        "loadingProgress": "Cargando progreso guardado...",
+        "savedProgress": "Sesion iniciada. Completado {done} de {total} pasos.",
+        "progressUnavailable": "La sincronizacion de progreso aun no esta disponible en esta pagina.",
+        "login": "Log in",
+        "resetProgress": "Restablecer progreso",
+        "resetConfirm": "Restablecer el progreso del curso?",
+        "videoMissing": "El video se agregara mas tarde",
+        "videoCaption": "Marcador para YouTube / Vimeo embed"
+      },
+      "downloads": [],
+      "modules": [
+        {
+          "id": "getting-started",
+          "title": "Primeros pasos en Mirage",
+          "steps": [
+            {
+              "id": "open-cst-results",
+              "title": "Inicio de Mirage y apertura de un archivo CST",
+              "duration": "2 min",
+              "contentUrl": "es/getting-started/open-cst-results.json"
+            },
+            {
+              "id": "model-navigation",
+              "title": "Navegación del modelo y control de la visualización",
+              "duration": "",
+              "contentUrl": "es/getting-started/model-navigation.json"
+            }
+          ]
+        },
+        {
+          "id": "solidification-results",
+          "title": "Visualización de la solidificación",
+          "steps": [
+            {
+              "id": "time-controls",
+              "title": "Uso de los controles de tiempo",
+              "duration": "",
+              "contentUrl": "es/solidification-results/time-controls.json"
+            },
+            {
+              "id": "temperature-phase-scale",
+              "title": "Ajuste de la escala de temperatura y fase",
+              "duration": "",
+              "contentUrl": "es/solidification-results/temperature-phase-scale.json"
+            },
+            {
+              "id": "sections",
+              "title": "Creación y posicionamiento de secciones",
+              "duration": "",
+              "contentUrl": "es/solidification-results/sections.json"
+            },
+            {
+              "id": "isosurfaces",
+              "title": "Creación de isosuperficies",
+              "duration": "",
+              "contentUrl": "es/solidification-results/isosurfaces.json"
+            }
+          ]
+        },
+        {
+          "id": "porosity-results",
+          "title": "Visualización de la porosidad",
+          "steps": [
+            {
+              "id": "open-p3d-results",
+              "title": "Apertura de un archivo P3D",
+              "duration": "",
+              "contentUrl": "es/porosity-results/open-p3d-results.json"
+            },
+            {
+              "id": "porosity-scale",
+              "title": "Ajuste de la escala de porosidad",
+              "duration": "",
+              "contentUrl": "es/porosity-results/porosity-scale.json"
+            },
+            {
+              "id": "porosity-sections",
+              "title": "Inspección de la porosidad mediante secciones",
+              "duration": "",
+              "contentUrl": "es/porosity-results/porosity-sections.json"
+            },
+            {
+              "id": "shrinkage-cavities",
+              "title": "Visualización de cavidades de contracción",
+              "duration": "",
+              "contentUrl": "es/porosity-results/shrinkage-cavities.json"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

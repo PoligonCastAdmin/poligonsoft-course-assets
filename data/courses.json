@@ -18,6 +18,15 @@
         "en",
         "es"
       ]
+    },
+    {
+      "id": "mirage-results-course",
+      "title": "Visualizing Solidification and Porosity in Mirage",
+      "folder": "mirage-results-course",
+      "languages": [
+        "en",
+        "es"
+      ]
     }
   ]
 }
