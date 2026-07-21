@@ -36,7 +36,20 @@
         "videoMissing": "Video will be added later",
         "videoCaption": "Placeholder for YouTube / Vimeo embed"
       },
-      "downloads": [],
+      "downloads": [
+        {
+          "title": "3dMesh_Sym_solid.CST",
+          "url": "https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/mirage-results-course/3dMesh_Sym_solid.CST"
+        },
+        {
+          "title": "3dMesh_Sym_solid.MLD",
+          "url": "https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/mirage-results-course/3dMesh_Sym_solid.MLD"
+        },
+        {
+          "title": "3dMesh_Sym_solid.P3D",
+          "url": "https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/mirage-results-course/3dMesh_Sym_solid.P3D"
+        }
+      ],
       "modules": [
         {
           "id": "getting-started",
@@ -153,7 +166,20 @@
         "videoMissing": "El video se agregara mas tarde",
         "videoCaption": "Marcador para YouTube / Vimeo embed"
       },
-      "downloads": [],
+      "downloads": [
+        {
+          "title": "3dMesh_Sym_solid.CST",
+          "url": "https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/mirage-results-course/3dMesh_Sym_solid.CST"
+        },
+        {
+          "title": "3dMesh_Sym_solid.MLD",
+          "url": "https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/mirage-results-course/3dMesh_Sym_solid.MLD"
+        },
+        {
+          "title": "3dMesh_Sym_solid.P3D",
+          "url": "https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/mirage-results-course/3dMesh_Sym_solid.P3D"
+        }
+      ],
       "modules": [
         {
           "id": "getting-started",
