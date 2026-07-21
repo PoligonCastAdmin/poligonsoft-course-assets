@@ -57,7 +57,7 @@
           "steps": [
             {
               "id": "open-cst-results",
-              "title": "Launching Mirage and Opening a CST File",
+              "title": "Launching Mirage and Opening Solidification Results",
               "duration": "2 min",
               "contentUrl": "en/getting-started/open-cst-results.json"
             },
@@ -187,7 +187,7 @@
           "steps": [
             {
               "id": "open-cst-results",
-              "title": "Inicio de Mirage y apertura de un archivo CST",
+              "title": "Inicio de Mirage y apertura de resultados de solidificación",
               "duration": "2 min",
               "contentUrl": "es/getting-started/open-cst-results.json"
             },

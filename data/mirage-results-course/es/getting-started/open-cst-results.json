@@ -1,13 +1,15 @@
 {
   "videoUrl": "",
-  "summary": "<p>En esta lección, iniciará Mirage y abrirá un archivo CST con los resultados del cálculo de solidificación. Este archivo contiene los campos de temperatura y fase guardados durante el cálculo.</p>",
+  "summary": "<p>En esta lección, iniciará Mirage y abrirá los resultados de solidificación que se utilizarán durante el curso. El archivo <a href=\"https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/mirage-results-course/3dMesh_Sym_solid.CST\" download=\"3dMesh_Sym_solid.CST\" target=\"_blank\" rel=\"noopener\">3dMesh_Sym_solid.CST</a> contiene los datos de temperatura de la pieza fundida, mientras que el archivo <a href=\"https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/mirage-results-course/3dMesh_Sym_solid.MLD\" download=\"3dMesh_Sym_solid.MLD\" target=\"_blank\" rel=\"noopener\">3dMesh_Sym_solid.MLD</a> contiene los datos de temperatura del molde. Ambos archivos deben guardarse en una misma carpeta.</p>",
   "actions": [
+    "<p>Descargue los archivos <a href=\"https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/mirage-results-course/3dMesh_Sym_solid.CST\" download=\"3dMesh_Sym_solid.CST\" target=\"_blank\" rel=\"noopener\">3dMesh_Sym_solid.CST</a> y <a href=\"https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/mirage-results-course/3dMesh_Sym_solid.MLD\" download=\"3dMesh_Sym_solid.MLD\" target=\"_blank\" rel=\"noopener\">3dMesh_Sym_solid.MLD</a> y guárdelos en una misma carpeta.</p>",
     "<p>Ejecute PoligonSoft.</p>",
     "<p>En la ventana principal de PoligonSoft, haga clic en Mirage.</p>",
-    "<p>Haga clic en Load the file Temperature. También puede utilizar la combinación de teclas Ctrl+T.</p>",
-    "<p>En la ventana de selección de archivos, localice y seleccione el archivo CST con los resultados del curso y haga clic en Open.</p>",
-    "<p>Espere hasta que finalice la carga del archivo.</p>",
-    "<p>Compruebe que el modelo aparezca en el área de trabajo.</p>"
+    "<p>Haga clic en Open Temperature o presione Ctrl+T.</p>",
+    "<p>En la ventana de selección de archivos, abra la carpeta donde guardó los archivos descargados.</p>",
+    "<p>Seleccione el archivo <a href=\"https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/mirage-results-course/3dMesh_Sym_solid.CST\" download=\"3dMesh_Sym_solid.CST\" target=\"_blank\" rel=\"noopener\">3dMesh_Sym_solid.CST</a> y haga clic en Open. El archivo <a href=\"https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/mirage-results-course/3dMesh_Sym_solid.MLD\" download=\"3dMesh_Sym_solid.MLD\" target=\"_blank\" rel=\"noopener\">3dMesh_Sym_solid.MLD</a> debe encontrarse en la misma carpeta. De lo contrario, solo se cargarán los datos de temperatura de la pieza fundida contenidos en el archivo CST.</p>",
+    "<p>Espere hasta que Mirage termine de cargar los resultados.</p>",
+    "<p>Compruebe que el modelo aparezca en el área de trabajo y que se hayan cargado los resultados de temperatura de la pieza fundida y del molde.</p>"
   ],
-  "expected": "<p>El archivo CST quedará abierto en Mirage. El modelo aparecerá en el área de trabajo con los campos de temperatura y fase disponibles para su visualización.</p>"
+  "expected": "<p>Los resultados de solidificación quedarán cargados en Mirage. El modelo aparecerá en el área de trabajo con los datos de temperatura de la pieza fundida contenidos en el archivo CST y los datos de temperatura del molde contenidos en el archivo MLD.</p>"
 }
