@@ -1,5 +1,5 @@
 {
-  "videoUrl": "",
+  "videoUrl": "https://youtu.be/1Cz1PbJaP-Q",
   "summary": "<p>En esta lección, iniciará Mirage y abrirá los resultados de solidificación que se utilizarán durante el curso. El archivo <a href=\"https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/mirage-results-course/3dMesh_Sym_solid.CST\" download=\"3dMesh_Sym_solid.CST\" target=\"_blank\" rel=\"noopener\">3dMesh_Sym_solid.CST</a> contiene los datos de temperatura de la pieza fundida, mientras que el archivo <a href=\"https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/mirage-results-course/3dMesh_Sym_solid.MLD\" download=\"3dMesh_Sym_solid.MLD\" target=\"_blank\" rel=\"noopener\">3dMesh_Sym_solid.MLD</a> contiene los datos de temperatura del molde. Ambos archivos deben guardarse en una misma carpeta.</p>",
   "actions": [
     "<p>Descargue los archivos <a href=\"https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/mirage-results-course/3dMesh_Sym_solid.CST\" download=\"3dMesh_Sym_solid.CST\" target=\"_blank\" rel=\"noopener\">3dMesh_Sym_solid.CST</a> y <a href=\"https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/mirage-results-course/3dMesh_Sym_solid.MLD\" download=\"3dMesh_Sym_solid.MLD\" target=\"_blank\" rel=\"noopener\">3dMesh_Sym_solid.MLD</a> y guárdelos en una misma carpeta.</p>",
