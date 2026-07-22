@@ -7,7 +7,7 @@
       "eyebrow": "Free training course",
       "sidebarTitle": "Mirage: Solidification and Porosity",
       "description": "<p>Learn how to open and visualize solidification and porosity results in Mirage.</p>\n<p>Use model display controls, time controls, temperature, phase, and porosity scales, sections, isosurfaces, and shrinkage cavity visualization to examine results inside the casting.</p>",
-      "sidebarDescription": "",
+      "sidebarDescription": "Learn how to open and visualize solidification and porosity results in Mirage.",
       "level": "Free",
       "labels": {
         "modules": "modules",
@@ -137,7 +137,7 @@
       "eyebrow": "Curso gratuito",
       "sidebarTitle": "Mirage: solidificación y porosidad",
       "description": "<p>Aprenda a abrir y visualizar resultados de solidificación y porosidad en Mirage.</p>\n<p>Utilice los controles de visualización del modelo, los controles de tiempo, las escalas de temperatura, fase y porosidad, las secciones, las isosuperficies y la visualización de cavidades de contracción para examinar los resultados dentro de la pieza fundida.</p>",
-      "sidebarDescription": "",
+      "sidebarDescription": "Aprenda a abrir y visualizar resultados de solidificación y porosidad en Mirage.\n\n",
       "level": "Gratis",
       "labels": {
         "modules": "modulos",
