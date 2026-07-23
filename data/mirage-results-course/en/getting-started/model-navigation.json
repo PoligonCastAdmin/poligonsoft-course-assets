@@ -1,6 +1,15 @@
 {
   "videoUrl": "",
-  "summary": "",
-  "actions": [],
-  "expected": ""
+  "summary": "<p>Learn how to navigate around the model using the mouse, control the display of casting and mold surfaces, meshes, and sections, manage volume visibility in the Model Tree, and apply Standard Views.</p>",
+  "actions": [
+    "<p>Hold the left mouse button and drag to rotate the model.</p>",
+    "<p>Rotate the mouse wheel to zoom in or out.</p>",
+    "<p>Hold the right mouse button and drag to move the model in the workspace.</p>",
+    "<p>Use the red Casting Surfaces and blue Mold Surfaces buttons to control the surface display of the casting and mold.</p>",
+    "<p>Use the Casting Mesh and Mold Mesh buttons to turn the finite element mesh display on or off.</p>",
+    "<p>Use the Casting Section and Mold Section buttons to turn the section display on or off.</p>",
+    "<p>Use the checkboxes in the Model Tree to show or hide individual volumes or the complete casting and mold groups.</p>",
+    "<p>Use the Rotations toolbar and Standard Views to position the model precisely when a specific orientation is required.</p>"
+  ],
+  "expected": "<p>You can navigate around the model, control the display of the casting and mold, manage the visibility of individual volumes, and set a precise viewing orientation.</p>"
 }

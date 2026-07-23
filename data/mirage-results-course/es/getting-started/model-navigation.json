@@ -1,6 +1,15 @@
 {
   "videoUrl": "",
-  "summary": "",
-  "actions": [],
-  "expected": ""
+  "summary": "<p>Aprenda a navegar alrededor del modelo con el ratón, controlar la visualización de las superficies, mallas y secciones de la pieza fundida y el molde, gestionar la visibilidad de los volúmenes en el Model Tree y aplicar Standard Views.</p>",
+  "actions": [
+    "<p>Mantenga presionado el botón izquierdo del ratón y arrastre para girar el modelo.</p>",
+    "<p>Gire la rueda del ratón para acercar o alejar la vista.</p>",
+    "<p>Mantenga presionado el botón derecho del ratón y arrastre para desplazar el modelo en el área de trabajo.</p>",
+    "<p>Utilice los botones rojos Casting Surfaces y los botones azules Mold Surfaces para controlar la visualización de las superficies de la pieza fundida y el molde.</p>",
+    "<p>Utilice los botones Casting Mesh y Mold Mesh para activar o desactivar la visualización de la malla de elementos finitos.</p>",
+    "<p>Utilice los botones Casting Section y Mold Section para activar o desactivar la visualización de las secciones.</p>",
+    "<p>Utilice las casillas del Model Tree para mostrar u ocultar volúmenes individuales o los grupos completos de la pieza fundida y el molde.</p>",
+    "<p>Utilice la barra Rotations y el comando Standard Views para colocar el modelo con precisión cuando necesite una orientación específica.</p>"
+  ],
+  "expected": "<p>Puede navegar alrededor del modelo, controlar la visualización de la pieza fundida y el molde, gestionar la visibilidad de los volúmenes individuales y establecer una orientación precisa de la vista.</p>"
 }
