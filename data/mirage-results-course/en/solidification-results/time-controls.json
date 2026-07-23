@@ -1,6 +1,12 @@
 {
-  "videoUrl": "",
-  "summary": "",
-  "actions": [],
-  "expected": ""
+  "videoUrl": "https://youtu.be/QqFZCHYUkEE",
+  "summary": "<p>Learn how to move between saved calculation time steps, select a specific moment of the simulation, and use automatic playback to review the results.</p>",
+  "actions": [
+    "<p>Use the buttons on the Time Control panel to move to the first or last saved simulation step.</p>",
+    "<p>Use the backward and forward buttons to move five saved steps at a time.</p>",
+    "<p>Use the previous and next step buttons to review the saved simulation states one by one.</p>",
+    "<p>Click Time Scale, move the slider or enter the required value in the Time field, press Enter, and click OK.</p>",
+    "<p>Click Autoview of time steps On / Off to start or stop automatic playback from the currently displayed step.</p>"
+  ],
+  "expected": "<p>You can move between saved calculation steps, display a specific moment of the simulation, and start or stop automatic playback of the results.</p>"
 }

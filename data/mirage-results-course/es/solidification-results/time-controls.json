@@ -1,6 +1,12 @@
 {
-  "videoUrl": "",
-  "summary": "",
-  "actions": [],
-  "expected": ""
+  "videoUrl": "https://youtu.be/QqFZCHYUkEE",
+  "summary": "<p>Aprenda a desplazarse entre los pasos de tiempo guardados, seleccionar un momento específico de la simulación y utilizar la reproducción automática para revisar los resultados.</p>",
+  "actions": [
+    "<p>Utilice los botones del panel Time Control para pasar al primer o al último paso guardado de la simulación.</p>",
+    "<p>Utilice los botones de retroceso y avance para desplazarse cinco pasos guardados a la vez.</p>",
+    "<p>Utilice los botones de paso anterior y siguiente para revisar uno por uno los estados guardados de la simulación.</p>",
+    "<p>Haga clic en Time Scale, mueva el control deslizante o introduzca el valor requerido en el campo Time, presione Enter y haga clic en OK.</p>",
+    "<p>Haga clic en Autoview of time steps On / Off para iniciar o detener la reproducción automática desde el paso que se muestra actualmente.</p>"
+  ],
+  "expected": "<p>Puede desplazarse entre los pasos de cálculo guardados, mostrar un momento específico de la simulación e iniciar o detener la reproducción automática de los resultados.</p>"
 }
