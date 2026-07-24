@@ -1,6 +1,13 @@
 {
-  "videoUrl": "",
-  "summary": "",
-  "actions": [],
-  "expected": ""
+  "videoUrl": "https://youtu.be/WmQofnAZKX0",
+  "summary": "<p>Learn how to interpret and adjust the temperature and phase scale, automatically calculate intermediate values, focus the visualization on a specific range, and load or restore scale settings.</p>",
+  "actions": [
+    "<p>Review the Palette and Scale panel. Values followed by the % symbol represent the liquid phase, while values without this symbol represent temperatures in degrees Celsius. The liquidus and solidus temperatures are also indicated on the scale.</p>",
+    "<p>Keep the checkboxes selected for the scale values that must remain fixed. Clear the checkboxes for the intermediate values that the program must calculate automatically.</p>",
+    "<p>Click the field of a fixed scale point and enter the required value. Add the % symbol to define a liquid phase value, or enter the number without this symbol to define a temperature. When you enter the new fixed value, the program immediately recalculates the intermediate values with cleared checkboxes.</p>",
+    "<p>Click Apply Colors and Scale to apply the modified scale to the model.</p>",
+    "<p>To load a previously prepared scale, click To read the scale and select the required SCL file.</p>",
+    "<p>Click Standard scale to restore the default temperature and phase scale.</p>"
+  ],
+  "expected": "<p>You can interpret the temperature and phase scale, define fixed values, automatically calculate intermediate values, apply the modified scale to the model, and load or restore scale settings.</p>"
 }

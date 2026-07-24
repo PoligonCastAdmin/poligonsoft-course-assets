@@ -82,7 +82,7 @@
             {
               "id": "temperature-phase-scale",
               "title": "Adjusting the Temperature and Phase Scale",
-              "duration": "",
+              "duration": "2 min",
               "contentUrl": "en/solidification-results/temperature-phase-scale.json"
             },
             {
@@ -212,7 +212,7 @@
             {
               "id": "temperature-phase-scale",
               "title": "Ajuste de la escala de temperatura y fase",
-              "duration": "",
+              "duration": "2 min",
               "contentUrl": "es/solidification-results/temperature-phase-scale.json"
             },
             {

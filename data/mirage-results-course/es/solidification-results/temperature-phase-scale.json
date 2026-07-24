@@ -1,6 +1,13 @@
 {
-  "videoUrl": "",
-  "summary": "",
-  "actions": [],
-  "expected": ""
+  "videoUrl": "https://youtu.be/WmQofnAZKX0",
+  "summary": "<p>Aprenda a interpretar y ajustar la escala de temperatura y fase, calcular automáticamente los valores intermedios, concentrar la visualización en un intervalo específico y cargar o restaurar la configuración de la escala.</p>",
+  "actions": [
+    "<p>Revise el panel Palette and Scale. Los valores seguidos del símbolo % representan la fase líquida, mientras que los valores sin este símbolo representan temperaturas en grados Celsius. Las temperaturas de liquidus y solidus también se indican en la escala.</p>",
+    "<p>Mantenga seleccionadas las casillas de los valores de la escala que deben permanecer fijos. Desmarque las casillas de los valores intermedios que el programa debe calcular automáticamente.</p>",
+    "<p>Haga clic en el campo de un punto fijo de la escala e introduzca el valor requerido. Agregue el símbolo % para definir un valor de fase líquida o introduzca el número sin este símbolo para definir una temperatura. Al introducir el nuevo valor fijo, el programa recalcula inmediatamente los valores intermedios cuyas casillas están desmarcadas.</p>",
+    "<p>Haga clic en Apply Colors and Scale para aplicar la escala modificada al modelo.</p>",
+    "<p>Para cargar una escala preparada previamente, haga clic en To read the scale y seleccione el archivo SCL requerido.</p>",
+    "<p>Haga clic en Standard scale para restaurar la escala predeterminada de temperatura y fase.</p>"
+  ],
+  "expected": "<p>Puede interpretar la escala de temperatura y fase, definir valores fijos, calcular automáticamente los valores intermedios, aplicar la escala modificada al modelo y cargar o restaurar la configuración de la escala.</p>"
 }
