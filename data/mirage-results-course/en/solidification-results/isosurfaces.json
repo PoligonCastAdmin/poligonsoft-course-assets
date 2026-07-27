@@ -1,6 +1,13 @@
 {
-  "videoUrl": "",
-  "summary": "",
-  "actions": [],
-  "expected": ""
+  "videoUrl": "https://youtu.be/0-pgqnAmADc",
+  "summary": "<p>This lesson explains how to use isosurfaces to visualize the regions that remain liquid during solidification and identify hot spots inside the casting.</p>",
+  "actions": [
+    "<p>Click Casting Isosurface to open the isosurface display settings.</p>",
+    "<p>Select 0% from the list of available values. The available values correspond to the reference points defined in Palette and Scale. A liquid phase value of 0% represents completely solidified metal.</p>",
+    "<p>Select Show the isosurface and above to display the isosurface together with all regions where the liquid phase value is greater than 0%. These regions contain metal that has not yet solidified completely.</p>",
+    "<p>Click Enter to generate the isosurface.</p>",
+    "<p>Use the time controls to move through the saved simulation steps and observe how the remaining liquid regions change as solidification progresses.</p>",
+    "<p>To change the displayed range, click Casting Isosurface again, select another available value and display mode, and click Enter.</p>"
+  ],
+  "expected": "<p>The regions that remain liquid are displayed inside the casting. By moving through the simulation steps, you can follow their development and identify the hot spots that solidify last.</p>"
 }

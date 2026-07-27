@@ -94,7 +94,7 @@
             {
               "id": "isosurfaces",
               "title": "Creating Isosurfaces",
-              "duration": "",
+              "duration": "2 min",
               "contentUrl": "en/solidification-results/isosurfaces.json"
             }
           ]
@@ -224,7 +224,7 @@
             {
               "id": "isosurfaces",
               "title": "Creación de isosuperficies",
-              "duration": "",
+              "duration": "2 min",
               "contentUrl": "es/solidification-results/isosurfaces.json"
             }
           ]

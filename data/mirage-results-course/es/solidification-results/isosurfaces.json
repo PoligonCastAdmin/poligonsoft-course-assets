@@ -1,6 +1,13 @@
 {
-  "videoUrl": "",
-  "summary": "",
-  "actions": [],
-  "expected": ""
+  "videoUrl": "https://youtu.be/0-pgqnAmADc",
+  "summary": "<p>Esta lección explica cómo utilizar las isosuperficies para visualizar las zonas que permanecen líquidas durante la solidificación e identificar los puntos calientes dentro de la pieza fundida.</p>",
+  "actions": [
+    "<p>Haga clic en Casting Isosurface para abrir la configuración de visualización de isosuperficies.</p>",
+    "<p>Seleccione 0% en la lista de valores disponibles. Los valores disponibles corresponden a los puntos de referencia definidos en Palette and Scale. Un valor de fase líquida de 0% representa metal completamente solidificado.</p>",
+    "<p>Seleccione Show the isosurface and above para mostrar la isosuperficie junto con todas las zonas donde el valor de fase líquida es superior a 0%. Estas zonas contienen metal que todavía no ha solidificado por completo.</p>",
+    "<p>Haga clic en Enter para generar la isosuperficie.</p>",
+    "<p>Utilice los controles de tiempo para desplazarse entre los pasos guardados de la simulación y observar cómo cambian las zonas que permanecen líquidas a medida que avanza la solidificación.</p>",
+    "<p>Para cambiar el intervalo mostrado, haga clic nuevamente en Casting Isosurface, seleccione otro valor disponible y otro modo de visualización, y haga clic en Enter.</p>"
+  ],
+  "expected": "<p>Las zonas que permanecen líquidas se muestran dentro de la pieza fundida. Al desplazarse entre los pasos de la simulación, puede observar su evolución e identificar los puntos calientes que solidifican al final.</p>"
 }
