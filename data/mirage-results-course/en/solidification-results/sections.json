@@ -1,6 +1,17 @@
 {
-  "videoUrl": "",
-  "summary": "",
-  "actions": [],
-  "expected": ""
+  "videoUrl": "https://youtu.be/toY188wdBs4",
+  "summary": "<p>This lesson explains how to position the section plane in the area of the model that you need to analyze, adjust its orientation, and restore its initial position.</p>",
+  "actions": [
+    "<p>Click Section Plane to display the section plane in the workspace.</p>",
+    "<p>Click Section Plane Control to activate the section plane editing mode.</p>",
+    "<p>Use the buttons on the Rotations toolbar to rotate the section plane around the coordinate axes.</p>",
+    "<p>Double-click with the left mouse button at the required location on a visible part of the casting. The section plane moves along its current normal until it passes through the selected point.</p>",
+    "<p>If the selected point is not suitable, press Ctrl+D to remove it, then double-click at a new location.</p>",
+    "<p>Click Fix Rotation to apply the selected position and orientation. The program automatically activates the section view for the casting and mold.</p>",
+    "<p>Click Section Plane Control again to return to the section plane editing mode.</p>",
+    "<p>Click Reset Rotations to restore the initial orientation of the section plane.</p>",
+    "<p>Click Move Plan Secion =0 to return the section plane to coordinate 0.</p>",
+    "<p>Click Fix Rotation to apply the restored position and orientation.</p>"
+  ],
+  "expected": "<p>The section is displayed in the required area of the model, allowing you to examine the internal temperature and phase distribution. You can also return the section plane to its initial position and orientation.</p>"
 }

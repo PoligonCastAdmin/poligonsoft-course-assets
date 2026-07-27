@@ -1,6 +1,17 @@
 {
-  "videoUrl": "",
-  "summary": "",
-  "actions": [],
-  "expected": ""
+  "videoUrl": "https://youtu.be/toY188wdBs4",
+  "summary": "<p>En esta lección se explica cómo colocar el plano de sección en la zona del modelo que necesita analizar, ajustar su orientación y restablecer su posición inicial.</p>",
+  "actions": [
+    "<p>Haga clic en Section Plane para mostrar el plano de sección en el área de trabajo.</p>",
+    "<p>Haga clic en Section Plane Control para activar el modo de edición del plano de sección.</p>",
+    "<p>Utilice los botones de la barra Rotations para girar el plano de sección alrededor de los ejes de coordenadas.</p>",
+    "<p>Haga doble clic con el botón izquierdo del ratón en el lugar requerido sobre una parte visible de la pieza fundida. El plano de sección se desplaza a lo largo de su vector normal actual hasta pasar por el punto seleccionado.</p>",
+    "<p>Si el punto seleccionado no es adecuado, presione Ctrl+D para eliminarlo y haga doble clic en un nuevo lugar.</p>",
+    "<p>Haga clic en Fix Rotation para aplicar la posición y la orientación seleccionadas. El programa activa automáticamente la vista de sección para la pieza fundida y el molde.</p>",
+    "<p>Haga clic nuevamente en Section Plane Control para volver al modo de edición del plano de sección.</p>",
+    "<p>Haga clic en Reset Rotations para restablecer la orientación inicial del plano de sección.</p>",
+    "<p>Haga clic en Move Plan Secion =0 para devolver el plano de sección a la coordenada 0.</p>",
+    "<p>Haga clic en Fix Rotation para aplicar la posición y la orientación restablecidas.</p>"
+  ],
+  "expected": "<p>La sección se muestra en la zona del modelo que necesita analizar, lo que permite examinar la distribución interna de temperatura y fase. También puede devolver el plano de sección a su posición y orientación iniciales.</p>"
 }
