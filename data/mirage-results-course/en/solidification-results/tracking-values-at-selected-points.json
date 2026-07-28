@@ -1,0 +1,14 @@
+{
+  "videoUrl": "https://youtu.be/vqeHusS5_fo",
+  "summary": "<p>This lesson explains how to place selected points on the casting, monitor the value of the displayed field at those locations as the simulation progresses, and save the points for later analysis.</p>",
+  "actions": [
+    "<p>Double-click with the left mouse button at the required location on any visible surface or section of the casting. The selected point appears with its number and the current value of the displayed field.</p>",
+    "<p>Repeat the operation at other locations to add more selected points.</p>",
+    "<p>Use the time controls to move through the saved simulation steps. The values shown at the selected points update according to the currently displayed time step.</p>",
+    "<p>To remove one point, place the cursor over its marker and double-click with the right mouse button.</p>",
+    "<p>Press Ctrl+D to remove all selected points.</p>",
+    "<p>After defining the required points, click Create the file with the defined points and save the point set as a PNT file.</p>",
+    "<p>To restore a previously saved point set, click Load the defined points from the file and select the required PNT file.</p>"
+  ],
+  "expected": "<p>The selected points show the current value of the displayed field at the required locations. You can follow these values through the simulation, remove the points, and save or load the complete point set.</p>"
+}

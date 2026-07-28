@@ -96,6 +96,12 @@
               "title": "Creating Isosurfaces",
               "duration": "2 min",
               "contentUrl": "en/solidification-results/isosurfaces.json"
+            },
+            {
+              "id": "tracking-values-at-selected-points",
+              "title": "Tracking Values at Selected Points",
+              "duration": "2 min",
+              "contentUrl": "en/solidification-results/tracking-values-at-selected-points.json"
             }
           ]
         },
@@ -226,6 +232,12 @@
               "title": "Creación de isosuperficies",
               "duration": "2 min",
               "contentUrl": "es/solidification-results/isosurfaces.json"
+            },
+            {
+              "id": "tracking-values-at-selected-points",
+              "title": "Seguimiento de valores en puntos seleccionados",
+              "duration": "2 min",
+              "contentUrl": "es/solidification-results/tracking-values-at-selected-points.json"
             }
           ]
         },

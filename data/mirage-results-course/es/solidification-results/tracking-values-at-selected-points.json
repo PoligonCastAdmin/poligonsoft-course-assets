@@ -1,0 +1,14 @@
+{
+  "videoUrl": "https://youtu.be/vqeHusS5_fo",
+  "summary": "<p>Esta lección explica cómo colocar puntos seleccionados sobre la pieza fundida, seguir en ellos el valor del campo mostrado a medida que avanza la simulación y guardar los puntos para utilizarlos en análisis posteriores.</p>",
+  "actions": [
+    "<p>Haga doble clic con el botón izquierdo del ratón en el lugar requerido sobre cualquier superficie o sección visible de la pieza fundida. El punto seleccionado aparece con su número y el valor actual del campo mostrado.</p>",
+    "<p>Repita la operación en otros lugares para agregar más puntos seleccionados.</p>",
+    "<p>Utilice los controles de tiempo para desplazarse entre los pasos guardados de la simulación. Los valores mostrados en los puntos seleccionados se actualizan de acuerdo con el paso de tiempo que aparece en pantalla.</p>",
+    "<p>Para eliminar un punto, coloque el cursor sobre su marcador y haga doble clic con el botón derecho del ratón.</p>",
+    "<p>Presione Ctrl+D para eliminar todos los puntos seleccionados.</p>",
+    "<p>Después de definir los puntos necesarios, haga clic en Create the file with the defined points y guarde el conjunto de puntos en un archivo PNT.</p>",
+    "<p>Para recuperar un conjunto de puntos guardado anteriormente, haga clic en Load the defined points from the file y seleccione el archivo PNT correspondiente.</p>"
+  ],
+  "expected": "<p>Los puntos seleccionados muestran el valor actual del campo en los lugares requeridos. Puede seguir estos valores durante la simulación, eliminar los puntos y guardar o cargar el conjunto completo.</p>"
+}
