@@ -1,0 +1,16 @@
+{
+  "videoUrl": "https://youtu.be/nri_oMD2TNA",
+  "summary": "<p>Esta lección explica cómo analizar el resultado final de porosidad en Mirage: primero se revisan los defectos visibles en la superficie, después se localizan los defectos internos mediante isosuperficies y, finalmente, se examina uno de ellos mediante una sección.</p>",
+  "actions": [
+    "<p>Haga clic en Open Porosity y abra el archivo <a href=\"https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/mirage-results-course/3dMesh_Sym_solid.P3D\" download=\"3dMesh_Sym_solid.P3D\" target=\"_blank\" rel=\"noopener\">3dMesh_Sym_solid.P3D</a>.</p>",
+    "<p>Utilice el panel Time Control para pasar al último paso de tiempo guardado. En este análisis nos interesa el resultado final de la porosidad, no su evolución durante el proceso.</p>",
+    "<p>Ajuste los valores de porosidad en Palette and Scale mediante el método explicado anteriormente. La escala muestra en porcentaje el resultado combinado de macroporosidad y microporosidad, donde un valor de 100% corresponde a una cavidad de contracción.</p>",
+    "<p>Haga clic en Apply Colors and Scale para aplicar al modelo la escala de porosidad configurada.</p>",
+    "<p>Examine la superficie de la pieza fundida e identifique las zonas con porosidad visible o defectos por contracción.</p>",
+    "<p>Haga clic en Casting Isosurface, defina un valor de porosidad de 8%, seleccione Show the isosurface and above y haga clic en Enter para mostrar las zonas donde la porosidad supera este límite.</p>",
+    "<p>Reduzca gradualmente el valor de porosidad hasta llegar a 1% y aplique la isosuperficie después de cada cambio. Compare los resultados para observar cómo los límites más bajos muestran zonas adicionales de porosidad dentro de la pieza fundida.</p>",
+    "<p>Utilice el método explicado en la lección anterior para colocar y aplicar una sección que pase por uno de los defectos detectados.</p>",
+    "<p>Examine la sección para estudiar la ubicación y la distribución de la porosidad y los defectos por contracción dentro de la pieza fundida.</p>"
+  ],
+  "expected": "<p>Puede evaluar el resultado final de porosidad, identificar los defectos visibles en la superficie, localizar zonas internas con diferentes niveles de porosidad y examinar un defecto específico mediante una sección.</p>"
+}

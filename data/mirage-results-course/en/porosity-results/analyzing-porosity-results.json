@@ -1,0 +1,16 @@
+{
+  "videoUrl": "https://youtu.be/nri_oMD2TNA",
+  "summary": "<p>This lesson explains how to analyze the final porosity results in Mirage: first by examining defects visible on the casting surface, then by locating internal defects with isosurfaces, and finally by inspecting one of those defects in a section.</p>",
+  "actions": [
+    "<p>Click Open Porosity and open the <a href=\"https://poligoncastadmin.github.io/poligonsoft-course-assets/downloads/mirage-results-course/3dMesh_Sym_solid.P3D\" download=\"3dMesh_Sym_solid.P3D\" target=\"_blank\" rel=\"noopener\">3dMesh_Sym_solid.P3D</a> file.</p>",
+    "<p>Use the Time Control panel to move to the last saved time step. For this analysis, we are interested in the final porosity result rather than how porosity develops over time.</p>",
+    "<p>Adjust the porosity values in Palette and Scale using the method covered earlier. The scale displays the combined macro- and microporosity results as a percentage, where 100% corresponds to a shrinkage cavity.</p>",
+    "<p>Click Apply Colors and Scale to apply the configured porosity scale to the model.</p>",
+    "<p>Examine the casting surface and identify areas with visible porosity or shrinkage defects.</p>",
+    "<p>Click Casting Isosurface, set the porosity value to 8%, select Show the isosurface and above, and click Enter to display the areas where porosity exceeds this threshold.</p>",
+    "<p>Gradually reduce the porosity value until you reach 1%, applying the isosurface after each change. Compare the results to see how lower thresholds reveal additional areas of porosity inside the casting.</p>",
+    "<p>Using the method explained in the previous lesson, position and apply a section through one of the detected defects.</p>",
+    "<p>Examine the section to study the location and distribution of porosity and shrinkage defects inside the casting.</p>"
+  ],
+  "expected": "<p>You can evaluate the final porosity result, identify defects on the casting surface, locate internal areas with different levels of porosity, and examine an individual defect inside the casting using a section.</p>"
+}

@@ -110,28 +110,10 @@
           "title": "Visualizing Porosity",
           "steps": [
             {
-              "id": "open-p3d-results",
-              "title": "Opening a P3D File",
-              "duration": "",
-              "contentUrl": "en/porosity-results/open-p3d-results.json"
-            },
-            {
-              "id": "porosity-scale",
-              "title": "Adjusting the Porosity Scale",
-              "duration": "",
-              "contentUrl": "en/porosity-results/porosity-scale.json"
-            },
-            {
-              "id": "porosity-sections",
-              "title": "Inspecting Porosity with Sections",
-              "duration": "",
-              "contentUrl": "en/porosity-results/porosity-sections.json"
-            },
-            {
-              "id": "shrinkage-cavities",
-              "title": "Displaying Shrinkage Cavities",
-              "duration": "",
-              "contentUrl": "en/porosity-results/shrinkage-cavities.json"
+              "id": "analyzing-porosity-results",
+              "title": "Analyzing Porosity Results",
+              "duration": "8 min",
+              "contentUrl": "en/porosity-results/analyzing-porosity-results.json"
             }
           ]
         }
@@ -246,28 +228,10 @@
           "title": "Visualización de la porosidad",
           "steps": [
             {
-              "id": "open-p3d-results",
-              "title": "Apertura de un archivo P3D",
-              "duration": "",
-              "contentUrl": "es/porosity-results/open-p3d-results.json"
-            },
-            {
-              "id": "porosity-scale",
-              "title": "Ajuste de la escala de porosidad",
-              "duration": "",
-              "contentUrl": "es/porosity-results/porosity-scale.json"
-            },
-            {
-              "id": "porosity-sections",
-              "title": "Inspección de la porosidad mediante secciones",
-              "duration": "",
-              "contentUrl": "es/porosity-results/porosity-sections.json"
-            },
-            {
-              "id": "shrinkage-cavities",
-              "title": "Visualización de cavidades de contracción",
-              "duration": "",
-              "contentUrl": "es/porosity-results/shrinkage-cavities.json"
+              "id": "analyzing-porosity-results",
+              "title": "Análisis de resultados de porosidad",
+              "duration": "8 min",
+              "contentUrl": "es/porosity-results/analyzing-porosity-results.json"
             }
           ]
         }
